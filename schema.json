@@ -261,6 +261,7 @@
             "properties": {
               "name": {"type": "string"},
               "forms": {"type": "array", "items": {"enum": ["nullary", "unary", "binary"]}},
+              "syntax": {"type": "array", "items": {"type": "string"}},
               "status": {"$ref": "#/$defs/status"},
               "replaced_by": {"type": "array", "items": {"type": "string"}},
               "branch": {"type": "string"},
