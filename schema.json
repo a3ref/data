@@ -1,11 +1,21 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://a3ref.github.io/schema.json",
-  "title": "Arma 3 scripting command or function",
-  "description": "One record of the a3ref mirror of the Bohemia Interactive Community Wiki. The root schema describes a single page (commands/<name>.json, functions/<name>.json); $defs/bundle describes commands.json and functions.json, $defs/index describes index.json.",
-  "$ref": "#/$defs/record",
+  "title": "a3ref: Arma 3 scripting reference record",
+  "description": "Records of the a3ref mirror of the Bohemia Interactive Community Wiki. The root schema describes one page (commands/<name>.json, functions/<name>.json, topics/<name>.json). $defs/bundle describes commands.json, functions.json and topics.json; $defs/index describes index.json; $defs/syntaxIndex describes syntax.json.",
+  "anyOf": [{"$ref": "#/$defs/record"}, {"$ref": "#/$defs/topic"}],
   "$defs": {
     "markdown": {"type": "string", "description": "GitHub-flavoured Markdown converted from wikitext; links are plain text in JSON."},
+    "types": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Data types linked in the wiki text, e.g. [\"Array\", \"String\"] for \"Array of Strings\". Each has a topic page (topics/<type>.md) when mirrored. Empty when the wiki describes the type in free text.",
+      "examples": [["Object"], ["Array", "Position"]]
+    },
+    "status": {
+      "enum": ["ok", "deprecated", "broken"],
+      "description": "deprecated: the wiki marks it obsolete or deprecated; broken: in the wiki's Broken Commands/Functions group. Prefer replaced_by when not ok."
+    },
     "game": {
       "type": "object",
       "required": ["game", "name", "version"],
@@ -26,15 +36,24 @@
     },
     "param": {
       "type": "object",
-      "required": ["name", "type", "optional", "default", "description", "since", "text"],
+      "required": ["name", "type", "types", "optional", "default", "description", "since", "text"],
       "properties": {
         "name": {"type": "string", "description": "Parameter name; may be empty when the wiki text has none."},
-        "type": {"type": ["string", "null"], "description": "Type as written on the wiki, e.g. \"Array of Strings\". Extracted heuristically; null if not recognised.", "examples": ["Object", "Array of Strings"]},
+        "type": {"type": ["string", "null"], "description": "Type as written on the wiki, e.g. \"Array of Strings\"; null if not recognised.", "examples": ["Object", "Array of Strings"]},
+        "types": {"$ref": "#/$defs/types"},
         "optional": {"type": "boolean"},
         "default": {"type": ["string", "null"], "description": "Default value as written on the wiki, may contain Markdown code."},
         "description": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
         "since": {"type": ["string", "null"], "description": "Game and version that added this parameter, e.g. \"arma3 2.10\"."},
         "text": {"$ref": "#/$defs/markdown", "description": "The complete original parameter text; use it when the split fields are not enough."}
+      }
+    },
+    "operand": {
+      "type": ["object", "null"],
+      "required": ["text", "types"],
+      "properties": {
+        "text": {"type": "string", "description": "The operand as written in the syntax line.", "examples": ["object", "[type, position]"]},
+        "types": {"$ref": "#/$defs/types"}
       }
     },
     "syntax": {
@@ -45,12 +64,17 @@
         "since": {"type": ["string", "null"]},
         "effect": {"type": ["string", "null"], "description": "Overrides the record's effect locality for this syntax."},
         "exec": {"type": ["string", "null"], "description": "Execution requirement for this syntax, e.g. server."},
+        "form": {"enum": ["nullary", "unary", "binary", null], "description": "Commands only. nullary: `time`; unary: `alive unit`; binary: `unit setPos pos`. null when the wiki syntax line is irregular."},
+        "operator": {"type": ["string", "null"], "description": "Commands only: the symbol for operator pages (\"!=\", \">>\", \"#\")."},
+        "left": {"$ref": "#/$defs/operand", "description": "Commands only: the operand before the command (binary form)."},
+        "right": {"$ref": "#/$defs/operand", "description": "Commands only: the operand after the command (unary and binary forms)."},
         "params": {"type": "array", "items": {"$ref": "#/$defs/param"}},
         "returns": {
           "type": ["object", "null"],
-          "required": ["type", "description", "text"],
+          "required": ["type", "types", "description", "text"],
           "properties": {
             "type": {"type": ["string", "null"], "examples": ["Nothing", "Object"]},
+            "types": {"$ref": "#/$defs/types"},
             "description": {"type": ["string", "null"]},
             "text": {"$ref": "#/$defs/markdown"}
           }
@@ -59,17 +83,21 @@
     },
     "record": {
       "type": "object",
-      "required": ["name", "title", "type", "url", "revid", "updated", "groups", "games", "since", "arma3_since", "branch",
-                   "locality", "exec", "description", "syntaxes", "examples", "multiplayer", "problems", "aliases", "see_also",
-                   "notes", "categories"],
+      "description": "A scripting command or function.",
+      "required": ["name", "operator", "title", "type", "url", "revid", "updated", "groups", "status", "replaced_by", "games",
+                   "since", "arma3_since", "branch", "locality", "exec", "description", "syntaxes", "examples",
+                   "multiplayer", "problems", "aliases", "see_also", "notes", "categories"],
       "properties": {
-        "name": {"type": "string", "description": "Name as written in scripts; functions use underscores (BIS_fnc_spawnGroup).", "examples": ["setPos", "BIS_fnc_spawnGroup", "a != b"]},
-        "title": {"type": "string", "description": "Wiki page title (functions use spaces: \"BIS fnc spawnGroup\")."},
+        "name": {"type": "string", "description": "Name as written in scripts (diag_fps, BIS_fnc_spawnGroup); operator pages keep the wiki title (\"a != b\").", "examples": ["setPos", "diag_fps", "BIS_fnc_spawnGroup", "a != b"]},
+        "operator": {"type": ["string", "null"], "description": "For operator pages, the symbol itself.", "examples": ["!=", ">>", "||"]},
+        "title": {"type": "string", "description": "Wiki page title (\"diag fps\", \"BIS fnc spawnGroup\")."},
         "type": {"enum": ["command", "function"]},
         "url": {"type": "string", "format": "uri", "description": "Source page on the BI Community Wiki."},
         "revid": {"type": "integer", "description": "Wiki revision the record was built from."},
         "updated": {"type": ["string", "null"], "format": "date-time", "description": "Time of that revision."},
         "groups": {"type": "array", "items": {"type": "string"}, "description": "Command groups, e.g. \"Object Manipulation\"."},
+        "status": {"$ref": "#/$defs/status"},
+        "replaced_by": {"type": "array", "items": {"type": "string"}, "description": "Names to use instead, from the deprecation notice."},
         "games": {"type": "array", "items": {"$ref": "#/$defs/game"}, "description": "Every game that has it, oldest first."},
         "since": {"anyOf": [{"$ref": "#/$defs/game"}, {"type": "null"}], "description": "The first game that had it."},
         "arma3_since": {"type": ["string", "null"], "description": "Arma 3 version that introduced it.", "examples": ["0.50", "2.18"]},
@@ -92,10 +120,10 @@
         "multiplayer": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
         "problems": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
         "aliases": {"type": "array", "items": {"type": "string"}},
-        "see_also": {"type": "array", "items": {"type": "string"}, "description": "Related page names."},
+        "see_also": {"type": "array", "items": {"type": "string"}, "description": "Related names (commands, functions or topics)."},
         "notes": {
           "type": "array",
-          "description": "Community notes from the bottom of the wiki page.",
+          "description": "Community notes from the bottom of the wiki page; may be outdated.",
           "items": {
             "type": "object",
             "required": ["user", "date", "text"],
@@ -109,15 +137,45 @@
         "categories": {"type": "array", "items": {"type": "string"}, "description": "Visible wiki categories of the page."}
       }
     },
+    "topic": {
+      "type": "object",
+      "description": "A concept page: a data type, locality, event handler list, Description.ext, ...",
+      "required": ["name", "title", "type", "url", "revid", "updated", "aliases", "groups", "markdown", "sections", "categories"],
+      "properties": {
+        "name": {"type": "string", "examples": ["Position", "Arma 3: Event Handlers"]},
+        "title": {"type": "string"},
+        "type": {"const": "topic"},
+        "url": {"type": "string", "format": "uri"},
+        "revid": {"type": "integer"},
+        "updated": {"type": ["string", "null"], "format": "date-time"},
+        "aliases": {"type": "array", "items": {"type": "string"}, "description": "Wiki titles that redirect here, e.g. PositionAGL for Position."},
+        "groups": {"type": "array", "items": {"enum": ["Data Types", "Event Handlers", "Scripting"]}},
+        "markdown": {"$ref": "#/$defs/markdown", "description": "The whole page."},
+        "sections": {
+          "type": "array",
+          "description": "The page split at headings; the first section (heading null) is the introduction. For event handler pages each handler is one section.",
+          "items": {
+            "type": "object",
+            "required": ["heading", "level", "markdown"],
+            "properties": {
+              "heading": {"type": ["string", "null"]},
+              "level": {"type": "integer", "description": "Markdown heading level (2 = ##)."},
+              "markdown": {"$ref": "#/$defs/markdown"}
+            }
+          }
+        },
+        "categories": {"type": "array", "items": {"type": "string"}}
+      }
+    },
     "bundle": {
       "type": "object",
-      "description": "commands.json / functions.json",
+      "description": "commands.json / functions.json / topics.json",
       "required": ["updated", "source", "count", "items"],
       "properties": {
         "updated": {"type": ["string", "null"], "format": "date-time", "description": "Newest wiki edit in the data."},
         "source": {"type": "string", "format": "uri"},
         "count": {"type": "integer"},
-        "items": {"type": "array", "items": {"$ref": "#/$defs/record"}}
+        "items": {"type": "array", "items": {"anyOf": [{"$ref": "#/$defs/record"}, {"$ref": "#/$defs/topic"}]}}
       }
     },
     "index": {
@@ -131,17 +189,55 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["name", "type", "md", "json", "groups", "syntax", "summary", "arma3_since", "locality"],
+            "required": ["name", "type", "md", "json", "groups", "syntax", "summary", "arma3_since", "locality", "status", "operator", "aliases"],
             "properties": {
               "name": {"type": "string"},
-              "type": {"enum": ["command", "function"]},
+              "type": {"enum": ["command", "function", "topic"]},
               "md": {"type": "string", "description": "Path of the Markdown page, relative to the site root."},
               "json": {"type": "string", "description": "Path of the JSON page, relative to the site root."},
               "groups": {"type": "array", "items": {"type": "string"}},
               "syntax": {"type": "array", "items": {"type": "string"}},
               "summary": {"type": "string", "description": "First sentence of the description, plain text."},
               "arma3_since": {"type": ["string", "null"]},
-              "locality": {"$ref": "#/$defs/locality"}
+              "locality": {"anyOf": [{"$ref": "#/$defs/locality"}, {"type": "null"}]},
+              "status": {"$ref": "#/$defs/status"},
+              "operator": {"type": ["string", "null"]},
+              "aliases": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    },
+    "syntaxIndex": {
+      "type": "object",
+      "description": "syntax.json: every command and function by lower-case name (operators by symbol), for linters.",
+      "required": ["updated", "commands", "functions"],
+      "properties": {
+        "updated": {"type": ["string", "null"]},
+        "commands": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["name", "forms", "status"],
+            "properties": {
+              "name": {"type": "string"},
+              "forms": {"type": "array", "items": {"enum": ["nullary", "unary", "binary"]}},
+              "status": {"$ref": "#/$defs/status"},
+              "replaced_by": {"type": "array", "items": {"type": "string"}},
+              "branch": {"type": "string"},
+              "operator": {"type": "string"}
+            }
+          }
+        },
+        "functions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["name", "status"],
+            "properties": {
+              "name": {"type": "string"},
+              "status": {"$ref": "#/$defs/status"},
+              "replaced_by": {"type": "array", "items": {"type": "string"}}
             }
           }
         }
