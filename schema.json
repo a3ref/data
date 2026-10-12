@@ -45,7 +45,39 @@
         "default": {"type": ["string", "null"], "description": "Default value as written on the wiki, may contain Markdown code."},
         "description": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
         "since": {"type": ["string", "null"], "description": "Game and version that added this parameter, e.g. \"arma3 2.10\"."},
-        "text": {"$ref": "#/$defs/markdown", "description": "The complete original parameter text; use it when the split fields are not enough."}
+        "text": {"$ref": "#/$defs/markdown", "description": "The complete original parameter text; use it when the split fields are not enough."},
+        "source": {"const": "docblock", "description": "Present when the parameter comes from the function header comment, not the wiki fields."}
+      }
+    },
+    "docblock": {
+      "type": ["object", "null"],
+      "description": "Functions only: the header comment of the function's .sqf file, shown on placeholder wiki pages. Parsed leniently; text is the cleaned original.",
+      "properties": {
+        "author": {"type": ["string", "null"]},
+        "description": {"type": ["string", "null"]},
+        "params": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {"type": ["integer", "null"], "description": "Position in the argument array; null for a single unnumbered argument."},
+              "name": {"type": ["string", "null"]},
+              "types": {"$ref": "#/$defs/types"},
+              "optional": {"type": "boolean"},
+              "default": {"type": ["string", "null"]},
+              "description": {"type": ["string", "null"]},
+              "text": {"type": "string"}
+            }
+          }
+        },
+        "returns": {"type": ["object", "null"], "properties": {"types": {"$ref": "#/$defs/types"}, "text": {"type": "string"}}},
+        "examples": {"type": "array", "items": {"type": "string"}},
+        "syntax": {"type": ["string", "null"]},
+        "execution": {"type": ["string", "null"]},
+        "notes": {"type": ["string", "null"]},
+        "requirements": {"type": ["string", "null"]},
+        "meta": {"type": "object", "additionalProperties": {"type": "string"}, "description": "Project, date, version, file, ..."},
+        "text": {"type": "string"}
       }
     },
     "operand": {
@@ -68,6 +100,7 @@
         "operator": {"type": ["string", "null"], "description": "Commands only: the symbol for operator pages (\"!=\", \">>\", \"#\")."},
         "left": {"$ref": "#/$defs/operand", "description": "Commands only: the operand before the command (binary form)."},
         "right": {"$ref": "#/$defs/operand", "description": "Commands only: the operand after the command (unary and binary forms)."},
+        "inferred": {"type": "boolean", "description": "Functions only: the syntax line was built from the function header's parameters, not written on the wiki."},
         "params": {"type": "array", "items": {"$ref": "#/$defs/param"}},
         "returns": {
           "type": ["object", "null"],
@@ -134,7 +167,13 @@
             }
           }
         },
-        "categories": {"type": "array", "items": {"type": "string"}, "description": "Visible wiki categories of the page."}
+        "categories": {"type": "array", "items": {"type": "string"}, "description": "Visible wiki categories of the page."},
+        "docblock": {"$ref": "#/$defs/docblock"},
+        "filled_from_docblock": {
+          "type": "array",
+          "items": {"enum": ["description", "params", "syntax", "returns", "examples"]},
+          "description": "Functions only: which fields came from the function header because the wiki page leaves them empty."
+        }
       }
     },
     "topic": {
