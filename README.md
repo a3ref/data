@@ -2,8 +2,9 @@
 
 Every Arma 3 scripting command and function from the
 [Bohemia Interactive Community Wiki](https://community.bistudio.com/wiki), as JSON.
-Updated daily by the workflow in [a3ref/a3ref.github.io](https://github.com/a3ref/a3ref.github.io),
-which also publishes the readable site at **https://a3ref.github.io/**.
+Updated daily by `.github/workflows/sync.yml` in this repository, using the code from
+[a3ref/a3ref.github.io](https://github.com/a3ref/a3ref.github.io), which also publishes the readable site at
+**https://a3ref.github.io/** an hour later.
 
 The commit history doubles as a changelog of the wiki: each sync commit contains only the pages edited since the last one.
 
