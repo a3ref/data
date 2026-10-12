@@ -1,25 +1,29 @@
 # a3ref/data — Arma 3 scripting dataset for AI agents and tools
 
-**Every Arma 3 scripting command (≈2,650) and function (≈2,050) from the
-[Bohemia Interactive Community Wiki](https://community.bistudio.com/wiki) as structured JSON, synced daily.**
+**Every Arma 3 scripting command (≈2,650), function (≈2,050) and the core concept pages (data types, locality,
+event handlers, ...) from the [Bohemia Interactive Community Wiki](https://community.bistudio.com/wiki) as structured
+JSON, synced daily.**
 
 Built first for AI agents, bots and programs: the original wiki blocks automated access behind a bot challenge,
 so this repository keeps a clean, versioned, machine-readable copy that anything can fetch with a plain HTTP GET.
-No API key, no rate limit, CORS open. The readable site with per-page Markdown and HTML is **https://a3ref.github.io/**.
+No API key, no rate limit, CORS open. The readable site with per-page Markdown and HTML is **https://a3ref.github.io/**;
+agents with MCP can use **[a3ref/mcp](https://github.com/a3ref/mcp)** (search, pages and an SQF linter).
 
 ## Files
 
 | File | Contents |
 |---|---|
-| `index.json` | start here: every entry with name, type, syntax lines, one-line summary, groups, locality and its page paths on the site |
-| `commands.json` | every scripting command, fully parsed: syntaxes, typed parameters, return values, examples, locality, versions, community notes |
-| `functions.json` | every `BIS_fnc_*` and other function, same format |
-| `schema.json` | JSON Schema 2020-12 of a record (`$defs/bundle` for the two files above, `$defs/index` for `index.json`) |
-| `raw/commands.json`, `raw/functions.json` | source wikitext of each page with its revision id, keyed by page id |
+| `index.json` | start here: every entry with name, type, syntax lines, one-line summary, groups, locality, status, operator symbol and its page paths on the site |
+| `commands.json` | every scripting command, fully parsed: syntaxes with forms and typed operands, typed parameters, return values, examples, locality, versions, status and replacements, community notes |
+| `functions.json` | every `BIS_fnc_*` and other function, same format; placeholder pages are filled from the function's header comment (`docblock`) |
+| `topics.json` | concept pages (data types, Position, Multiplayer Scripting, event handler lists, Description.ext, ...) as Markdown split into sections |
+| `syntax.json` | compact lookup for linters: forms (nullary/unary/binary), status, replacements and syntax lines of every name |
+| `schema.json` | JSON Schema 2020-12 of all of the above |
+| `raw/*.json` | source wikitext of each page with its revision id, keyed by page id |
 
-Each of the top three files is `{"updated": ..., "count": ..., "items": [...]}` with one item per line, so diffs stay
-readable. `updated` is the time of the newest wiki edit in the data, not the build time: a file only changes when the
-wiki does, or when the parser improves.
+The bundles are `{"updated": ..., "count": ..., "items": [...]}` with one item per line, so diffs stay readable.
+`updated` is the time of the newest wiki edit in the data, not the build time: a file only changes when the wiki does,
+or when the parser improves.
 
 ## Fetch it
 
