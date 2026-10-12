@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://a3ref.github.io/schema.json",
+  "title": "Arma 3 scripting command or function",
+  "description": "One record of the a3ref mirror of the Bohemia Interactive Community Wiki. The root schema describes a single page (commands/<name>.json, functions/<name>.json); $defs/bundle describes commands.json and functions.json, $defs/index describes index.json.",
+  "$ref": "#/$defs/record",
+  "$defs": {
+    "markdown": {"type": "string", "description": "GitHub-flavoured Markdown converted from wikitext; links are plain text in JSON."},
+    "game": {
+      "type": "object",
+      "required": ["game", "name", "version"],
+      "properties": {
+        "game": {"type": "string", "description": "Wiki game code, e.g. ofp, arma2oa, arma3.", "examples": ["arma3"]},
+        "name": {"type": "string", "examples": ["Arma 3"]},
+        "version": {"type": ["string", "null"], "description": "Game version that introduced it.", "examples": ["0.50"]}
+      }
+    },
+    "locality": {
+      "type": "object",
+      "required": ["argument", "effect", "server_exec"],
+      "properties": {
+        "argument": {"enum": ["local", "global", null], "description": "local: arguments must be local to the machine running it."},
+        "effect": {"enum": ["local", "global", null], "description": "global: the effect is broadcast to every machine."},
+        "server_exec": {"type": "boolean", "description": "Must be executed on the server."}
+      }
+    },
+    "param": {
+      "type": "object",
+      "required": ["name", "type", "optional", "default", "description", "since", "text"],
+      "properties": {
+        "name": {"type": "string", "description": "Parameter name; may be empty when the wiki text has none."},
+        "type": {"type": ["string", "null"], "description": "Type as written on the wiki, e.g. \"Array of Strings\". Extracted heuristically; null if not recognised.", "examples": ["Object", "Array of Strings"]},
+        "optional": {"type": "boolean"},
+        "default": {"type": ["string", "null"], "description": "Default value as written on the wiki, may contain Markdown code."},
+        "description": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
+        "since": {"type": ["string", "null"], "description": "Game and version that added this parameter, e.g. \"arma3 2.10\"."},
+        "text": {"$ref": "#/$defs/markdown", "description": "The complete original parameter text; use it when the split fields are not enough."}
+      }
+    },
+    "syntax": {
+      "type": "object",
+      "required": ["syntax", "since", "effect", "exec", "params", "returns"],
+      "properties": {
+        "syntax": {"type": "string", "description": "Plain-text syntax line; may be empty for some functions.", "examples": ["object setPos pos", "[group, position] call BIS_fnc_taskPatrol"]},
+        "since": {"type": ["string", "null"]},
+        "effect": {"type": ["string", "null"], "description": "Overrides the record's effect locality for this syntax."},
+        "exec": {"type": ["string", "null"], "description": "Execution requirement for this syntax, e.g. server."},
+        "params": {"type": "array", "items": {"$ref": "#/$defs/param"}},
+        "returns": {
+          "type": ["object", "null"],
+          "required": ["type", "description", "text"],
+          "properties": {
+            "type": {"type": ["string", "null"], "examples": ["Nothing", "Object"]},
+            "description": {"type": ["string", "null"]},
+            "text": {"$ref": "#/$defs/markdown"}
+          }
+        }
+      }
+    },
+    "record": {
+      "type": "object",
+      "required": ["name", "title", "type", "url", "revid", "updated", "groups", "games", "since", "arma3_since", "branch",
+                   "locality", "exec", "description", "syntaxes", "examples", "multiplayer", "problems", "aliases", "see_also",
+                   "notes", "categories"],
+      "properties": {
+        "name": {"type": "string", "description": "Name as written in scripts; functions use underscores (BIS_fnc_spawnGroup).", "examples": ["setPos", "BIS_fnc_spawnGroup", "a != b"]},
+        "title": {"type": "string", "description": "Wiki page title (functions use spaces: \"BIS fnc spawnGroup\")."},
+        "type": {"enum": ["command", "function"]},
+        "url": {"type": "string", "format": "uri", "description": "Source page on the BI Community Wiki."},
+        "revid": {"type": "integer", "description": "Wiki revision the record was built from."},
+        "updated": {"type": ["string", "null"], "format": "date-time", "description": "Time of that revision."},
+        "groups": {"type": "array", "items": {"type": "string"}, "description": "Command groups, e.g. \"Object Manipulation\"."},
+        "games": {"type": "array", "items": {"$ref": "#/$defs/game"}, "description": "Every game that has it, oldest first."},
+        "since": {"anyOf": [{"$ref": "#/$defs/game"}, {"type": "null"}], "description": "The first game that had it."},
+        "arma3_since": {"type": ["string", "null"], "description": "Arma 3 version that introduced it.", "examples": ["0.50", "2.18"]},
+        "branch": {"type": ["string", "null"], "description": "dev / diag / prof when only available in that build.", "examples": ["diag"]},
+        "locality": {"$ref": "#/$defs/locality"},
+        "exec": {"type": ["string", "null"], "description": "Functions only: how it is executed (spawn / call)."},
+        "description": {"$ref": "#/$defs/markdown"},
+        "syntaxes": {"type": "array", "items": {"$ref": "#/$defs/syntax"}},
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["text", "code"],
+            "properties": {
+              "text": {"$ref": "#/$defs/markdown"},
+              "code": {"type": "array", "items": {"type": "string"}, "description": "Raw SQF snippets from the example."}
+            }
+          }
+        },
+        "multiplayer": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
+        "problems": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
+        "aliases": {"type": "array", "items": {"type": "string"}},
+        "see_also": {"type": "array", "items": {"type": "string"}, "description": "Related page names."},
+        "notes": {
+          "type": "array",
+          "description": "Community notes from the bottom of the wiki page.",
+          "items": {
+            "type": "object",
+            "required": ["user", "date", "text"],
+            "properties": {
+              "user": {"type": "string"},
+              "date": {"type": "string", "description": "ISO 8601, empty if unknown."},
+              "text": {"$ref": "#/$defs/markdown"}
+            }
+          }
+        },
+        "categories": {"type": "array", "items": {"type": "string"}, "description": "Visible wiki categories of the page."}
+      }
+    },
+    "bundle": {
+      "type": "object",
+      "description": "commands.json / functions.json",
+      "required": ["updated", "source", "count", "items"],
+      "properties": {
+        "updated": {"type": ["string", "null"], "format": "date-time", "description": "Newest wiki edit in the data."},
+        "source": {"type": "string", "format": "uri"},
+        "count": {"type": "integer"},
+        "items": {"type": "array", "items": {"$ref": "#/$defs/record"}}
+      }
+    },
+    "index": {
+      "type": "object",
+      "description": "index.json",
+      "required": ["updated", "count", "items"],
+      "properties": {
+        "updated": {"type": ["string", "null"], "format": "date-time"},
+        "count": {"type": "integer"},
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "type", "md", "json", "groups", "syntax", "summary", "arma3_since", "locality"],
+            "properties": {
+              "name": {"type": "string"},
+              "type": {"enum": ["command", "function"]},
+              "md": {"type": "string", "description": "Path of the Markdown page, relative to the site root."},
+              "json": {"type": "string", "description": "Path of the JSON page, relative to the site root."},
+              "groups": {"type": "array", "items": {"type": "string"}},
+              "syntax": {"type": "array", "items": {"type": "string"}},
+              "summary": {"type": "string", "description": "First sentence of the description, plain text."},
+              "arma3_since": {"type": ["string", "null"]},
+              "locality": {"$ref": "#/$defs/locality"}
+            }
+          }
+        }
+      }
+    }
+  }
+}
