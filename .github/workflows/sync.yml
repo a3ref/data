@@ -1,10 +1,12 @@
-# Daily: pull pages edited on the BI wiki since the last run, re-parse them and commit the result.
+# Twice a day: pull pages edited on the BI wiki since the last run, re-parse them and commit the result.
 # The code lives in a3ref/a3ref.github.io; that repository deploys the site once this data changes.
+# GitHub may delay or drop scheduled runs under load, so there are two; a sync with no wiki edits commits nothing.
 name: Sync from wiki
 
 on:
   schedule:
     - cron: "17 4 * * *"
+    - cron: "17 16 * * *"
   workflow_dispatch:
     inputs:
       full:

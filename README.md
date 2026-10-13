@@ -58,7 +58,7 @@ Names are case-sensitive and use the wiki spelling.
 
 ## History as a changelog
 
-`.github/workflows/sync.yml` runs daily, using the code from
+`.github/workflows/sync.yml` runs twice a day, using the code from
 [a3ref/a3ref.github.io](https://github.com/a3ref/a3ref.github.io): it pulls the pages edited since the last run,
 re-parses them and commits only if something changed. The commit log therefore doubles as a changelog of the wiki's
 Arma 3 scripting pages; `git log -p -- commands.json` shows which commands changed and how.
