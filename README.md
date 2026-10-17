@@ -13,17 +13,25 @@ agents with MCP can use **[a3ref/mcp](https://github.com/a3ref/mcp)** (search, p
 
 | File | Contents |
 |---|---|
-| `index.json` | start here: every entry with name, type, syntax lines, one-line summary, groups, locality, status, operator symbol and its page paths on the site |
-| `commands.json` | every scripting command, fully parsed: syntaxes with forms and typed operands, typed parameters, return values, examples, locality, versions, status and replacements, community notes |
-| `functions.json` | every `BIS_fnc_*` and other function, same format; placeholder pages are filled from the function's header comment (`docblock`) |
-| `topics.json` | concept pages (data types, Position, Multiplayer Scripting, event handler lists, Description.ext, ...) as Markdown split into sections |
-| `syntax.json` | compact lookup for linters: forms (nullary/unary/binary), status, replacements and syntax lines of every name |
+| `index.json` (2 MB) | start here: every entry with name, type, syntax lines, one-line summary, groups, locality, status, operator symbol and its page paths on the site |
+| `commands.json` (7 MB) | every scripting command, fully parsed: syntaxes with forms and typed operands, typed parameters, return values, examples, locality, versions, status and replacements, community notes |
+| `functions.json` (4 MB) | every `BIS_fnc_*` and other function, same format; placeholder pages are filled from the function's header comment (`docblock`) |
+| `topics.json` (1 MB) | concept pages (data types, Position, Multiplayer Scripting, event handler lists, Description.ext, ...) as Markdown split into sections |
+| `syntax.json` (0.5 MB) | compact lookup for linters: forms (nullary/unary/binary), status, replacements and syntax lines of every name |
 | `schema.json` | JSON Schema 2020-12 of all of the above |
 | `raw/*.json` | source wikitext of each page with its revision id, keyed by page id |
 
 The bundles are `{"updated": ..., "count": ..., "items": [...]}` with one item per line, so diffs stay readable.
 `updated` is the time of the newest wiki edit in the data, not the build time: a file only changes when the wiki does,
 or when the parser improves.
+
+Each record is one line, so a single `grep` returns one complete record without loading the file:
+
+```sh
+grep -m1 '^{"name":"setPos"' commands.json
+```
+
+AI agents: [AGENTS.md](AGENTS.md) has more ways to query the data without filling the context.
 
 ## Fetch it
 
