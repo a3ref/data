@@ -12,6 +12,11 @@
       "description": "Data types linked in the wiki text, e.g. [\"Array\", \"String\"] for \"Array of Strings\". Each has a topic page (topics/<type>.md) when mirrored. Empty when the wiki describes the type in free text.",
       "examples": [["Object"], ["Array", "Position"]]
     },
+    "typeExpr": {
+      "type": ["string", "null"],
+      "description": "The type normalised for programs: alternatives joined with \" | \", element types as Array<...>; qualifiers (\"in range 0..1\", \"(RGBA)\") dropped. Collected from a list of alternatives below the parameter when the first line has no type. Null when the type is free text.",
+      "examples": ["Object", "Object | Array<Object>", "Array<Array<Number>>", "Number | Boolean"]
+    },
     "status": {
       "enum": ["ok", "deprecated", "broken"],
       "description": "deprecated: the wiki marks it obsolete or deprecated; broken: in the wiki's Broken Commands/Functions group. Prefer replaced_by when not ok."
@@ -36,11 +41,12 @@
     },
     "param": {
       "type": "object",
-      "required": ["name", "type", "types", "optional", "default", "description", "since", "text"],
+      "required": ["name", "type", "types", "type_expr", "optional", "default", "description", "since", "text"],
       "properties": {
         "name": {"type": "string", "description": "Parameter name; may be empty when the wiki text has none."},
         "type": {"type": ["string", "null"], "description": "Type as written on the wiki, e.g. \"Array of Strings\"; null if not recognised.", "examples": ["Object", "Array of Strings"]},
         "types": {"$ref": "#/$defs/types"},
+        "type_expr": {"$ref": "#/$defs/typeExpr"},
         "optional": {"type": "boolean"},
         "default": {"type": ["string", "null"], "description": "Default value as written on the wiki, may contain Markdown code."},
         "description": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
@@ -63,6 +69,7 @@
               "index": {"type": ["integer", "null"], "description": "Position in the argument array; null for a single unnumbered argument."},
               "name": {"type": ["string", "null"]},
               "types": {"$ref": "#/$defs/types"},
+              "type_expr": {"$ref": "#/$defs/typeExpr"},
               "optional": {"type": "boolean"},
               "default": {"type": ["string", "null"]},
               "description": {"type": ["string", "null"]},
@@ -70,7 +77,7 @@
             }
           }
         },
-        "returns": {"type": ["object", "null"], "properties": {"types": {"$ref": "#/$defs/types"}, "text": {"type": "string"}}},
+        "returns": {"type": ["object", "null"], "properties": {"types": {"$ref": "#/$defs/types"}, "type_expr": {"$ref": "#/$defs/typeExpr"}, "text": {"type": "string"}}},
         "examples": {"type": "array", "items": {"type": "string"}},
         "syntax": {"type": ["string", "null"]},
         "execution": {"type": ["string", "null"]},
@@ -104,10 +111,11 @@
         "params": {"type": "array", "items": {"$ref": "#/$defs/param"}},
         "returns": {
           "type": ["object", "null"],
-          "required": ["type", "types", "description", "text"],
+          "required": ["type", "types", "type_expr", "description", "text"],
           "properties": {
             "type": {"type": ["string", "null"], "examples": ["Nothing", "Object"]},
             "types": {"$ref": "#/$defs/types"},
+            "type_expr": {"$ref": "#/$defs/typeExpr"},
             "description": {"type": ["string", "null"]},
             "text": {"$ref": "#/$defs/markdown"}
           }
