@@ -33,9 +33,8 @@ jq -c '.items[] | select(.status == "deprecated") | {name, syntax}' index.json
 
 ## Changing something
 
-- **Wrong or missing content in a record**: the parser is in a3ref/a3ref.github.io, cloned next to this one as
-  `../a3ref.github.io` (`biwiki/parse.py`,
-  `biwiki/wikitext.py`); fix it there. Its AGENTS.md says how to rebuild these files.
+- **Wrong or missing content in a record**: the parser is in [a3ref/a3ref.github.io](https://github.com/a3ref/a3ref.github.io)
+  (`biwiki/parse.py`, `biwiki/wikitext.py`); fix it there. Its AGENTS.md says how to rebuild these files.
 - **Wrong text on the wiki**: fix it on https://community.bistudio.com/wiki; the next sync picks it up.
 - **Sync schedule or steps**: `.github/workflows/sync.yml`.
 - In Claude Code a hook blocks edits to the generated files.
