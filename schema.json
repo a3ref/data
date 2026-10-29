@@ -186,7 +186,7 @@
     },
     "topic": {
       "type": "object",
-      "description": "A concept page: a data type, locality, event handler list, Description.ext, ...",
+      "description": "Any other Arma 3 page: a data type, locality, event handler list, Description.ext, a config reference, a GUI control type, a tool, ...",
       "required": ["name", "title", "type", "url", "revid", "updated", "aliases", "groups", "markdown", "sections", "categories"],
       "properties": {
         "name": {"type": "string", "examples": ["Position", "Arma 3: Event Handlers"]},
@@ -196,7 +196,7 @@
         "revid": {"type": "integer"},
         "updated": {"type": ["string", "null"], "format": "date-time"},
         "aliases": {"type": "array", "items": {"type": "string"}, "description": "Wiki titles that redirect here, e.g. PositionAGL for Position."},
-        "groups": {"type": "array", "items": {"enum": ["Data Types", "Event Handlers", "Scripting"]}},
+        "groups": {"type": "array", "items": {"enum": ["Data Types", "Event Handlers", "Scripting", "GUI", "Multiplayer and Server", "Mission Editing", "Tools and File Formats", "Reference Lists", "Configuration", "General"]}},
         "markdown": {"$ref": "#/$defs/markdown", "description": "The whole page."},
         "sections": {
           "type": "array",
