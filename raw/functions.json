@@ -4473,9 +4473,9 @@
    "Take On Helicopters: Functions",
    "Take On Helicopters: New Functions"
   ],
-  "revid": 349031,
-  "timestamp": "2023-11-08T14:47:12Z",
-  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Missions\n\n|descr= Returns config of current single mission.\n\n|s1= call [[BIS_fnc_singleMissionConfig]]\n\n|r1= [[Config]] or [[Nothing]] - returns [[Config]] if mission was found, otherwise [[Nothing]]\n\n|x1= <sqf>private _config = call BIS_fnc_singleMissionConfig;</sqf>\n\n|seealso= [[missionName]] [[briefingName]] [[BIS_fnc_singleMissionKeys]] [[BIS_fnc_singleMissionName]]\n}}\nsingleMissionKeys"
+  "revid": 379206,
+  "timestamp": "2026-10-30T21:12:23Z",
+  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Missions\n\n|descr= Returns config of current single mission.\n\n|s1= call [[BIS_fnc_singleMissionConfig]]\n\n|r1= [[Config]] or [[Nothing]] - returns [[Config]] if mission was found, otherwise [[Nothing]]\n\n|x1= <sqf>private _config = call BIS_fnc_singleMissionConfig;</sqf>\n\n|seealso= [[missionName]] [[briefingName]] [[BIS_fnc_singleMissionKeys]] [[BIS_fnc_singleMissionName]]\n}}"
  },
  "15860": {
   "title": "BIS fnc singleMissionKeys",
@@ -5265,9 +5265,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 347983,
-  "timestamp": "2023-11-08T09:59:34Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Diagnostic\n\n|descr= Previews selected class from the list. When '''cheat1''' (?) is activated, classnames will be shown instead of display names.\n\n|s1= [container, position, vector, display] call [[BIS_fnc_diagPreviewCycle]]\n\n|p1= container: [[String]] - (Optional, default \"CfgVehicles\") class container. Can be:\n* \"CfgVehicles\"\n* \"CfgWeapons\"\n\n|p2= position: [Array]] format [[Position]] - (Optional, default <sqf inline>[position player, 10, 0] call BIS_fnc_relPos</sqf>) position of the previewed object\n\n|p3= vector [[Array]] of [[Number]]s - (Optional, default [0,0]]) vector of previewed object in format:\n* 0: Pitch\n* 1: Bank\n\n|p4= display: [[Display]] - (Optional, default [[BIS_fnc_displayMission]]) parent display\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[\"CfgVehicles\"] call BIS_fnc_diagPreviewCycle;</sqf>\n\n|seealso= [[:Category:Function Group: Diagnostic|Diag functions]]\n}}"
+  "revid": 379205,
+  "timestamp": "2026-10-30T21:11:31Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Diagnostic\n\n|descr= Previews selected class from the list. When '''cheat1''' (?) is activated, classnames will be shown instead of display names.\n\n|s1= [container, position, vector, display] call [[BIS_fnc_diagPreviewCycle]]\n\n|p1= container: [[String]] - (Optional, default \"CfgVehicles\") class container. Can be:\n* \"CfgVehicles\"\n* \"CfgWeapons\"\n\n|p2= position: [[Array]] format [[Position]] - (Optional, default <sqf inline>[position player, 10, 0] call BIS_fnc_relPos</sqf>) position of the previewed object\n\n|p3= vector: [[Array]] of [[Number]]s - (Optional, default [0,0]) vector of previewed object in format:\n* 0: Pitch\n* 1: Bank\n\n|p4= display: [[Display]] - (Optional, default [[BIS_fnc_displayMission]]) parent display\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[\"CfgVehicles\"] call BIS_fnc_diagPreviewCycle;</sqf>\n\n|seealso= [[:Category:Function Group: Diagnostic|Diag functions]]\n}}"
  },
  "15921": {
   "title": "BIS fnc diagKeyLayout",

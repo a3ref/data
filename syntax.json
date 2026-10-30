@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-30T20:33:25Z",
+"updated": "2026-10-30T21:20:52Z",
 "commands": {
 "!": {
 "name": "! a",
@@ -3347,11 +3347,11 @@
 "clearitempool": {
 "name": "clearItemPool",
 "forms": [
-"unary"
+"nullary"
 ],
 "status": "ok",
 "syntax": [
-"clearItemPool box"
+"clearItemPool"
 ]
 },
 "clearmagazinecargo": {
@@ -4790,7 +4790,9 @@
 "control ctrlGetProperty property",
 "control ctrlGetProperty properties"
 ],
-"branch": "dev"
+"branch": [
+"dev"
+]
 },
 "ctrlhtmlloaded": {
 "name": "ctrlHTMLLoaded",
@@ -5540,7 +5542,9 @@
 "control ctrlSetProperty property",
 "control ctrlSetProperty properties"
 ],
-"branch": "dev"
+"branch": [
+"dev"
+]
 },
 "ctrlsetscale": {
 "name": "ctrlSetScale",
@@ -6785,7 +6789,10 @@
 "syntax": [
 "diag_captureFrame frame"
 ],
-"branch": "diag prof"
+"branch": [
+"diag",
+"prof"
+]
 },
 "diag_captureframetofile": {
 "name": "diag_captureFrameToFile",
@@ -6796,7 +6803,10 @@
 "syntax": [
 "diag_captureFrameToFile frame"
 ],
-"branch": "diag prof"
+"branch": [
+"diag",
+"prof"
+]
 },
 "diag_captureslowframe": {
 "name": "diag_captureSlowFrame",
@@ -6807,7 +6817,10 @@
 "syntax": [
 "diag_captureSlowFrame [section, threshold, frameSkip, toFile, continuousCounter]"
 ],
-"branch": "diag prof"
+"branch": [
+"diag",
+"prof"
+]
 },
 "diag_codeperformance": {
 "name": "diag_codePerformance",
@@ -6838,7 +6851,9 @@
 "syntax": [
 "diag_drawMode type"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_dumpcalltracetolog": {
 "name": "diag_dumpCalltraceToLog",
@@ -6849,7 +6864,9 @@
 "syntax": [
 "diag_dumpCalltraceToLog"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_dumpscriptassembly": {
 "name": "diag_dumpScriptAssembly",
@@ -6860,7 +6877,9 @@
 "syntax": [
 "diag_dumpScriptAssembly code"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_dumpterrainsynth": {
 "name": "diag_dumpTerrainSynth",
@@ -6881,7 +6900,9 @@
 "syntax": [
 "diag_dynamicSimulationEnd file"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_dynamicsimulationstart": {
 "name": "diag_dynamicSimulationStart",
@@ -6892,7 +6913,9 @@
 "syntax": [
 "diag_dynamicSimulationStart"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_enable": {
 "name": "diag_enable",
@@ -6903,7 +6926,9 @@
 "syntax": [
 "mode diag_enable state"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_enabled": {
 "name": "diag_enabled",
@@ -6914,7 +6939,9 @@
 "syntax": [
 "diag_enabled mode"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_exportconfig": {
 "name": "diag_exportConfig",
@@ -6925,7 +6952,9 @@
 "syntax": [
 "diag_exportConfig [path, config]"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_exportterrainsvg": {
 "name": "diag_exportTerrainSVG",
@@ -6936,7 +6965,9 @@
 "syntax": [
 "diag_exportTerrainSVG [filePath, drawLocationNames, drawGrid, drawCountlines, drawTreeObjects, drawMountainHeightpoints, simpleRoads]"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_fps": {
 "name": "diag_fps",
@@ -6980,7 +7011,9 @@
 "replaced_by": [
 "getTerrainInfo"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_getterrainheight": {
 "name": "diag_getTerrainHeight",
@@ -6994,7 +7027,9 @@
 "replaced_by": [
 "getTerrainHeight"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_getterrainsegmentoffset": {
 "name": "diag_getTerrainSegmentOffset",
@@ -7005,7 +7040,9 @@
 "syntax": [
 "diag_getTerrainSegmentOffset worldPos"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_lightnewload": {
 "name": "diag_lightNewLoad",
@@ -7026,7 +7063,9 @@
 "syntax": [
 "diag_list mode"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_localized": {
 "name": "diag_localized",
@@ -7057,7 +7096,9 @@
 "syntax": [
 "diag_mergeConfigFile [path, userdir]"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_recordturretlimits": {
 "name": "diag_recordTurretLimits",
@@ -7068,7 +7109,9 @@
 "syntax": [
 "diag_recordTurretLimits section"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_remainscollector": {
 "name": "diag_remainsCollector",
@@ -7089,7 +7132,9 @@
 "syntax": [
 "diag_resetAnims"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_resetshapes": {
 "name": "diag_resetShapes",
@@ -7100,7 +7145,9 @@
 "syntax": [
 "diag_resetShapes"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_scope": {
 "name": "diag_scope",
@@ -7134,7 +7181,9 @@
 "replaced_by": [
 "setTerrainHeight"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_sqfcdebugdump": {
 "name": "diag_SQFCDebugDump",
@@ -7145,7 +7194,9 @@
 "syntax": [
 "diag_SQFCDebugDump [sourcePath, targetPath]"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "diag_stacktrace": {
 "name": "diag_stacktrace",
@@ -7166,7 +7217,10 @@
 "syntax": [
 "diag_testScriptSimpleVM code"
 ],
-"branch": "diag prof"
+"branch": [
+"diag",
+"prof"
+]
 },
 "diag_ticktime": {
 "name": "diag_tickTime",
@@ -7187,7 +7241,9 @@
 "syntax": [
 "diag_toggle mode"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "dialog": {
 "name": "dialog",
@@ -26137,7 +26193,9 @@
 "syntax": [
 "useAIOperMapObstructionTest state"
 ],
-"branch": "diag"
+"branch": [
+"diag"
+]
 },
 "useaisteeringcomponent": {
 "name": "useAISteeringComponent",

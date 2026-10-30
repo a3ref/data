@@ -2,33 +2,26 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://a3ref.github.io/schema.json",
   "title": "a3ref: Arma 3 scripting reference record",
-  "description": "Records of the a3ref mirror of the Bohemia Interactive Community Wiki. The root schema describes one page (commands/<name>.json, functions/<name>.json, topics/<name>.json). $defs/bundle describes commands.json, functions.json and topics.json; $defs/index describes index.json; $defs/syntaxIndex describes syntax.json.",
+  "version": 2,
+  "description": "Records of the a3ref mirror of the Bohemia Interactive Community Wiki, format version 2 (\"version\" above; format 1 had every field in every command and function record). The root schema describes one page (commands/<name>.json, functions/<name>.json, topics/<name>.json). $defs/bundle describes commands.json, functions.json and topics.json; $defs/index describes index.json; $defs/syntaxIndex describes syntax.json. Command and function records leave out every optional field whose value is empty (null, [], {}, false or \"\"): read a missing field as that empty value. They also leave out what follows from other fields, as each field's description says: derivable categories, a parameter's or return value's text, an example's text, types lists, a syntax's operator. Topic records have every field.",
   "anyOf": [{"$ref": "#/$defs/record"}, {"$ref": "#/$defs/topic"}],
   "$defs": {
     "markdown": {"type": "string", "description": "GitHub-flavoured Markdown converted from wikitext; links are plain text in JSON."},
+    "version": {"type": "string", "pattern": "^[a-z0-9]+( \\S+)?$", "description": "Game code and version, \"arma3 2.10\"; the game code alone when the wiki gives no version.", "examples": ["arma3 2.10", "ofp 1.00"]},
     "types": {
       "type": "array",
       "items": {"type": "string"},
-      "description": "Data types in the type position of the wiki text (not links in notes or prose after it), e.g. [\"Array\", \"String\"] for \"Array of Strings\". Each has a topic page (topics/<type>.md) when mirrored. Empty when the wiki describes the type in free text.",
-      "examples": [["Object"], ["Array", "Position"]]
+      "description": "Data types in the type position of the wiki text (not links in notes or prose after it), e.g. [\"Array\", \"Position\"] for \"Array format Position\". Each has a topic page (topics/<type>.md) when mirrored. Present only where it differs from the names in type_expr (split type_expr at <, > and |, trim, drop repeats: \"Array<Object> | Side\" gives [\"Array\", \"Object\", \"Side\"]); when missing, those names are the types. It differs for well under 1% of parameters and return values: a wrapper the wiki names (\"Array format Position\" is type_expr Position, types Array and Position), alternatives listed below the first line that type_expr adds, function header types, and links in a type type_expr cannot read (type_expr null).",
+      "examples": [["Array", "Position"]]
     },
     "typeExpr": {
-      "type": ["string", "null"],
-      "description": "The type normalised for programs: alternatives joined with \" | \", element types as Array<...>; qualifiers (\"in range 0..1\", \"(RGBA)\") dropped. Collected from a list of alternatives below the parameter when the first line has no type. Null when the type is free text.",
+      "type": "string",
+      "description": "The type normalised for programs: alternatives joined with \" | \", element types as Array<...>; qualifiers (\"in range 0..1\", \"(RGBA)\") dropped. Collected from a list of alternatives below the parameter when the first line has no type. Missing when the type is free text.",
       "examples": ["Object", "Object | Array<Object>", "Array<Array<Number>>", "Number | Boolean"]
     },
     "status": {
       "enum": ["ok", "deprecated", "broken"],
       "description": "deprecated: the wiki marks it obsolete or deprecated; broken: in the wiki's Broken Commands/Functions group. Prefer replaced_by when not ok."
-    },
-    "game": {
-      "type": "object",
-      "required": ["game", "name", "version"],
-      "properties": {
-        "game": {"type": "string", "description": "Wiki game code, e.g. ofp, arma2oa, arma3.", "examples": ["arma3"]},
-        "name": {"type": "string", "examples": ["Arma 3"]},
-        "version": {"type": ["string", "null"], "description": "Game version that introduced it.", "examples": ["0.50"]}
-      }
     },
     "locality": {
       "type": "object",
@@ -41,127 +34,115 @@
     },
     "param": {
       "type": "object",
-      "required": ["name", "type", "types", "type_expr", "optional", "default", "description", "since", "text"],
+      "required": ["name"],
       "properties": {
-        "name": {"type": "string", "description": "Parameter name; may be empty when the wiki text has none."},
-        "type": {"type": ["string", "null"], "description": "Type as written on the wiki, e.g. \"Array of Strings\"; null if not recognised.", "examples": ["Object", "Array of Strings"]},
+        "name": {"type": "string", "description": "Parameter name."},
+        "type": {"type": "string", "description": "Type as written on the wiki, e.g. \"Array of Strings\"; missing if not recognised.", "examples": ["Object", "Array of Strings"]},
         "types": {"$ref": "#/$defs/types"},
         "type_expr": {"$ref": "#/$defs/typeExpr"},
-        "optional": {"type": "boolean"},
-        "default": {"type": ["string", "null"], "description": "Default value as written on the wiki, may contain Markdown code."},
-        "description": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
-        "since": {"type": ["string", "null"], "description": "Game and version that added this parameter, e.g. \"arma3 2.10\"."},
-        "optional_since": {"type": "string", "description": "Only when the wiki writes \"(Optional since 2.20, ...)\": the game and version from which an existing parameter may be left out, e.g. \"arma3 2.20\". Older versions require it.", "examples": ["arma3 2.20"]},
-        "text": {"$ref": "#/$defs/markdown", "description": "The complete original parameter text; use it when the split fields are not enough."},
+        "optional": {"const": true, "description": "Present only when the parameter may be left out."},
+        "default": {"type": "string", "description": "Default value as written on the wiki, may contain Markdown code."},
+        "description": {"$ref": "#/$defs/markdown"},
+        "since": {"$ref": "#/$defs/version", "description": "Game and version that added this parameter, e.g. \"arma3 2.10\"."},
+        "optional_since": {"$ref": "#/$defs/version", "description": "Only when the wiki writes \"(Optional since 2.20, ...)\": the game and version from which an existing parameter may be left out, e.g. \"arma3 2.20\". Older versions require it."},
+        "text": {"$ref": "#/$defs/markdown", "description": "The complete original parameter text; use it when the split fields are not enough. Missing when it is exactly name, then \": \" and type if there is a type, then \" - \" and description if there is a description (\"pos: Array - the new position\"): rebuild it that way."},
         "source": {"const": "docblock", "description": "Present when the parameter comes from the function header comment, not the wiki fields."}
       }
     },
     "docblock": {
-      "type": ["object", "null"],
-      "description": "Functions only: the header comment of the function's .sqf file, shown on placeholder wiki pages. Parsed leniently; text is the cleaned original.",
+      "type": "object",
+      "description": "Functions only: the header comment of the function's .sqf file, shown on placeholder wiki pages. Its description, parameters, return value and examples went into the record's fields where the wiki page leaves them empty (filled_from_docblock); kept here are the cleaned original text, the author and the remaining header fields.",
       "properties": {
-        "author": {"type": ["string", "null"]},
-        "description": {"type": ["string", "null"]},
-        "params": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "index": {"type": ["integer", "null"], "description": "Position in the argument array; null for a single unnumbered argument."},
-              "name": {"type": ["string", "null"]},
-              "types": {"$ref": "#/$defs/types"},
-              "type_expr": {"$ref": "#/$defs/typeExpr"},
-              "optional": {"type": "boolean"},
-              "default": {"type": ["string", "null"]},
-              "description": {"type": ["string", "null"]},
-              "text": {"type": "string"}
-            }
-          }
-        },
-        "returns": {"type": ["object", "null"], "properties": {"types": {"$ref": "#/$defs/types"}, "type_expr": {"$ref": "#/$defs/typeExpr"}, "text": {"type": "string"}}},
-        "examples": {"type": "array", "items": {"type": "string"}},
-        "syntax": {"type": ["string", "null"]},
-        "execution": {"type": ["string", "null"]},
-        "notes": {"type": ["string", "null"]},
-        "requirements": {"type": ["string", "null"]},
+        "author": {"type": "string"},
         "meta": {"type": "object", "additionalProperties": {"type": "string"}, "description": "Project, date, version, file, ..."},
         "text": {"type": "string"}
       }
     },
     "operand": {
-      "type": ["object", "null"],
-      "required": ["text", "types"],
+      "type": "object",
+      "required": ["text"],
       "properties": {
         "text": {"type": "string", "description": "The operand as written in the syntax line.", "examples": ["object", "[type, position]"]},
-        "types": {"$ref": "#/$defs/types"}
+        "types": {"$ref": "#/$defs/types", "description": "Missing when it is the usual one: [\"Array\"] for an array literal (text starts with \"[\"), else the types of the syntax's parameter named text (the last one if several; its types, or the names in its type_expr), else []."}
       }
     },
     "syntax": {
       "type": "object",
-      "required": ["syntax", "since", "effect", "exec", "params", "returns"],
+      "required": ["syntax", "params", "returns"],
       "properties": {
         "syntax": {"type": "string", "description": "Plain-text syntax line; may be empty for some functions.", "examples": ["object setPos pos", "[group, position] call BIS_fnc_taskPatrol"]},
-        "since": {"type": ["string", "null"]},
-        "effect": {"type": ["string", "null"], "description": "Overrides the record's effect locality for this syntax."},
-        "exec": {"type": ["string", "null"], "description": "Execution requirement for this syntax, e.g. server."},
         "note": {"type": "string", "description": "Only when the wiki puts a note into the syntax field: that note as Markdown (e.g. that the syntax is obsolete)."},
-        "form": {"enum": ["nullary", "unary", "binary", null], "description": "Commands only. nullary: `time`; unary: `alive unit`; binary: `unit setPos pos`. null when the wiki syntax line is irregular."},
-        "operator": {"type": ["string", "null"], "description": "Commands only: the symbol for operator pages (\"!=\", \">>\", \"#\")."},
-        "left": {"$ref": "#/$defs/operand", "description": "Commands only: the operand before the command (binary form)."},
-        "right": {"$ref": "#/$defs/operand", "description": "Commands only: the operand after the command (unary and binary forms)."},
-        "inferred": {"type": "boolean", "description": "Functions only: the syntax line was built from the function header's parameters, not written on the wiki."},
+        "since": {"$ref": "#/$defs/version", "description": "Game and version that added this syntax."},
+        "effect": {"type": "string", "description": "Overrides the record's effect locality for this syntax.", "examples": ["local"]},
+        "server_exec": {"const": true, "description": "This syntax must be executed on the server (overrides locality.server_exec; format 1 called it exec: \"server\")."},
         "params": {"type": "array", "items": {"$ref": "#/$defs/param"}},
         "returns": {
           "type": ["object", "null"],
-          "required": ["type", "types", "type_expr", "description", "text"],
+          "description": "null when the wiki gives no return value or leaves it empty.",
           "properties": {
-            "type": {"type": ["string", "null"], "examples": ["Nothing", "Object"]},
+            "type": {"type": "string", "description": "Type as written on the wiki; a lone \"-\" is written as Nothing.", "examples": ["Nothing", "Object"]},
             "types": {"$ref": "#/$defs/types"},
             "type_expr": {"$ref": "#/$defs/typeExpr"},
-            "description": {"type": ["string", "null"]},
-            "text": {"$ref": "#/$defs/markdown"}
+            "description": {"$ref": "#/$defs/markdown"},
+            "text": {"$ref": "#/$defs/markdown", "description": "The complete original text. Missing when it is exactly type (or \"\"), then \" - \" and description if there is a description: rebuild it that way."},
+            "source": {"const": "docblock", "description": "Present when the return value comes from the function header comment."}
           }
-        }
+        },
+        "form": {"enum": ["nullary", "unary", "binary"], "description": "Commands only. nullary: `time`; unary: `alive unit`; binary: `unit setPos pos`. Missing when the wiki syntax line is irregular."},
+        "operator": {"type": "string", "description": "Commands only, and only where it differs from the record's operator (never so far). Format 1 repeated the record's operator here."},
+        "left": {"$ref": "#/$defs/operand", "description": "Commands only: the operand before the command (binary form)."},
+        "right": {"$ref": "#/$defs/operand", "description": "Commands only: the operand after the command (unary and binary forms)."},
+        "inferred": {"const": true, "description": "Functions only: the syntax line was built from the function header's parameters, not written on the wiki."}
       }
     },
     "record": {
       "type": "object",
-      "description": "A scripting command or function.",
-      "required": ["name", "operator", "title", "type", "url", "revid", "updated", "groups", "status", "replaced_by", "games",
-                   "since", "arma3_since", "branch", "locality", "exec", "description", "syntaxes", "examples",
-                   "multiplayer", "problems", "aliases", "see_also", "notes", "categories"],
+      "description": "A scripting command or function. Every field but the required ones is left out when empty (see the root description).",
+      "required": ["name", "title", "type", "url", "revid", "updated", "groups", "status", "description", "syntaxes"],
       "properties": {
         "name": {"type": "string", "description": "Name as written in scripts (diag_fps, BIS_fnc_spawnGroup); operator pages keep the wiki title (\"a != b\").", "examples": ["setPos", "diag_fps", "BIS_fnc_spawnGroup", "a != b"]},
-        "operator": {"type": ["string", "null"], "description": "For operator pages, the symbol itself.", "examples": ["!=", ">>", "||"]},
+        "operator": {"type": "string", "description": "For operator pages, the symbol itself.", "examples": ["!=", ">>", "||"]},
         "title": {"type": "string", "description": "Wiki page title (\"diag fps\", \"BIS fnc spawnGroup\")."},
         "type": {"enum": ["command", "function"]},
         "url": {"type": "string", "format": "uri", "description": "Source page on the BI Community Wiki."},
         "revid": {"type": "integer", "description": "Wiki revision the record was built from."},
-        "updated": {"type": ["string", "null"], "format": "date-time", "description": "Time of that revision."},
+        "updated": {"type": ["string", "null"], "format": "date-time", "description": "Time of that revision. Like name, title, type, url and revid always present (the change feed reads them from every bundle in the data repository's history)."},
         "groups": {"type": "array", "items": {"type": "string"}, "description": "Command groups, e.g. \"Object Manipulation\"."},
         "status": {"$ref": "#/$defs/status"},
         "replaced_by": {"type": "array", "items": {"type": "string"}, "description": "Names to use instead, from the deprecation notice."},
-        "games": {"type": "array", "items": {"$ref": "#/$defs/game"}, "description": "Every game that has it, oldest first."},
-        "since": {"anyOf": [{"$ref": "#/$defs/game"}, {"type": "null"}], "description": "The first game that had it."},
-        "arma3_since": {"type": ["string", "null"], "description": "Arma 3 version that introduced it.", "examples": ["0.50", "2.18"]},
-        "branch": {"type": ["string", "null"], "description": "dev / diag / prof when only available in that build.", "examples": ["diag"]},
-        "locality": {"$ref": "#/$defs/locality"},
-        "exec": {"type": ["string", "null"], "description": "Functions only: how it is executed (spawn / call)."},
+        "games": {
+          "type": "object",
+          "additionalProperties": {"type": ["string", "null"]},
+          "description": "Every game that has it, oldest first: wiki game code -> game version that introduced it (null when the wiki gives none). Codes: ofp (Operation Flashpoint), ofpe (Operation Flashpoint: Elite), arma1 (Armed Assault), arma2 (Arma 2), arma2oa (Arma 2: Operation Arrowhead), tkoh (Take On Helicopters), arma3 (Arma 3). Format 1 had a list of {game, name, version}.",
+          "examples": [{"ofp": "1.00", "arma3": "0.50"}]
+        },
+        "since": {"$ref": "#/$defs/version", "description": "The first game that had it and its version: the first entry of games, as \"ofp 1.00\" (format 1: an object {game, name, version})."},
+        "arma3_since": {"type": "string", "description": "Arma 3 version that introduced it (games.arma3).", "examples": ["0.50", "2.18"]},
+        "branch": {"type": "array", "items": {"type": "string", "examples": ["dev", "diag", "prof"]}, "description": "The builds it only exists in, e.g. [\"diag\", \"prof\"]; missing when it is in the normal game. Format 1 had one string (\"diag prof\").", "examples": [["diag"], ["diag", "prof"]]},
+        "locality": {
+          "type": "object",
+          "description": "Missing when nothing is known: arguments and effect of unknown locality, no need to run on the server. Each key is missing when unknown or false.",
+          "properties": {
+            "argument": {"enum": ["local", "global"], "description": "local: arguments must be local to the machine running it."},
+            "effect": {"enum": ["local", "global"], "description": "global: the effect is broadcast to every machine."},
+            "server_exec": {"const": true, "description": "Must be executed on the server."}
+          }
+        },
+        "exec": {"type": "string", "description": "Functions only: how it is executed (spawn / call). A syntax that must run on the server has server_exec instead.", "examples": ["spawn"]},
         "description": {"$ref": "#/$defs/markdown"},
         "syntaxes": {"type": "array", "items": {"$ref": "#/$defs/syntax"}},
         "examples": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["text", "code"],
             "properties": {
-              "text": {"$ref": "#/$defs/markdown"},
+              "text": {"$ref": "#/$defs/markdown", "description": "The example as Markdown. Missing when it is only the code: each snippet fenced as ```sqf, joined by one blank line (\"```sqf\\n<code>\\n```\")."},
               "code": {"type": "array", "items": {"type": "string"}, "description": "Raw SQF snippets from the example."}
             }
           }
         },
-        "multiplayer": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
-        "problems": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
+        "multiplayer": {"$ref": "#/$defs/markdown"},
+        "problems": {"$ref": "#/$defs/markdown"},
         "aliases": {"type": "array", "items": {"type": "string"}},
         "see_also": {"type": "array", "items": {"type": "string"}, "description": "Related names (commands, functions or topics)."},
         "notes": {
@@ -169,15 +150,14 @@
           "description": "Community notes from the bottom of the wiki page; may be outdated.",
           "items": {
             "type": "object",
-            "required": ["user", "date", "text"],
             "properties": {
               "user": {"type": "string"},
-              "date": {"type": "string", "description": "ISO 8601, empty if unknown."},
+              "date": {"type": "string", "description": "ISO 8601 (a date, or a UTC date and time); missing if unknown."},
               "text": {"$ref": "#/$defs/markdown"}
             }
           }
         },
-        "categories": {"type": "array", "items": {"type": "string"}, "description": "Visible wiki categories of the page."},
+        "categories_extra": {"type": "array", "items": {"type": "string"}, "description": "The visible wiki categories of the page that do not follow from other fields (WIP, Stubs, AI, Easter Eggs, Arma 3: Remote Execution, games missing from games, ...). The others follow from them, with <kind> \"Scripting Commands\" or \"Functions\": \"<kind>\", \"Arma 3: <kind>\", \"<game name>: <kind>\" per game (arma1 as \"ArmA: Armed Assault\"), \"<game name>: New <kind>\" for the first game, \"Introduced with <game name> version <version>\", \"Command Group: <group>\" / \"Function Group: <group>\", \"<kind>: Local|Global Argument|Effect\", \"<kind>: Server Execution\", \"Arma 3: <kind>: Diagnostic|Profiling|Development Branch\". Format 1 had every category in categories."},
         "docblock": {"$ref": "#/$defs/docblock"},
         "filled_from_docblock": {
           "type": "array",
@@ -274,7 +254,7 @@
               "syntax": {"type": "array", "items": {"type": "string"}},
               "status": {"$ref": "#/$defs/status"},
               "replaced_by": {"type": "array", "items": {"type": "string"}},
-              "branch": {"type": "string"},
+              "branch": {"type": "array", "items": {"type": "string", "examples": ["dev", "diag", "prof"]}, "description": "The builds it only exists in, e.g. [\"diag\", \"prof\"]; missing for the normal game. Format 1 had one string (\"diag prof\")."},
               "operator": {"type": "string"}
             }
           }
