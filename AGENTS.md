@@ -10,12 +10,12 @@ Wiki as JSON. A workflow rewrites it twice a day with the code from
 
 ## Reading the data without wasting context
 
-The bundles are large (`commands.json` 7 MB, `functions.json` 4 MB, `index.json` 2 MB, `topics.json` 1 MB,
-`syntax.json` 0.5 MB, `raw/` 7 MB). Never read a whole bundle. Every record sits on its own line, so one `grep` returns
+The bundles are large (`commands.json` 4.5 MB, `functions.json` 2.4 MB, `index.json` 2 MB, `topics.json` 27 MB,
+`syntax.json` 0.5 MB, `raw/` 25 MB). Never read a whole bundle. Every record sits on its own line, so one `grep` returns
 one complete record:
 
 ```sh
-grep -m1 '^{"name":"setPos"' commands.json            # full record of one command (~5 KB)
+grep -m1 '^{"name":"setPos"' commands.json            # full record of one command (~3.5 KB)
 grep -m1 '"name":"setPos"' index.json                 # its index entry: syntax, summary, groups, locality, status
 grep -i '"name":"[^"]*spawngroup' index.json | cut -c1-300   # find by part of the name
 grep -m1 '^{"name":"Position"' topics.json            # a concept page as Markdown with sections

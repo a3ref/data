@@ -14,9 +14,9 @@ agents with MCP can use **[a3ref/mcp](https://github.com/a3ref/mcp)** (search, p
 | File | Contents |
 |---|---|
 | `index.json` (2 MB) | start here: every entry with name, type, syntax lines, one-line summary, groups, locality, status, operator symbol and its page paths on the site |
-| `commands.json` (7 MB) | every scripting command, fully parsed: syntaxes with forms and typed operands, typed parameters, return values, examples, locality, versions, status and replacements, community notes |
-| `functions.json` (4 MB) | every `BIS_fnc_*` and other function, same format; placeholder pages are filled from the function's header comment (`docblock`) |
-| `topics.json` (1 MB) | concept pages (data types, Position, Multiplayer Scripting, event handler lists, Description.ext, ...) as Markdown split into sections |
+| `commands.json` (4.5 MB) | every scripting command, fully parsed: syntaxes with forms and typed operands, typed parameters, return values, examples, locality, versions, status and replacements, community notes |
+| `functions.json` (2.4 MB) | every `BIS_fnc_*` and other function, same format; placeholder pages are filled from the function's header comment (`docblock`) |
+| `topics.json` (27 MB) | concept pages (data types, Position, Multiplayer Scripting, event handler lists, Description.ext, ...) as Markdown split into sections |
 | `syntax.json` (0.5 MB) | compact lookup for linters: forms (nullary/unary/binary), status, replacements and syntax lines of every name |
 | `schema.json` | JSON Schema 2020-12 of all of the above |
 | `raw/*.json` | source wikitext of each page with its revision id, keyed by page id: `commands.json`, `functions.json`, `topics.json`, and `templates.json`, the wiki templates those pages transclude, which the build renders them with |
