@@ -1421,7 +1421,10 @@
    "Command Group: Variables",
    "Introduced with Operation Flashpoint version 1.00",
    "Operation Flashpoint: Elite: Scripting Commands",
-   "Operation Flashpoint: New Scripting Commands"
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
   ],
   "revid": 321223,
   "timestamp": "2022-05-13T15:38:11Z",
@@ -1429,7 +1432,19 @@
  },
  "1467": {
   "title": "a * b",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Math",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 322990,
   "timestamp": "2022-06-28T21:42:57Z",
   "wikitext": "{{RV|type=command\n\n|sortKey= #\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Math\n\n|descr= Returns the value of ''a'' multiplied by ''b''.\n\n|s1= a [[a * b|*]] b\n\n|p1= a: [[Number]]\n\n|p2= b: [[Number]]\n\n|r1= [[Number]]\n\n|x1= <sqf>_percentage = 0.5 * 100;</sqf>\n\n|seealso= [[Operators]]\n}}"
@@ -1494,7 +1509,20 @@
  },
  "1479": {
   "title": "a / b",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Config",
+   "Command Group: Math",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 363979,
   "timestamp": "2024-04-29T22:53:36Z",
   "wikitext": "{{RV|type=command\n\n|sortKey= #\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Math\n\n|gr2= Config\n\n|descr= Returns the quotient of two numbers. If the divisor is 0 a ''Division by zero'' error is shown but the script does not stop and the result of such division is assumed to be 0.<br><br>\nAlternative syntax returns the [[Config]] entry with the given name (alias for [[config greater greater name|>>]], slightly slower but with [[Operators#Order of Precedence|higher precedence]]).\n\n|s1= a [[a / b|/]] b\n\n|p1= a: [[Number]] - dividend\n\n|p2= b: [[Number]] - divisor\n\n|r1= [[Number]] - quotient\n\n|s2= config [[a / b|/]] name\n\n|s2since= arma1 1.00\n\n|p21= config: [[Config]]\n\n|p22= name: [[String]]\n\n|r21= [[Config]] - config entry\n\n|x1= <sqf>_result = 15 / 3; // result is 5</sqf>\n\n|x2= <sqf>_cfgVehicles = configFile / \"CfgVehicles\"; // identical to configFile >> \"CfgVehicles\" (but the order of precedence)</sqf>\n\n|seealso= [[Operators]] [[configFile]] [[missionConfigFile]] [[campaignConfigFile]] [[configName]] [[config greater greater name|config >> name]] [[count]]\n}}\n\n{{Note\n|user= ffur2007slx2_5\n|timestamp= 20140401000200\n|text= ({{arma3}} 1.14) config / name can be composed to config >> name [[String]] or [[Array]] format via [[BIS_fnc_configPath]]. E.g.\n<sqf>\n[configFile / \"ATMineCrater\" / \"MissileCircleDust\", \"\"] call BIS_fnc_configPath; // return: \"configfile >> \"ATMineCrater\" >> \"MissileCircleDust\"\"\n[configFile / \"ATMineCrater\" / \"MissileCircleDust\", []] call BIS_fnc_configPath; // return: [\"configfile\",\"ATMineCrater\",\"MissileCircleDust\"]\n</sqf>\n}}"
@@ -1520,14 +1548,39 @@
  },
  "1482": {
   "title": "a == b",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Math",
+   "Command Group: Variables",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 369426,
   "timestamp": "2024-09-03T18:48:52Z",
   "wikitext": "{{RV|type=command\n\n|sortKey= #\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Math\n|gr2= Variables\n\n|descr= Check if ''a'' is equal to ''b''. String comparison is case-'''in'''sensitive  - use [[isEqualTo]] if case sensitivity is needed.\n{{Feature|important|''a'' and ''b'' types '''must''' match: comparing e.g [[String]] with [[Number]] is invalid.}}\n\n|s1= a [[a == b|==]] b\n\n|p1= a:\n{{{!}} class=\"wikitable\"\n! Introduced in\n! colspan=\"5\" {{!}} {{GVI|ofp|1.00}}\n! colspan=\"4\" {{!}} {{GVI|arma1|1.00}}\n! {{GVI|arma1|1.08}}\n! colspan=\"3\" {{!}} {{GVI|arma3|2.00}}\n{{!}}-\n! Possible Type\n{{!}} [[Number]]\n{{!}} [[Side]]\n{{!}} [[String]]\n{{!}} [[Object]]\n{{!}} [[Group]]\n{{!}} [[Structured Text]]\n{{!}} [[Config]]\n{{!}} [[Display]]\n{{!}} [[Control]]\n{{!}} [[Location]]\n{{!}} [[Diary Record]]\n{{!}} [[Namespace]]\n{{!}} [[Boolean]]\n{{!}}}\n\n|p2= b: identical to ''a''<nowiki/>'s type\n\n|r1= [[Boolean]]\n\n|x1= <sqf>\nif (player == leader group player) then\n{\n\thint \"You are the leader of your group.\";\n}\nelse\n{\n\thint \"Someone else is the boss\";\n};\n</sqf>\n\n|x2= <sqf>\"MyRabbit\" == \"MYRABBIT\"; // returns true</sqf>\n\n|x3= <sqf>if (alive _unit1 == alive _unit2) then { hint \"Both units are either dead or both alive\" };</sqf>\n\n|seealso= [[a != b|!=]] [[Operators]] [[isEqualTo]]\n}}\n\n{{Note\n|user= ffur2007slx2_5\n|timestamp= 20140415101300\n|text= For script comparison we need to detect whether scripts are running in advance, then compose both into string:\n<sqf>if (scriptDone _var0) then [{false},{(str _var0) == (str _var1)}];</sqf>\n \nIt is recommended to use [[isEqualTo]] for all types comparison, which is more functional and as fast as operator.\nFor multiple comparisons:\n<sqf>\nfnc_areEqual = {\n\tprivate [\"_b\", \"_var1\", \"_var2\"];\n\t_b = true;\n\tfor [{ _i = 1 }, { _i < (count _this) && _b }, { _i=_i + 1 }] do {\n\t\t_var1 = _this select (_i-1);\n\t\t_var2 = _this select _i;\n\t\tif (!(_var1 isEqualTo _var2)) then { _b = false; };\n\t};\n\t_b\n};\n[\"A\",\"a\",\"a\"] call fnc_areEqual; // false\n</sqf>\nAnd we can use such workaround instead of using [[BIS_fnc_arrayCompare]] or [[BIS_fnc_areEqual]]\n}}\n\n</dl>"
  },
  "1484": {
   "title": "a ^ b",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Math",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 321222,
   "timestamp": "2022-05-13T15:37:49Z",
   "wikitext": "{{RV|type=command\n\n|sortKey= #\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Math\n\n|descr= ''a'' raised to the power of ''b''\n\n|s1= a [[a ^ b|^]] b\n\n|p1= a: [[Number]]\n\n|p2= b: [[Number]]\n\n|r1= [[Number]]\n\n|x1= <sqf>5 ^ 2 // 5², result is 25</sqf>\n\n|seealso= [[Math Commands]] [[Operators]]\n}}"
@@ -1572,7 +1625,20 @@
  },
  "1487": {
   "title": "a or b",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Math",
+   "Command Group: Variables",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 349256,
   "timestamp": "2023-11-08T14:51:04Z",
   "wikitext": "{{RV|type=command\n\n|sortKey= #\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Math\n\n|gr2= Variables\n\n|descr= Returns [[true]] if one or both conditions are [[true]]. In case of the alternative syntax, {{Link|https://en.wikipedia.org/wiki/Lazy_evaluation#Control_structures|lazy evaluation}} is used. That means that if left operand is [[true]], evaluation of the right side is skipped completely.\n\n|alias= [[or]]\n\n|s1= a [[a or b|{{!}}{{!}}]] b\n\n|p1= a: [[Boolean]] - test condition or variable\n\n|p2= b: [[Boolean]] - test condition or variable\n\n|r1= [[Boolean]]\n\n|s2= a [[a or b|{{!}}{{!}}]] b\n\n|s2since= arma2oa 1.62\n\n|p21= a: [[Boolean]] - test condition or variable\n\n|p22= b: [[Code]] - code that returns [[Boolean]]. It is not evaluated if ''a'' returns [[true]]\n\n|r2= [[Boolean]]\n\n\n|x1= <sqf>if (OBJ1 || _enemycount == 0) then { hint \"you win !\" };</sqf>\n\n|x2= <sqf>\nif (count _array == 0 || { (_array select 0) != player }) then\n{\n\thint \"It works! Without lazy evaluation it would throw an error if array was empty.\";\n};\n</sqf>\n\n|seealso= [[or]] [[and]] [[Operators]]\n}}"
@@ -2354,7 +2420,17 @@
   "title": "mapAnimCommit",
   "categories": [
    "ArmA: Armed Assault: Scripting Commands",
-   "Arma 2: Operation Arrowhead: Scripting Commands"
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Map",
+   "Introduced with Operation Flashpoint version 1.27",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
   ],
   "revid": 319497,
   "timestamp": "2022-05-13T09:24:11Z",
@@ -2362,42 +2438,115 @@
  },
  "1535": {
   "title": "mapAnimDone",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Map",
+   "Introduced with Operation Flashpoint version 1.27",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 310810,
   "timestamp": "2022-05-07T20:22:01Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.27\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= local\n\n|eff= local\n\n|gr1= Map\n\n|descr= Check if map animation is finished.\n\n|s1= [[mapAnimDone]]\n\n|r1= [[Boolean]]\n\n|x1= <sqf>private _isDone = mapAnimDone;</sqf>\n\n|seealso= [[mapAnimAdd]] [[mapAnimClear]] [[mapAnimCommit]] [[ctrlMapAnimAdd]] [[ctrlMapAnimClear]] [[ctrlMapAnimCommit]] [[ctrlMapAnimDone]]\n}}\n\n<dl class=\"command_description\">\n<dt class=\"note\">[[User:Ceeeb|Ceeeb]]</dt>\n<dd class=\"note\">\nIn '''OFP v1.96''', the mapAnim series of commands, together with [[forceMap]] can only be used in the intro and mission, as it is not possible to access the map from the outro. ''(not checked, sourced from an old copy of the OFPEC comref)''\n</dd>\n\n</dl>"
  },
  "1536": {
   "title": "markerColor",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Markers",
+   "Introduced with Operation Flashpoint version 1.46",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 370049,
   "timestamp": "2024-10-29T12:21:16Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.46\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Markers\n\n|descr= Returns colour of the given marker. See also [[setMarkerColor]]/[[setMarkerColorLocal|Local]].\n\n|s1= [[markerColor]] markerName\n\n|p1= markerName: [[String]]\n\n|r1= [[String]]\n\n|x1= <sqf>if (markerColor \"Marker1\" == \"ColorRed\") then { hint \"Marker1 is red!\" };</sqf>\n\n|x2= <sqf>\n\"mySuperMarker\" setMarkerColor \"#(0,1000,0,0.50000)\";\t// full green, 50% alpha\nprivate _colour = markerColor \"mySuperMarker\";\t\t\t// return properly-formatted custom value, here #(0,1,0,0.5)\nif (_colour select [0, 1] == \"#\") then { hint \"this marker has a custom colour!\" };\n</sqf>\n\n|seealso= [[setMarkerColor]] [[setMarkerColorLocal]]\n}}"
  },
  "1537": {
   "title": "markerPos",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Markers",
+   "Introduced with Operation Flashpoint version 1.46",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 377420,
   "timestamp": "2026-01-02T06:45:30Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.46\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Markers\n\n|descr= Returns marker position. See also [[setMarkerPos]].\n\n|alias= [[getMarkerPos]]\n\n|s1= [[markerPos]] markerName\n\n|p1= markerName: [[String]]\n\n|r1= [[Position#PositionAGL|PositionAGL]] - [x, y, '''0'''], z is always 0\n\n|s2= [[markerPos]] [markerName, preserveElevation]\n\n|s2since= arma3 1.94\n\n|p21= markerName: [[String]]\n\n|p22= preserveElevation: [[Boolean]] - (Optional, default [[false]])\n\n|r2= [[Position#PositionAGL|PositionAGL]] - if ''preserveElevation'' is [[true]] or [x, y, '''0'''] if ''preserveElevation'' is [[false]]\n\n|x1= <sqf>_mPos1 = markerPos \"markerOne\";</sqf>\n\n|x2= <sqf>_mPos2 = markerPos [\"markerTwo\", true];</sqf>\n\n|seealso= [[setMarkerPos]] [[setMarkerPosLocal]]\n}}\n\n<dl class=\"command_description\">\n\n<dt><dt>\n<dd class=\"notedate\">Posted on 2016-09-01 - 12:42 (UTC)</dd>\n<dt class=\"note\">[[User:Demellion|Demellion]]</dt>\n<dd class=\"note\">\nTo accomplish getting the altitude of a marker before the alternative syntax introduced in A3 v1.93, you can do a workaround using [[setMarkerDir]] as it accepts any number (above 360 or below -360):\n<sqf>\n\"myMarker\" setMarkerPos [200, 200];\n\"myMarker\" setMarkerDir 1640;\n</sqf>\n\nAfter, setting player position as an example:\n<sqf>player setPosASL [(markerPos \"myMarker\") select 0, (markerPos \"myMarker\") select 1, (markerDir \"myMarker\")]</sqf>\n</dd>\n\n</dl>"
  },
  "1538": {
   "title": "markerSize",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Markers",
+   "Introduced with Operation Flashpoint version",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 377691,
   "timestamp": "2026-01-02T09:03:12Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1=\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Markers\n\n|arg= global\n\n|descr= Returns marker size. This command is identical to [[getMarkerSize]].\n\n|s1= [[markerSize]] markerName\n\n|p1= markerName: [[String]]\n\n|r1= [[Array]] with [a_axis, b_axis]\n* a_axis: [[Number]] - 1/2 width of marker\n* b_axis: [[Number]] - 1/2 height of marker\n\n|x1= <sqf>_mSize = markerSize \"Marker1\";</sqf>\n\n|seealso= [[setMarkerSize]] [[setMarkerSizeLocal]]\n}}"
  },
  "1539": {
   "title": "markerType",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Markers",
+   "Introduced with Operation Flashpoint version",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 348839,
   "timestamp": "2023-11-08T14:39:09Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n\n|version1=\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Markers\n\n|arg= global\n\n|descr= Gets type of marker. See [[CfgMarkers]] for a list of standard markers.\n\n|alias = [[getMarkerType]]\n\n|s1= [[markerType]]  markerName\n\n|p1= markerName: [[String]]\n\n|r1= [[String]] - marker class name. See [[CfgMarkers]].\n\n|x1= <sqf>if (markerType \"Marker1\" == \"\") then { hint \"Marker1 is not an icon!\" };</sqf>\n\n|seealso= [[setMarkerType]] [[setMarkerTypeLocal]]\n}}\n\n<dl class=\"command_description\">\n\n<dt><dt>\n<dd class=\"notedate\">Posted on 2014-03-17</dd>\n<dt class=\"note\">[[User:Waffle SS.|Waffle SS.]]</dt>\n<dd class=\"note\"> Using markerType is a good method to determine if a string is a valid marker name, unless the marker type isn't set. <sqf>if (markerType \"mark1\" != \"\") then {hint \"valid marker\"}</sqf>\n</dl>"
  },
  "1540": {
   "title": "missionName",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Mission Information",
+   "Introduced with Operation Flashpoint version 1.80",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 364087,
   "timestamp": "2024-05-03T19:33:29Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.80\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Mission Information\n\n|descr= Return currently loaded mission file (path to mission.pbo, relative to game exe).\n\n|s1= [[missionName]]\n\n|r1= [[String]]\n\n|x1= <sqf>hint format [\"You are playing mission \"\"%1\"\"\", missionName];</sqf>\n\n|seealso= [[missionNameSource]] [[worldName]] [[briefingName]] [[serverName]] [[worldSize]]\n}}\n\n{{Note\n|user= .kju\n|timestamp= 20100802101900\n|text= Only works in SP and on the MP Host/DS. It returns the mission pboprefix if available, otherwise the pboname. For clients it returns '__cur_mp'.\n}}\n\n{{Note\n|user= Kenoxite\n|timestamp= 20140925080500\n|text= Prior to {{GVI|ofp|1.96}} it returns the mission filename. Since {{GVI|ofp|1.99}}, it returns the briefing name instead when in multiplayer. The string displayed is that set in the Intel section of the mission editor.\n|game= ofp\n|version= 1.99\n}}\n\n{{Note\n|user= NikkoJT\n|timestamp= 20210612193100\n|text= Testing suggests it does now work on clients in the current {{arma3}} version.\n|game= arma3\n|version= 2.06\n}}"
@@ -2599,7 +2748,19 @@
  },
  "1551": {
   "title": "cadetMode",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Difficulty",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 325302,
   "timestamp": "2022-07-10T22:51:20Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Difficulty\n\n|descr= '''Prior to {{arma3}}''' it returns if the player is currently playing in cadet or veteran mode.\n\n|pr= {{Feature|arma3|\nThis command returns the status of the global [[Arma 3: Difficulty Settings| difficulty]] {{hl|showCadetHints}}.<br>\nUse <sqf inline>difficulty in [0, 1]</sqf> to achieve the '''original intended''' functionality!\n}}\n\n|s1= [[cadetMode]]\n\n|r1= [[Boolean]] - true when playing in cadet mode, false when playing in veteran mode\n\n|x1= [[SQS Syntax]]: <sqs>? (cadetMode) : _AIsoldier setSkill 0.1</sqs>\n\n|x2= [[SQF Syntax]]: <sqf>if (cadetMode) then { _AIsoldier setSkill 0.1 };</sqf>\n\n|seealso= [[hintCadet]] [[difficulty]]\n}}\n\n{{Note\n|user= Killswitch\n|timestamp= 20091201174900\n|text= In {{arma2}}, this command will return true if the difficulty level is set to \"Recruit\" or \"Regular\". It returns false for the \"Veteran\" and \"Expert\" difficulty levels.\n|game= arma2\n}}"
@@ -3696,7 +3857,9 @@
    "Operation Flashpoint: Elite: Scripting Commands",
    "Operation Flashpoint: New Scripting Commands",
    "Operation Flashpoint: Scripting Commands",
-   "Scripting Commands"
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
   ],
   "revid": 377588,
   "timestamp": "2026-01-02T06:57:08Z",
@@ -4027,7 +4190,10 @@
    "Command Group: Lights",
    "Introduced with Operation Flashpoint version 1.04",
    "Operation Flashpoint: Elite: Scripting Commands",
-   "Operation Flashpoint: New Scripting Commands"
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
   ],
   "revid": 369182,
   "timestamp": "2024-09-03T10:34:45Z",
@@ -4035,49 +4201,136 @@
  },
  "1639": {
   "title": "list",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Triggers",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 378370,
   "timestamp": "2026-04-03T16:47:58Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= global\n|eff= local\n\n|gr1= Triggers\n\n|descr= List of units that would activate given [[Triggers|Trigger]].\n\nIt returns nothing before the simulation started, i.e. in (undelayed) init.sqf files. Returns a '''[[Array#Array properties|pointer]]''' to the trigger's list after the simulation started.<br>\nSince this is just a ''reference'' this means that the value in your local variable will change as the content of the trigger area changes.\nTo permanently copy the returned list to a different variable, use <sqf inline>_mylist = +(list triggerOne)</sqf>.\n\nThe second example can be used inside the trigger (in that case, no need to name your trigger).\n\nThe list returned for trigger of type \"Not present\" is the same as that returned for type \"present\". \n\n{{Feature|important|While the command can query any trigger, local or remote, the result will be only for the trigger condition set on the local client. See [[createTrigger]] for more info.}}\n\n|s1= [[list]] trigger\n\n|p1= trigger: [[Object]]\n\n|r1= [[Nothing]] or [[Array]] of [[Object]]s\n\n|x1= <sqf>_triggerList = list _triggerOne;</sqf>\n\n|x2= <sqf>hint format [\"%1\", thisList];</sqf>\n\n|seealso= [[setTriggerActivation]] [[createTrigger]] [[thisList]]\n}}\n\n{{Note\n|user= TeaCup\n|timestamp= 20130306141500\n|text= Calling [[list]] immediately after creating a trigger via [[createTrigger]] (and setting up activation, area, statements, timeout, etc..), will return {{hl|<null>}} instead of an array. It seems the trigger needs about 1 second to initialise, after which it will behave as expected: returning an array of all the objects inside the trigger (the ones matching the criteria), or an empty array.\n}}\n\n{{Note\n|user= 7erra\n|timestamp= 20210106015800\n|text= The resulting array is not modifiable. Any [[:Category:Command_Group:_Arrays|array related commands]], that modify the original array, will fail with the error message: {{hl|Error Reserved variable in expression}}.\n}}"
  },
  "1640": {
   "title": "ln",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Math",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 369410,
   "timestamp": "2024-09-03T18:43:25Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Math\n\n|descr= Returns the natural logarithm of x.  [[File:A3 lnx figure.jpg|thumb|400|ln(x) and ln(e)]]\n\n|s1= [[ln]]  x\n\n|p1= x: [[Number]]\n\n|r1= [[Number]]\n\n|x1= <sqf>_nlog = ln 10;</sqf>\n\n|x2= <sqf>\n_euler = exp 1;\n_euler = ln _euler; // Returns 1\n</sqf>\n\n|seealso= [[Math Commands]]\n}}"
  },
  "1641": {
   "title": "loadFile",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Program Flow",
+   "Introduced with Operation Flashpoint version 1.90",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 352208,
   "timestamp": "2024-02-01T23:26:04Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.90\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Program Flow\n\n|descr= Returns the content of given files. If you plan to [[compile]] said string, be aware that the file should not contain comments or [[compile]] will throw an error. If there are comments, use [[preprocessFile]]/[[preprocessFileLineNumbers]] instead.\n{{Feature|warning|If the file is not prepared using UTF-8 encoding and contains some characters [[toArray|with codes]] > 127, they might convert incorrectly.}}\n\n|s1= [[loadFile]] fileName\n\n|p1= fileName: [[String]]\n\n|r1= [[String]]\n\n|x1= <sqf>_contents = loadFile \"wantedString.txt\";</sqf>\n\n|x2= <sqf>_contents = compile loadFile \"myFunction.sqf\"; // will compile string into code</sqf>\n\n|seealso= [[fileExists]] [[preprocessFile]] [[preprocessFileLineNumbers]]\n}}\n\n<dl class=\"command_description\">\n\n<dt></dt>\n<dd class=\"notedate\">Posted on 25 January 2016 - 12:13</dd>\n<dt class=\"note\">[[User:James|James]]</dt>\n<dd class=\"note\">Notice that you will have to activate file patching via [[Arma 3: Startup Parameters#Developer Options|-filePatching]]. Otherwise [[execVM]] and [[loadFile]] will '''not''' load any files outside your mission folder (like the global scripts).\n</dl>"
  },
  "1642": {
   "title": "loadIdentity",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Unit Identity",
+   "Introduced with Operation Flashpoint version 1.75",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 322977,
   "timestamp": "2022-06-28T21:42:55Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.75\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Unit Identity\n\n|descr= Loads person's identity from [[Objects.sav]] file in campaign directory (from entry name).\n\n|mp= This command does not work in Multiplayer.\n\n|s1= unit [[loadIdentity]]  name\n\n|p1= unit: [[Object]]\n\n|p2= name: [[String]]\n\n|r1= [[Boolean]] - [[true]] if successfull, otherwise [[false]]\n\n|x1= <sqf>_ok = player loadIdentity \"playerIdentity\";</sqf>\n\n|seealso= [[saveIdentity]] [[lockIdentity]] [[setIdentity]]\n}}"
  },
  "1643": {
   "title": "loadStatus",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Mission Information",
+   "Command Group: Weapon Pool",
+   "Introduced with Operation Flashpoint version 1.75",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 319462,
   "timestamp": "2022-05-13T09:24:07Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.75\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Weapon Pool\n\n|gr2= Mission Information\n\n|descr= Loads object's properties from [[Objects.sav]] file in campaign directory (from entry name).\n\n|mp= This command does not work in Multiplayer.\n\n|s1= object [[loadStatus]]  entryName\n\n|p1= object: [[Object]]\n\n|p2= entryName: [[String]]\n\n|r1= [[Boolean]] - [[true]] if successfull, otherwise [[false]]\n\n|x1= <sqf>_ok = player loadStatus \"playerState\";</sqf>\n\n|seealso= [[saveStatus]]\n}}"
  },
  "1644": {
   "title": "local",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Multiplayer",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 349662,
   "timestamp": "2023-11-18T17:02:32Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Multiplayer\n\n|arg= global\n\n|descr= Check if given unit is local on the computer in multiplayer games - see {{Link|Multiplayer Scripting#Locality}}.<br>\nThis can be used to determine on which computer some code must be run. In single player all objects are local.\n\n|mp= A few things to note [[Multiplayer Scripting#General information about locality|amongst others]]:\n* A game logic / module is always local to the server\n* Terrain objects are local to every machine\n\n|s1= [[local]] object\n\n|p1= object: [[Object]] or [[Group]] (since {{GVI|arma3|1.32|size= 0.75}})\n\n|r1= [[Boolean]]\n\n|s2= [[local]] variable = value <span style=\"margin-left: 7em\">'''{{Color|red|From {{arma2}} v1.00 until {{arma3}} v1.54}}''' - see '''[[private]]''' for later versions</span>\n\n|s2since= arma2 1.00\n\n|r2= [[Nothing]]\n\n|x1= <sqf>\nif (not local _unit) then\n{\n\thint format [\"%1 is remote\", name _unit];\n};\n</sqf>\n\n|x2= <sqf>_isLocalGroup = local group _unit;</sqf>\n\n|x3= Sets variable's [[Variables#Scopes|scope]]:\n<sqf>\n// from Arma 2 v1.00 until Arma 3v1.54\nlocal _myVariable = 42;\n\n// since {{arma3}} v1.54\nprivate _myVariable = 42;\n</sqf>\n\n|seealso= [[Arma 3: Event Handlers#Local|\"Local\" Event Handler]] [[owner]] [[setOwner]]\n}}"
  },
  "1645": {
   "title": "localize",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Localization",
+   "Command Group: Strings",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 340342,
   "timestamp": "2023-04-30T12:39:28Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Strings\n\n|gr2= Localization\n\n|descr= Used to internationalise text messages. The provided translation key is looked up in [[Stringtable.xml]] (or [[Stringtable.csv]]).\n\n|s1= [[localize]] stringName\n\n|p1= stringName: [[String]] - string which leads to localisation. Casing does not matter. {{GVI|arma3|2.04|size= 0.75}} A string starting with \"$\" is supported\n\n|r1= [[String]] - text found in corresponding entry in stringtable file. If the key could not be found an empty string {{hl|\"\"}} is returned and an entry is added to .rpt file, for example {{hl|String STR_DN_SNAKE not found}}\n\n|x1= <sqf>\nhint localize \"STR_West\";\t\t\t\t// returns \"BLUFOR\"\nhint localize \"STR_WEST\";\t\t\t\t// returns \"BLUFOR\"\nhint localize \"STR_weSt\";\t\t\t\t// returns \"BLUFOR\"\nhint localize \"STR_NonExistentString\";\t// returns \"\" and logs \"String STR_NonExistentString not found\"\n</sqf>\n\n|x2= <sqf>hint format [\"Go %1\", localize \"STR_Q_NORTH\"]; // returns \"Go North\"</sqf>\n\n|x3= <sqf>\nhint format \n[\n\tlocalize \"STR_ACTION_DROP_WEAPON\",\t// \"STR_ACTION_DROP_WEAPON\" contains \"Drop %1\"\n\tlocalize \"STR_SN_RIFLE\"\t\t\t\t// \"STR_SN_RIFLE\" contains \"Rifle\"\n]; // returns \"Drop Rifle\"\n</sqf>\n\n|x4= <sqf>localize \"$STR_USRACT_ADJUST\"; // returns \"Adjust\" since Arma 3 v2.04</sqf>\n\n|seealso= [[isLocalized]] [[diag_localized]] [[getTextRaw]] [[BIS_fnc_localize]] [[WFSideText]] [[parseText]] [[Stringtable.csv]] [[Stringtable.xml]]\n}}\n\n{{Note\n|user= Killzone_Kid\n|timestamp= 20140912115500\n|text= The command [[localize]] will strip all HTML tags from your [[Stringtable.xml]] entries, however there is a way to trick it by substituting tags with HTML code instead:\n<syntaxhighlight lang=\"xml\">\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Key ID=\"STR_TEST_KK\">\n\t<Original><![CDATA[<t color='#ff0000'>This doesn't work</t>]]></Original>\n</Key>\n<Key ID=\"STR_TEST_KK2\">\n\t<Original>&lt;t color='#ff0000'&gt;This works&lt;/t&gt;</Original>\n</Key>\n</syntaxhighlight>\n<sqf>\nhint parseText localize \"str_test_kk\";\t// no change of colour\nhint parseText localize \"str_test_kk2\";\t// hint content is in red\n</sqf>\n}}"
@@ -4162,7 +4415,20 @@
  },
  "1655": {
   "title": "camCommand",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Camera Control",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 369082,
   "timestamp": "2024-09-02T20:36:38Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= local\n\n|eff= local\n\n|gr1= Camera Control\n\n|descr= Executes a command on the given ''camera / actor'' object. Known commands:\n\n{{{!}} class{{=}}\"wikitable\"\n! All cameras !! \"Camera\" !! \"Seagull\" !! \"CamCurator\"\n{{!}}- style=\"vertical-align: top\"\n{{!}}\n* {{hl|\"manual on\"}}\n* {{hl|\"manual off\"}}\n{{!}}\n* {{hl|\"inertia on\"}}\n* {{hl|\"inertia off\"}}\n{{!}}\n* {{hl|\"landed\"}} lands the seagull\n* {{hl|\"airborne\"}} makes the seagull fly\n{{!}}\n* {{hl|\"maxPitch (x)\"}} (number, in degrees)\n* {{hl|\"minPitch (x)\"}} (number, in degrees)\n* {{hl|\"speedDefault (x)\"}} (number)\n* {{hl|\"speedMax (x)\"}} (number)\n* {{hl|\"ceilingHeight (x)\"}} (number, in meters, ASL)\n* {{hl|\"atl (x)\"}} (on/off)\n* {{hl|\"surfaceSpeed (x)\"}} (on/off)\n{{!}}}\n\n{{Feature|informative|The [[camCommand]] effect is immediate and does not need [[camCommit]]/[[camCommitPrepared]].}}\n\n|s1= camera [[camCommand]] command\n\n|p1= camera: [[Object]] - see [[camCreate]]\n\n|p2= command: [[String]] - see description\n\n|r1= [[Nothing]]\n\n|x1= <sqf>_camera camCommand \"manual on\";</sqf>\n\n|x2= <sqf>\nprivate _camera = \"CamCurator\" camCreate [0,0,0];\n_camera camCommand \"maxPitch 89\";\n_camera camCommand \"minPitch -89\";\n_camera camCommand \"speedDefault 0.1\";\n_camera camCommand \"speedMax 2\";\n_camera camCommand \"ceilingHeight 5000\";\n_camera camCommand \"atl off\";\n_camera camCommand \"surfaceSpeed off\";\n</sqf>\n\n|seealso= [[cameraEffect]] [[camCreate]] [[camCommit]]\n}}"
@@ -4429,7 +4695,20 @@
  },
  "1670": {
   "title": "doWatch",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Unit Control",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Global Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 377524,
   "timestamp": "2026-01-02T06:52:15Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= local\n\n|eff= global\n\n|gr1= Unit Control\n\n|descr= Order the given unit(s) to watch the given position or target (without radio messages). Use [[objNull]] as the target to order a unit to stop watching a position/target.\n\n|s1= unit(s) [[doWatch]] position\n\n|p1= unit(s): [[Object]] or [[Array]] of [[Object]]s\n\n|p2= position: [[Position]]\n\n|r1= [[Nothing]]\n\n|s2= unit(s) [[doWatch]]  target\n\n|p21= unit(s): [[Object]] or [[Array]] of [[Object]]s\n\n|p22= target: [[Object]]\n\n|r2= [[Nothing]]\n\n|x1= <sqf>_soldierOne doWatch markerPos \"MarkerMoveOne\";</sqf>\n\nThe unit named \"soldierOne\" will watch the position where the marker \"MarkerMoveOne\" is placed.\n\n|x2= <sqf>_soldierOne doWatch _eastSoldier;</sqf>\n\nThe unit named \"soldierOne\" will watch the unit named \"eastSoldier\".\n\n|seealso= [[commandWatch]] [[lookAt]] [[glanceAt]]\n}}\n\n\n<dl class=\"command_description\">\n\n<dt></dt>\n<dd class=\"notedate\">Posted on 2015-04-18 - 07:50 (UTC)</dd>\n<dt class=\"note\">[[User:Waffle SS.|Waffle SS.]]</dt>\n<dd class=\"note\">\nAlso controls where a vehicle gunner aims.\n</dd>\n\n</dl>"
@@ -5012,7 +5291,11 @@
    "Arma 3: Scripting Commands",
    "Command Group: Object Manipulation",
    "Introduced with Operation Flashpoint version 1.00",
-   "Operation Flashpoint: Elite: Scripting Commands"
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
   ],
   "revid": 348275,
   "timestamp": "2023-11-08T11:40:38Z",
@@ -5020,56 +5303,157 @@
  },
  "1703": {
   "title": "ctrlEnable",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: GUI Control",
+   "Introduced with Operation Flashpoint version 1.75",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 364166,
   "timestamp": "2024-05-05T10:46:43Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.75\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= local\n\n|eff= local\n\n|gr1= GUI Control\n\n|descr= Enables or disables a control of the currently active user dialog.\nDisabled controls cannot be clicked onto.\nRead [[Arma: GUI Configuration]] for more information about user dialogs and controls.\n\n|s1= [[ctrlEnable]] [idc, enable]\n\n|p1= idc: [[Number]] - control IDC\n\n|p2= enable: [[Boolean]] - [[true]] to enable the control, [[false]] to disable it\n\n|r1= [[Nothing]]\n\n|s2= controlName [[ctrlEnable]] enable\n\n|p21= controlName: [[Control]]\n\n|p22= enable: [[Boolean]]\n\n|r2= [[Nothing]]\n\n|x1= <sqf>ctrlEnable [100, false];</sqf>\n\n|x2= <sqf>_ctrl ctrlEnable false;</sqf>\n\n|seealso= [[ctrlEnabled]]\n}}\n\n{{Note\n|user= Yuval\n|timestamp= 20170720115900\n|text= Please do note that enabled controls can gain focus upon click. Therefore do not enable background controls or else they will cover any controls on top of them.<br>\nAs a general rule of thumb, enabled controls should only be already on the top of the GUI.\n}}\n\n{{Note\n|user= R3vo\n|timestamp= 20200907222600\n|text= One can disable a control when it is loaded by using [[ctrlEnable]] in the [[User_Interface_Event_Handlers#onLoad|onLoad]] event handler.\n<syntaxhighlight lang=\"cpp\">\nclass MyDialog\n{\n\tclass MyControl\n\t{\n\t\tonLoad = \"(_this # 0) ctrlEnable false;\";\n\t};\n};\n</syntaxhighlight>\n}}"
  },
  "1704": {
   "title": "ctrlEnabled",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: GUI Control",
+   "Introduced with Operation Flashpoint version 1.75",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 338573,
   "timestamp": "2023-03-20T14:59:19Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.75\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= local\n\n|gr1= GUI Control\n\n|descr= Returns if a control on the currently active user dialog is enabled. Disabled controls cannot be focused. Read [[Arma: GUI Configuration]] for more information about user dialogs and controls.\n\n|s1= [[ctrlEnabled]] idc\n\n|p1= idc: [[Number]] - control's IDC\n\n|r1= [[Boolean]] - [[true]] if the control is enabled, [[false]] if not\n\n|s2= [[ctrlEnabled]] controlName\n\n|p21= controlName: [[Control]]\n\n|r2= [[Boolean]] - [[true]] if the control is enabled, [[false]] if not\n\n|x1= <sqf>\nif !(ctrlEnabled 100) then\n{\n\tctrlEnable [100, true];\n};\n</sqf>\n\n|x2= <sqf>_enabled = ctrlEnabled _control;</sqf>\n\n|seealso= [[ctrlEnable]]\n}}"
  },
  "1705": {
   "title": "ctrlSetText",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: GUI Control",
+   "Introduced with Operation Flashpoint version 1.75",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 378494,
   "timestamp": "2026-04-26T15:15:10Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.75\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= local\n\n|eff= local\n\n|gr1= GUI Control\n\n|descr= Sets the text of a control of the currently active user dialog or display.\nThis command can be used for static texts, buttons, edit lines and active texts as well as for images, where you can use it to set the image path.\n<br>\nRead [[Arma: GUI Configuration]] for more information about user dialogs and controls.<br>\nUse [[endl]] to insert line breaks.\n\nSince {{GVI|arma3|2.06|size= 0.75}} supported control types are:\n{{Columns|4|\n* [[CT_STATIC]]\n* [[CT_EDIT]]\n* [[CT_XKEYDESC]]\n* [[CT_XBUTTON]]\n* [[CT_SHORTCUTBUTTON]]\n* [[CT_STRUCTURED_TEXT]]\n* [[CT_BUTTON]]\n* [[CT_ACTIVETEXT]]\n}}\n\nSince {{GVI|arma3|2.22|size= 0.75}} [[CT_PROGRESS]] is also supported.\n\n|s1= [[ctrlSetText]] [idc, text]\n\n|p1= idc: [[Number]] - control IDC\n\n|p2= text: [[String]] - text or image path or texture, depending on the control type\n\n|r1= [[Nothing]]\n\n|s2= control [[ctrlSetText]] text\n\n|p21= control: [[Control]] - control\n\n|p22= text: [[String]] - text or image path or texture, depending on the control type\n\n|r2= [[Nothing]]\n\n|x1= <sqf>ctrlSetText [100, \"Hello world\"]; // for Dialogs</sqf>\n\n|x2= <sqf>_control ctrlSetText \"Hello world.\"; // for Displays</sqf>\n\n|x3= Since Arma 3 2.22:\n<sqf>with uiNamespace do \n{ \n bar = findDisplay 46 ctrlCreate [\"RscProgress\", -1]; \n bar ctrlSetText \"\\A3\\Data_F\\Flags\\Flag_red_CO.paa\";\n bar ctrlSetPosition [0,0,1,0.25]; \n bar ctrlCommit 0; \n bar progressSetPosition 0.7;\n};\n</sqf>\n\n|seealso= [[ctrlText]] [[ctrlTextSelection]] [[ctrlSetTextSelection]]\n}}"
  },
  "1706": {
   "title": "ctrlShow",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: GUI Control",
+   "Introduced with Operation Flashpoint version 1.75",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 370565,
   "timestamp": "2025-01-09T18:12:50Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.75\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= local\n\n|eff= local\n\n|gr1= GUI Control\n\n|descr= Shows or hides a control, or group of controls together with all the controls inside that group of controls.<br>\nRead [[Arma: GUI Configuration]] for more information about user dialogs and controls.<br>\n{{ Feature | Informative | Using [[ctrlShow]] on a [[CT_CONTROLS_GROUP|controls group]] will show or hide all controls within the controls group (including controls that are placed in nested controls groups). }}\n\n|s1= [[ctrlShow]] [idc, show]\n\n|p1= idc: [[Number]] - control IDC\n\n|p2= show: [[Boolean]] - [[true]] to show the control, [[false]] to hide it\n\n|r1= [[Nothing]]\n\n|s2= control [[ctrlShow]] show\n\n|p21= control: [[Control]]\n\n|p22= show: [[Boolean]] - [[true]] to show the control, [[false]] to hide it\n\n|r2= [[Nothing]]\n\n|x1= <sqf>ctrlShow [100, false];</sqf>\n\n|x2= <sqf>_control ctrlShow false;</sqf>\n\n|seealso= [[ctrlVisible]] [[ctrlShown]] [[ctrlEnable]]\n}}"
  },
  "1707": {
   "title": "ctrlText",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: GUI Control",
+   "Introduced with Operation Flashpoint version 1.75",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 378493,
   "timestamp": "2026-04-26T15:11:35Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.75\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= GUI Control\n\n|descr= Returns the text of a control of the currently active user dialog. This command can be used on static texts, buttons, edit lines and active texts as well as for images, where it returns the image path. Does not work on HTML control and returns empty string \"\". Since {{GVI|arma3|2.05|size= 0.75}} supported control types are:\n{{Columns|4|* [[CT_STATIC]]\n\n* [[CT_EDIT]]\n* [[CT_XKEYDESC]]\n* [[CT_XBUTTON]]\n* [[CT_SHORTCUTBUTTON]]\n* [[CT_STRUCTURED_TEXT]]\n* [[CT_BUTTON]]\n* [[CT_ACTIVETEXT]]\n}}\n\nSince {{GVI|arma3|2.20|size= 0.75}} [[CT_PROGRESS]] is also supported.\n\n|s1= [[ctrlText]]  idc\n\n|p1= idc: [[Number]] - control ID\n\n|r1= [[String]] - the text or image path or texture is returned, dependent on the control type\n\n|s2= [[ctrlText]]  controlName\n\n|p21= controlName: [[Control]] - control\n\n|r2= [[String]] - the text or image path or texture is returned, dependent on the control type\n\n|x1= <sqf>_text = ctrlText 100;</sqf>\n\n|x2= <sqf>_text = ctrlText _control;</sqf>\n\n|seealso= [[ctrlTextSecondary]] [[ctrlSetText]] [[Arma: GUI Configuration]]\n}}"
  },
  "1708": {
   "title": "ctrlVisible",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: GUI Control",
+   "Introduced with Operation Flashpoint version 1.75",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 348410,
   "timestamp": "2023-11-08T13:00:06Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.75\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= GUI Control\n\n|arg= local\n\n|descr= Returns if a control of the currently active user dialog is shown or not. Read [[Arma: GUI Configuration]] for more information about user dialogs and controls.\n\n|s1= [[ctrlVisible]]  idc\n\n|p1= idc: [[Number]] - control IDC\n\n|r1= [[Boolean]] - [[true]] if the control is shown, [[false]] if not\n\n|x1= <sqf>_bool = ctrlVisible 100;</sqf>\n\n|seealso= [[ctrlShow]] [[ctrlShown]]\n}}"
  },
  "1709": {
   "title": "cutObj",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: GUI Control",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 348145,
   "timestamp": "2023-11-08T11:32:40Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= GUI Control\n\n|eff= local\n\n|descr= Displays an object defined in the global config in {{hl|CfgTitles}}.\n{{Feature|arma3|For greater efficiency and ease of modability, it is recommended to use named layers with {{Link|#Syntax 3}}.}}\n\n|s1= [[cutObj]] [class, type, speed, showInMap, drawOverHUD]\n\n|p1= class: [[String]] - the className of the object defined in {{hl|[[configFile]] >> \"CfgTitles\" >> class}}\n\n|p2= type: [[String]] - one of \"PLAIN\", \"PLAIN DOWN\", \"BLACK\", \"BLACK FADED\", \"BLACK OUT\", \"BLACK IN\", \"WHITE OUT\" and \"WHITE IN\". See [[Title Effect Type]]s for more information about these values\n\n|p3= speed: [[Number]] - (Optional, default -1) time in seconds to fade in resource\n\n|p4= showInMap: [[Boolean]] - (Optional, default [[true]]) [[false]] to hide the text when the map is opened\n\n|p5= drawOverHUD: [[Boolean]] - (Optional, default [[true]]) [[false]] to show the object under in-game HUD\n|p5since= arma3 2.16\n\n|r1= [[Nothing]]\n\n|s2= layer [[cutObj]] [class, type, speed, showInMap, drawOverHUD]\n\n|p21= layer: [[Number]] - layer number on which the effect is shown, where 0 is the back most. Layer number is rounded to the nearest integer and also cannot be negative. Layer 99.5 will be treated as layer 100\n\n|p22= class: [[String]] - the className of the object defined in {{hl|[[configFile]] >> \"CfgTitles\" >> class}}\n\n|p23= type: [[String]] - one of \"PLAIN\", \"PLAIN DOWN\", \"BLACK\", \"BLACK FADED\", \"BLACK OUT\", \"BLACK IN\", \"WHITE OUT\" and \"WHITE IN\". See [[Title Effect Type]]s for more information about these values.\n\n|p24= speed: [[Number]] - (Optional, default -1) time in seconds to fade in resource\n\n|p25= showInMap: [[Boolean]] - (Optional, default [[true]]) [[false]] to hide the text when the map is opened\n\n|p26= drawOverHUD: [[Boolean]] - (Optional, default [[true]]) [[false]] to show the object under in-game HUD\n|p26since= arma3 2.16\n\n|r2= [[Nothing]]\n\n|s3= layerName [[cutObj]] [class, type, speed, showInMap, drawOverHUD]\n\n|s3since= arma3 1.58\n\n|p41= layerName: [[String]] - layer name on which the effect is shown. Layer names are CaSe SeNsItIvE\n\n|p42= class: [[String]] - the className of the object defined in {{hl|[[configFile]] >> \"CfgTitles\" >> class}}\n\n|p43= type: [[String]] - one of \"PLAIN\", \"PLAIN DOWN\", \"BLACK\", \"BLACK FADED\", \"BLACK OUT\", \"BLACK IN\", \"WHITE OUT\" and \"WHITE IN\". See [[Title Effect Type]]s for more information about these values\n\n|p44= speed: [[Number]] - (Optional, default -1) time in seconds to fade in resource\n\n|p45= showInMap: [[Boolean]] - (Optional, default [[true]]) [[false]] to hide the text when the map is opened\n\n|p46= drawOverHUD: [[Boolean]] - (Optional, default [[true]]) [[false]] to show the object under in-game HUD\n|p46since= arma3 2.16\n\n|r3= [[Number]] - number of the allocated layer\n\n|x1= <sqf>\ncutObj [\"TVSet\", \"PLAIN\"];\ncutObj [\"TVSet\", \"PLAIN\", 2];\n</sqf>\n\n|x2= <sqf>2 cutObj [\"Sphere\", \"PLAIN\"];</sqf>\n\n|x3= <sqf>private _layer = \"layer1\" cutObj [\"BISLogo\", \"PLAIN\"];</sqf>\n\n|seealso= [[allCutLayers]] [[titleObj]] [[cutText]] [[cutRsc]] [[cutFadeOut]] [[allActiveTitleEffects]] [[activeTitleEffectParams]] \n}}"
  },
  "1710": {
   "title": "cutRsc",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: GUI Control",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 378028,
   "timestamp": "2026-01-24T02:09:18Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|eff= local\n\n|gr1= GUI Control\n\n|descr= Display a resource defined in RscTitles of the mission's [[Description.ext]], the campaign's description.ext or the global config.\n{{Feature|arma3|For greater efficiency and ease of modability, it is recommended to use named layers available with [[String]] and {{Link|#Syntax 2}}.}}\n{{Feature|important|To avoid conflicts with existing layers it is recommended to register a layer with [[BIS_fnc_rscLayer]] and to start the name with a TAG:\n<sqf>\n(\"TAG_myLayer\" call BIS_fnc_rscLayer) cutRsc [\"myRsc\", \"PLAIN\"];\n\"TAG_myLayer\" cutRsc [\"myRsc\", \"PLAIN\"];</sqf>\n}}\n\n|s1= [[cutRsc]] [class, effect, speed, showInMap, drawOverHUD]\n\n|p1= class: [[String]] - the class name of the resource. (\"Default\" will remove the current resource.)\n\n|p2= effect: [[String]] - one of \"PLAIN\", \"PLAIN DOWN\", \"BLACK\", \"BLACK FADED\", \"BLACK OUT\", \"BLACK IN\", \"WHITE OUT\" and \"WHITE IN\". See [[Title Effect Type]]s for more information about these values.\n\n|p3= speed: [[Number]] - (Optional, default -1) time in seconds to fade in resource.\n\n|p4= showInMap: [[Boolean]] - (Optional, default [[true]]) [[false]] to hide the text when the map is opened.\n\n|p5= drawOverHUD: [[Boolean]] - (Optional, default [[true]]) [[false]] to show the resource under in-game HUD (for example, a binocular effect)\n|p5since= arma3 2.16\n\n|r1= [[Nothing]]\n\n|s2= layer [[cutRsc]] [class, effect, speed, showInMap, drawOverHUD]\n\n|p21= layer: [[Number]] or [[String]]\n* [[Number]] - layer number on which the effect is shown, where 0 is the back most. Layer number is rounded to the nearest integer and also cannot be negative. Layer 99.5 will be treated as layer 100\n* [[String]] - {{GVI|arma3|1.58|size= 0.75}} layer name on which the effect is shown. Layer names are '''CaSe SeNsItIvE'''.\n\n|p22= class: [[String]] - the class name of the resource. (\"Default\" will remove the current resource.)\n\n|p23= effect: [[String]] - one of \"PLAIN\", \"PLAIN DOWN\", \"BLACK\", \"BLACK FADED\", \"BLACK OUT\", \"BLACK IN\", \"WHITE OUT\" and \"WHITE IN\". See [[Title Effect Type]]s for more information about these values.\n\n|p24= speed: [[Number]] - (Optional, default -1) time in seconds to fade in resource.\n\n|p25= showInMap: [[Boolean]] - (Optional, default [[true]]) [[false]] to hide the text when the map is opened.\n\n|p26= drawOverHUD: [[Boolean]] - (Optional, default [[true]]) [[false]] to show the resource under in-game HUD (for example, a binocular effect)\n|p26since= arma3 2.16\n\n|r2= [[Nothing]]\n\n|x1= <sqf>\ncutRsc [\"binocular\", \"PLAIN\"];\ncutRsc [\"binocular\", \"PLAIN\", 2];\ncutRsc [\"binocular\", \"PLAIN\", 2, false];\n</sqf>\n\n|x2= <sqf>2 cutRsc [\"binocular\", \"PLAIN\", 2];</sqf>\n\n|x3= <sqf>\"layer1\" cutRsc [\"binocular\", \"PLAIN\", 2];</sqf>\n\n|x4= <sqf>\n// create IGUI display\n// such display can be closed with closeDisplay command or by overwriting the same cut layer with another output.\n// note that \"Unload\" EH for some reason does not work with such display.\n\"someLayer\" cutRsc [\"RscTitleDisplayEmpty\", \"PLAIN\"];\nprivate _display = uiNamespace getVariable \"RscTitleDisplayEmpty\";\n</sqf>\n\n|seealso= [[allCutLayers]] [[titleRsc]] [[cutText]] [[cutObj]] [[cutFadeOut]] [[setTitleEffect]] [[allActiveTitleEffects]] [[activeTitleEffectParams]] \n}}\n\n{{Note\n|user= Dr_Eyeball\n|timestamp= 20080630084400\n|text= Using [[cutRsc]] (instead of [[titleRsc]]) for a HUD has the benefits of:\n* having the HUD automatically hide itself when you access the map and redisplay itself after closing the map.\n* using the 'Direct communication' chat channel messages will not interfere with the HUD by hiding it.\n}}\n\n{{Note\n|user= Killzone_Kid\n|timestamp= 20131017163000\n|text= Regarding removing current resource with [[cutRsc]] [\"Default\", \"PLAIN\"]. If it does't work and it gives you error message that \"Default\" is not found, add it by yourself to RscTitles in [[Description.ext|description.ext]] so it looks like this:\n<syntaxhighlight lang=\"cpp\">\nclass RscTitles\n{\n\tclass Default \n\t{\n\t\tidd = -1;\n\t\tfadein = 0;\n\t\tfadeout = 0;\n\t\tduration = 0;\n\t};\n};\n</syntaxhighlight>\n\nAlternatively, you can use cutText, yes [[cutText]] command to cancel your resources. As Karel Moricky explains: \"All 'cut' commands are in the same layer, the same as all 'title' commands are in another one.\" So to remove cutRsc resource execute cutText on the same layer:\n\n<sqf>\ncutRsc [\"myRsc\", \"PLAIN\"];\t// show\ncutText [\"\", \"PLAIN\"];\t\t// remove\n</sqf>\n\n<sqf>\n10 cutRsc [\"myRsc\", \"PLAIN\"];\t// show\n10 cutText [\"\", \"PLAIN\"];\t\t// remove\n</sqf>\n\nAlso if you use layers would be a good idea to register them with [[BIS_fnc_rscLayer]] to avoid possible clashes with other layers:\n<sqf>\n(\"myLayerName\" call BIS_fnc_rscLayer) cutRsc [\"myRsc\", \"PLAIN\"];\t// show\n(\"myLayerName\" call BIS_fnc_rscLayer) cutText [\"\", \"PLAIN\"];\t\t// remove\n</sqf>\n\nYou can also immediately remove resource with [[cutFadeOut]] command:<sqf>123 cutFadeOut 0;</sqf>\n}}\n\n{{Note\n|user= Sa-Matra\n|timestamp= 20230413081935\n|text= Layer display time seems to be display's \"duration\" parameter divided by \"speed\" provided into this command, which also acts as effect time. So to make sure your display doesn't close after a bit, have your \"\"duration\"\" at a very high number like <sqf inline>duration = 1e11;</sqf>\n}}\n\n{{Note\n|user= Rpg12\n|timestamp= 20250901212741\n|text= The note by Killzone_kid is no longer valid due to an arma 3 update, ensure you do this instead:\n<sqf>\n\"exampleLayer\" cutRsc [\"RCSDefinedLayer\", \"PLAIN\"];\n</sqf>\nThe RCSDefinedLayer is something you define in either config.cpp or description.ext\n}}"
@@ -6063,7 +6447,8 @@
    "Operation Flashpoint: New Scripting Commands",
    "Operation Flashpoint: Scripting Commands",
    "Scripting Commands",
-   "Scripting Commands: Global Effect"
+   "Scripting Commands: Global Effect",
+   "Take On Helicopters: Scripting Commands"
   ],
   "revid": 351537,
   "timestamp": "2023-12-06T23:01:31Z",
@@ -6071,42 +6456,117 @@
  },
  "1768": {
   "title": "showCinemaBorder",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Camera Control",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 310208,
   "timestamp": "2022-05-05T13:10:42Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Camera Control\n\n|descr= Forces drawing of cinema borders when using custom camera [[camCreate]]. This is normally used in cutscenes to indicate player has no control.\n\n|s1= [[showCinemaBorder]] show\n\n|p1= show: [[Boolean]]\n\n|r1= [[Nothing]]\n\n|x1= <sqf>showCinemaBorder false;</sqf>\n\n|seealso= [[showHUD]]\n}}\n\n<dl class=\"command_description\">\n\n<dt></dt>\n<dd class=\"notedate\">Posted on 13 October 2007 - 15:20 (CEST)</dd>\n<dt class=\"note\">[[User:Crowe|Crowe]]</dt>\n<dd class=\"note\">This command does only work when Mission is started. Use [[waitUntil]] {[[time]] > 0}; to be sure it works.\n\n</dl>"
  },
  "1769": {
   "title": "showCompass",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Interaction",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 310192,
   "timestamp": "2022-05-05T13:10:33Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Interaction\n\n|descr= Shows or hides the compass on the map screen, if enabled for the mission and you possess the item. (default [[true]])\n\n|s1= [[showCompass]] show\n\n|p1= show: [[Boolean]]\n\n|r1= [[Nothing]]\n\n|x1= <sqf>showCompass false;</sqf>\n\n|seealso= [[shownCompass]] [[visibleCompass]] [[showGPS]] [[showRadio]] [[showWatch]] [[showPad]] [[showMap]]\n}}\n\n<dl class=\"command_description\">\n\n<dt><dt>\n<dd class=\"notedate\">Posted on 16 Aug, 2009</dd>\n<dt class=\"note\">[[User:Generalcarver|GeneralCarver]]</dt>\n<dd class=\"note\">\nIn Arma 2, the Compass is now an inventory item. Class path is CfgWeapons->ItemCompass. Use the commands addWeapon and removeWeapon to add or remove it from a unit's inventory. (example: player addweapon \"ItemCompass\") \n\n</dl>"
  },
  "1771": {
   "title": "showMap",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Map",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 377943,
   "timestamp": "2026-01-11T23:01:48Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Map\n\n|descr= Enable Map (default [[true]]).\n{{Feature|informative|\nIn {{arma2}} and later this command no longer works, the map now being an inventory item (\"ItemMap\" class name).\n<sqf>\nunitName removeWeapon \"ItemMap\";\nunitName addWeapon \"ItemMap\";\n</sqf>\n}}\n\n|s1= [[showMap]] show\n\n|p1= show: [[Boolean]]\n\n|r1= [[Nothing]]\n\n|x1= <sqf>showMap false;</sqf>\n\n|seealso= [[showCompass]] [[showGPS]] [[showRadio]] [[showWatch]] [[showPad]] [[shownMap]]\n}}"
  },
  "1772": {
   "title": "setWPPos",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Waypoints",
+   "Introduced with Operation Flashpoint version 1.21",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 377575,
   "timestamp": "2026-01-02T06:56:29Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.21\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Waypoints\n\n|descr= Sets waypoint position.\n{{Feature|informative|This command is identical to <sqf inline>setWaypointPosition [pos, -1]</sqf> (see [[setWaypointPosition]] description for more information).}}\n\n|s1= waypoint [[setWPPos]] pos\n\n|p1= waypoint: [[Waypoint]]\n\n|p2= pos: [[Position#PositionAGL|PositionAGL]]\n\n|r1= [[Nothing]]\n\n|x1= <sqf>[_groupOne, 1] setWPPos markerPos \"MarkerOne\";</sqf>\n\n|seealso= [[deleteWaypoint]] [[copyWaypoints]] [[setCurrentWaypoint]] [[setWaypointBehaviour]] [[setWaypointCombatMode]] [[setWaypointCompletionRadius]] [[setWaypointDescription]] [[setWaypointFormation]] [[setWaypointHousePosition]] [[setWaypointPosition]] [[setWaypointScript]] [[setWaypointSpeed]] [[setWaypointStatements]] [[setWaypointTimeout]] [[setWaypointType]] [[setWaypointVisible]] [[waypointAttachVehicle]] [[waypointAttachedVehicle]] [[setWaypointLoiterRadius]] [[waypointLoiterRadius]] [[addWaypoint]] [[setWaypointLoiterType]] [[waypoints]] [[waypointSpeed]]\n}}\n\n{{Note\n|user= Killzone_Kid\n|timestamp= 20181115142700\n|text= Even though this command can accept [[Position#Introduction|Position2D]], it is better to always explicitly state the elevation of waypoint by providing [[Position#PositionAGL|PositionAGL]].\n}}"
  },
  "1773": {
   "title": "setViewDistance",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Environment",
+   "Command Group: System",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 364699,
   "timestamp": "2024-05-25T17:28:31Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|eff= local\n\n|gr1= System\n\n|gr2= Environment\n\n|descr= Set rendering distance. Setting view distance to <= 0 resets the value to the client's options (set in {{hl|Options → Video → General → Visibility → Overall}}).\n{{Feature|informative|In previous versions, client's max view distance was limited by the server's view distance.}}\n{{Feature|important|\nView distance also defines the maximum distance between a unit and any other unit they can [[knowsAbout|know about]].\nHigher view distance will involve more AI simulation cycles for every unit, which causes low performance. See [[Arma 3: Performance Optimisation]].\n}}\n\n{{{!}} class=\"wikitable\"\n! Game\n! min. scripted\n! min. UI\n! default\n! max. UI\n! max. scripted\n{{!}}-\n{{!}} {{arma3}}\n{{!}} 200\n{{!}} 500\n{{!}} '''1600'''\n{{!}} 12000\n{{!}} 40000\n{{!}}-\n{{!}} {{arma2oa}}\n{{!}} 200\n{{!}} 500\n{{!}} '''2500'''\n{{!}} 10000\n{{!}} 15000\n{{!}}-\n{{!}} {{arma2}}\n{{!}} 200\n{{!}} 500\n{{!}} '''3000'''\n{{!}} 10000\n{{!}} 15000\n{{!}}-\n{{!}} {{arma1}}\n{{!}} 200\n{{!}} 500\n{{!}} '''1200'''\n{{!}} 10000\n{{!}} 15000\n{{!}}-\n{{!}} {{ofp}}\n{{!}} 500\n{{!}} 500\n{{!}} '''900'''\n{{!}} 5000\n{{!}} 5000\n{{!}}}\n\n|s1= [[setViewDistance]] distance\n\n|p1= distance: [[Number]] - distance in metres; {{GVI|arma3|1.00|size= 0.75}} a negative value resets the view distance to user video setting\n\n|r1= [[Nothing]]\n\n|x1= <sqf>setViewDistance 2250;</sqf>\n\n|x2= <sqf>setViewDistance -1; // reset view distance in Arma 3</sqf>\n\n|seealso= [[viewDistance]] [[setDetailMapBlendPars]] [[setTerrainGrid]] [[getObjectViewDistance]] [[setObjectViewDistance]]\n}}"
  },
  "1774": {
   "title": "setVelocity",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Object Manipulation",
+   "Introduced with Operation Flashpoint version 1.80",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Global Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 378408,
   "timestamp": "2026-04-04T08:14:56Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofp\n|version1= 1.80\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= local\n\n|eff= global\n\n|gr1= Object Manipulation\n\n|descr= Sets [[velocity]] vector of an object in m/s.\n\n{{Feature|important|Since {{GVI|arma3|2.06|size= 0.75}} each velocity component is limited to the range +-5000 m/s.}}\n\n|s1= object [[setVelocity]] vector\n\n|p1= object: [[Object]]\n\n|p2= vector: [[Vector3D]]\n\n|r1= [[Nothing]]\n\n|x1= <sqf>_truck1 setVelocity [20, 0, 0];</sqf>\n\n|x2= Advanced method used for relative acceleration:\n<sqf>\n_vel = velocity _vehicle;\n_dir = getDir _vehicle;\n_additionalSpeed = 10; // in m/s\n_vehicle setVelocity [\n\t(_vel select 0) + (sin _dir * _additionalSpeed), \n\t(_vel select 1) + (cos _dir * _additionalSpeed), \n\t(_vel select 2) // horizontal only\n];\n</sqf>\n\n|seealso= [[velocity]] [[velocityModelSpace]] [[setVelocityModelSpace]] [[setVelocityTransformation]] [[speed]]\n}}\n\n{{Note\n|user= ffur2007slx2_5\n|timestamp= 20140620165000\n|text= {{GVI|arma3|1.22}} [[setVelocity]] will be affected by [[setDir]] and [[setVectorDirAndUp]], so use it after them.\n}}"
@@ -6680,35 +7140,91 @@
  },
  "1845": {
   "title": "a = b",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Variables",
+   "Introduced with Operation Flashpoint version 1.00",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 348661,
   "timestamp": "2023-11-08T13:49:04Z",
   "wikitext": "{{RV|type=command\n\n|sortKey= #\n\n|game1= ofp\n|version1= 1.00\n\n|game2= ofpe\n|version2= 1.00\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|gr1= Variables\n\n|descr= Assigns the result of expression on the right to the variable on the left. Technically this is not a command and it is not listed in [[supportInfo]]; this is more of a compiler instruction.\n{{Feature|important|The following structure is invalid: <sqf inline>a = b = c = 4;</sqf>.}}\n\n|s1= variable [[a = b|=]] value\n\n|p1= variable: [[Anything]] - see [[Identifier]]\n\n|p2= value: [[Anything]]\n\n|r1= [[Nothing]] {{Feature|important|The returned value is not equivalent to [[nil]]. See {{Link|#Notes}} below for additional information.}}\n\n|x1= <sqf>_value = 5;</sqf> \n\n|x2= <sqf>_mygroup = group player;</sqf>\n\n|x3= <sqf>_greeting = \"Hello!\";</sqf>\n\n|x4= <sqf>private _enemyTank = myTank1;</sqf>\n\n|seealso= [[Operators]]\n}}\n\n{{Note\n|user= Kronzky\n|timestamp= 20061215052700\n|text= A conditional assignment can be done via the following syntax:\n<sqf>_msg = if (alive player) then {\"you're alive\"} else {\"you're dead\"}</sqf>\n}}\n\n{{Note\n|user= Alef\n|timestamp= 20090622162700\n|text= It's possible to assign to [[Number]]s. Numbers values are not changed. Useful instead of assigning to ''nul'' or ''nil'' when a result is of no use.\n<sqf>[player] execVM \"myScript.sqf\"</sqf>\n}}\n\n{{Note\n|user= Dedmen\n|timestamp= 20161109002900\n|text= This operator actually does not return a Nil. It really returns pure Nothing. Not Nil Nothing.<br>\nThis can cause problems. For example:\n<sqf>\n_var1 = call {\n\t_var2 = \"\";\n};\n</sqf>\nThe return value of the \"call\" is the return value of the \"{{=}}\" operator.<br>\nIf it were a nil then of cause \"_var {{=}} nil;\" would work just fine.<br>\nBut in reality this causes a \"Generic Error in expression\" because you can't assign pure Nothing to anything\n}}"
  },
  "1966": {
   "title": "actionKeys",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Interaction",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 330779,
   "timestamp": "2022-11-01T16:06:07Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|gr1= Interaction\n\n|descr= Returns [[Array]] containing [[DIK_KeyCodes|dikCodes]] of keys, buttons and combos assigned to the given user action. Action names could be found in config class ControllerSchemes or [[:Category:Key Actions|user action names]] or user profile, for example:\n<syntaxhighlight lang=\"cpp\">\nkeyWatch[] = { 24 };\n</syntaxhighlight>\nTo retrieve the value, use the property name without 'key':\n<sqf>actionKeys \"Watch\"; // 24</sqf>\nIn addition, some of the actions are also listed in here: [[inputAction/actions]]\n\n|s1= [[actionKeys]] userAction\n\n|p1= userAction: [[String]]\n\n|r1= [[Array]] of [[Number]]s\n\n|s2= [[actionKeys]] [userAction]\n|s2since=Arma3 2.08\n\n|p21= userAction: [[String]]\n\n|r2= [[Array]] of [[String]]s\n\n|x1= <sqf>_arrayOfNumbers = actionKeys \"ReloadMagazine\";</sqf>\n|x2= From {{arma3}} v2.08: <sqf>_arrayOfStrings = actionKeys [\"ReloadMagazine\"];</sqf>\n\n|seealso= [[actionKeysNames]] [[actionKeysNamesArray]] [[actionKeysImages]] [[actionName]] [[inputAction]] [[addUserActionEventHandler]]\n}}\n\n{{Note\n|user= AgentRev\n|timestamp= 20160511023600\n|text= If an action key is configured with a modifier (e.g. \"Right Ctrl + M\" for \"MiniMapToggle\"), the DIK code returned by this command has a weird value, equivalent to the following:<br>\n: Left Ctrl + Key = 486539264 + DIK\n: Left Shift + Key = 704643072 + DIK\n: Left Alt + Key = 939524096 + DIK\n: Right Ctrl + Key = -1660944384 + DIK\n: Right Shift + Key = 905969664 + DIK\n: Right Alt + Key = -1207959552 + DIK</sqf>\n\nThis increases the difficulty of accurately comparing key codes to actionKeys in [[User_Interface_Event_Handlers|UI event handlers]]. Those strange numbers are probably due to bit flags being added to the DIK value by the game engine for easier storage in the [[Profile|ArmaProfile]].<br>\nIn case of mouse buttons, actionKeys will also return values that are different from those in \"MouseButton\" UI events:<br>\n: LMB: MouseButton 0 = actionKeys 65536\n: RMB: MouseButton 1 = actionKeys 65665 (65536 + 1 + 128)\n: MMB: MouseButton 2 = actionKeys 65538 (65536 + 2)\n: 4MB: MouseButton 3 = actionKeys 65539 (65536 + 3)\n: 5MB: MouseButton 4 = actionKeys 65540 (65536 + 4)\nThe values above are valid for a right-handed mouse configuration, and may or may not differ for a left-handed config.\n<br><small>''Note edited by [[User:R3vo|R3vo]] ([[User talk:R3vo|talk]]) 13:04, 19 March 2021 (CET)''</small>\n}}\n\n{{Note\n|user= Commy2\n|timestamp= 20160806122400\n|text= '''The values described by {{User|AgentRev}} cannot be compared <u>reliably</u>.''' All numbers in SQF are floats and those are only precise up to 7 digits.<br>\n<sqf>486539264 + 19 == 486539264 + 20 // returns true</sqf>\nThe DIK codes for {{hl|LCtrl + R}} and {{hl|LCtrl + T}} are indistinguishable.\n<br><small>''Note edited by [[User:R3vo|R3vo]] ([[User talk:R3vo|talk]]) 13:04, 19 March 2021 (CET)''</small>\n}}"
  },
  "1967": {
   "title": "actionKeysImages",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Interaction",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 369623,
   "timestamp": "2024-09-27T22:13:10Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|gr1= Interaction\n\n|descr= Returns a list of button images or names assigned to the given user action.\nA maximum of ''maxKeys'' keys is listed.\nYou can find the action names in the ControllerSchemes config class or [[:Category:Key Actions|user action names]].\n\n|s1= [[actionKeysImages]] userAction\n\n|p1= userAction: [[String]]\n\n|r1= [[Structured Text]]\n\n|s2= [[actionKeysImages]] [userAction, maxKeys]\n\n|p21= userAction: [[String]]\n\n|p22= maxKeys: [[Number]]\n\n|r2= [[Structured Text]]\n\n|x1= <sqf>_text = actionKeysImages \"ReloadMagazine\";</sqf>\n\n|x2= <sqf>_reload = actionKeysImages [\"ReloadMagazine\", 1] // returns \"R\" (including the quotation marks!)</sqf>\n\n|seealso= [[actionKeys]] [[actionKeysNames]] [[actionKeysNamesArray]] [[actionName]] [[inputAction]]\n}}"
  },
  "1968": {
   "title": "actionKeysNames",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Interaction",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 364173,
   "timestamp": "2024-05-05T10:46:45Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|gr1= Interaction\n\n|descr= Returns a list of button names assigned to the given user action.\nAction names can be found in config class {{hl|ControllerSchemes}} or [[:Category:Key Actions|user action names]].\n\n|s1= [[actionKeysNames]]  userAction\n\n|p1= userAction: [[String]]\n\n|r1= [[String]]\n\n|s2= [[actionKeysNames]] [userAction, maxKeys, inputDevicePriority]\n\n|p21= userAction: [[String]]\n\n|p22= maxKeys: [[Number]] - maximum number of keys to return\n\n|p23= inputDevicePriority: [[String]] - result sorted by inputDevicePriority with values:\n* {{hl|\"Mouse\"}}\n* {{hl|\"Keyboard\"}}\n* {{hl|\"Stick\"}}\n* {{hl|\"Gamepad\"}}\n* {{hl|\"Tracker\"}}\n* {{hl|\"Combo\"}} (mouse and keyboard combinations)\n* {{sic|{{hl|\"Controler\"}}}} (any controller other than mouse or keyboard)\nOther values are considered as: \n* {{hl|\"Unsorted\"}}\n|p23since= arma3 1.36\n\n|r2= [[String]]\n\n|x1= <sqf>_list = actionKeysNames \"ReloadMagazine\"; // \"\"\"R\"\" or \"\"XBox X\"\"\"</sqf>\n\n|seealso= [[actionKeys]] [[actionKeysImages]] [[actionKeysNamesArray]] [[actionName]] [[inputAction]]\n}}\n\n{{Note\n|user= WGL.Q\n|timestamp= 20100120201400\n|text= The return type is a stacked string. A string inside a string. To compare use first single and inside double quotes:<br>\n<sqf>if (actionKeysNames \"User1\" == '\"W\"') then { /* ... */ };</sqf>\n}}"
  },
  "1969": {
   "title": "activateAddons",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Mods and Addons",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 370473,
   "timestamp": "2024-12-16T18:10:00Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|gr1= Mods and Addons\n\n|descr= Activates the listed addons.\n\n|s1= [[activateAddons]] addonsList\n\n|p1= addonsList: [[Array]] of [[String]]s\n\n|r1= [[Nothing]]\n\n|x1= <sqf>activateAddons [\"BISOFP\"];</sqf>\n\n|seealso= [[unitAddons]] [[activatedAddons]]\n}}\n\n{{Note\n|user= WGL.Q\n|timestamp= 20090121123700\n|text= Be aware that addon's string is the {{hl|CfgPatches}} class of the desired addon to preload.\n}}\n\n{{Note\n|user= UNN\n|timestamp= 20090510111700\n|text= This command will activate addons that are referenced via scripts but not included in a missions required addons section. If executed from a configs init event with the [[call]] command, it will effectively override a missions required addons, preventing them from being activated (Appears to only happen in multi player). \nTo activate the passed addons along with those defined in the mission.sqm, execute the command from a configs init event using [[spawn]] or [[execVM]].\n}}\n\n{{Note\n|user= Sa-Matra\n|timestamp= 20220703084305\n|text= Here is a handy function to call before you do [[createVehicle]] or other create* command during missing init scripts, which should activate missing addons without having to worry about re-adding previously added addons.\n<sqf>\nfnc_prepareClassAddons = {\n\tprivate _class = toLower _this;\n\n\t// To avoid double checks\n\tif(isNil\"var_addonCheckedClasses\") then {var_addonCheckedClasses = createHashMap;};\n\tif(_class in var_addonCheckedClasses) exitWith {};\n\n\t// Finding missing addons\n\tprivate _needed = unitAddons _class apply {toLower _x};\n\tprivate _active = activatedAddons;\n\tprivate _missing = _needed - (_needed arrayIntersect _active);\n\tif(count _missing > 0) then {\n\t\t// Adding everything again, engine will figure it out itself\n\t\t_active append _missing;\n\t\tactivateAddons _active;\n\t};\n\n\tvar_addonCheckedClasses set [_class, _needed];\n};\n</sqf>\nUsage would be <sqf inline>\"Land_BurntGarbage_01_F\" call fnc_prepareClassAddons</sqf>.\n}}"
@@ -7935,7 +8451,8 @@
    "Operation Flashpoint: Elite: New Scripting Commands",
    "Operation Flashpoint: Elite: Scripting Commands",
    "Scripting Commands",
-   "Scripting Commands: Global Effect"
+   "Scripting Commands: Global Effect",
+   "Take On Helicopters: Scripting Commands"
   ],
   "revid": 363391,
   "timestamp": "2024-03-29T17:43:01Z",
@@ -7943,21 +8460,55 @@
  },
  "2038": {
   "title": "sendSimpleCommand",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Unit Control",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 336305,
   "timestamp": "2022-12-21T11:10:14Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|gr1= Unit Control\n\n|descr= Sends a simple command to the vehicle's driver / gunner (air vehicles ignore it). See also [[vehicleMoveInfo]].{{Feature | important | Doesn't seem to work if AI driver is alone, needs another unit in the vehicle (could be another AI or player) that is set as [[setEffectiveCommander]]. If driver is [[effectiveCommander]] it will refuse any drive commands.}}\n{{Feature|arma3|Due to some sort of a bug when vehicle is ordered turning (\"LEFT\" or \"RIGHT\"), it locks the vehicle ability to respond to any other commands properly. Always use \"STOPTURNING\" to cancel turning before issuing other move commands}}\n{{{!}} class=\"valign-top\"\n! style=\"width: 33%\" {{!}} Gunner commands\n! style=\"width: 33%\" {{!}} Driver Move commands\n! Driver Turn commands\n{{!}}-\n{{!}}\n* {{hl|\"FIRE\"}}\n* {{hl|\"CEASE FIRE\"}}\n* {{hl|\"MANUAL FIRE\"}}\n* {{hl|\"CANCEL MANUAL FIRE\"}}\n* {{hl|\"KEY FIRE\"}}\n{{!}}\n* {{hl|\"FORWARD\"}} - move forward\n* {{hl|\"FAST\"}} - move forward, fast\n* {{hl|\"SLOW\"}} - move forward, slow\n* {{hl|\"STOP\"}} - stop moving forward or backward\n* {{hl|\"BACK\"}} - move backward\n* {{hl|\"KEY UP\"}}\n* {{hl|\"KEY DOWN\"}}\n* {{hl|\"KEY FAST\"}}\n* {{hl|\"KEY SLOW\"}}\n{{!}}\n* {{hl|\"LEFT\"}} - turn left, while moving or not\n* {{hl|\"RIGHT\"}} - turn right, while moving or not\n* {{GVI|arma3|1.78|size= 0.75}} {{hl|\"STOPTURNING\"}} cancel turning (special case, normally would be called by the engine when LEFT or RIGHT turn key is released by the player)\n{{!}}}\n\n|s1= vehicleName [[sendSimpleCommand]] command\n\n|p1= vehicleName: [[Object]]\n|p2= command: [[String]]\n\n|r1= [[Nothing]]\n\n|x1= <sqf>vehicle player sendSimpleCommand \"STOP\";</sqf>\n\n|seealso= [[vehicleMoveInfo]] [[useAISteeringComponent]] [[effectiveCommander]] [[setEffectiveCommander]] [[enableAI]] [[disableAI]] [[enableAIFeature]] [[enableSentences]]\n}}\n\n{{Note\n|user= Ceeeb\n|timestamp= 20070416045200\n|text= Valid commands include: \"FORWARD\", \"SLOW\", \"FAST\" \"BACK\", \"LEFT\", \"RIGHT\", \"STOP\", \"FIRE\", \"CEASE FIRE\", \"MANUAL FIRE\", \"CANCEL MANUAL FIRE\". There may be more. <br><br>\nOnly vehicles crewed by a player can use sendSimpleCommand.\n}}\n\n{{Note\n|user= Killzone_Kid\n|timestamp= 20140126155800\n|text= Other commands that work: \"KEY FIRE\", \"KEY FAST\", \"KEY SLOW\", \"KEY DOWN\", \"KEY UP\". These will simulate key presses.<br><br>\nIn {{arma3}} player doesn't always need to be in the vehicle to give commands.\n}}"
  },
  "2039": {
   "title": "setAttributes",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Strings",
+   "Command Group: Structured Text",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 351277,
   "timestamp": "2023-11-27T02:34:49Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|gr1= Strings\n\n|gr2= Structured Text\n\n|descr= Returns a [[Structured Text]] created from the given [[Structured Text|structured]] text and sets [[Structured_Text#Attributes | attributes]] to the given values.\n{{Feature|important|Even though command accepts plain [[String]] too, the argument should be [[Structured Text]] in order for the set attributes to have an effect.\nAdditionally the result of the command should be fed to [[composeText]] (See {{Link|#Example 1}}) or [[formatText]].\n}}\n\n|s1= text [[setAttributes]] [name1, value1, name2, value2, ...]\n\n|p1= text: [[String]] or [[Structured Text]] - only passing [[Structured Text]] has any effect\n\n|p2= nameN: [[String]] - name of the attribute\n\n|p3= valueN: [[String]] - value of the attribute\n\n|r1= [[Structured Text]]\n\n|x1= <sqf>\n_txt = text \"Red text, right align\";\n_txt setAttributes [\"color\", \"#FF0000\", \"align\", \"right\"];\nhint composeText [_txt];\n</sqf>\n\n|seealso= [[composeText]] [[formatText]] [[parseText]] [[text]] [[ctrlSetStructuredText]]\n}}"
  },
  "2041": {
   "title": "setCameraInterest",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Camera Control",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 310118,
   "timestamp": "2022-05-05T12:25:32Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|gr1= Camera Control\n\n|descr= Set camera interest for given entity. Camera interest is by default 0. Any unit which is speaking has its camera interest raised to 50. Camera interest is used to focus camera to control depth of field in cutscenes. Combination of camera interest, unit position of the screen, unit movement, unit type, and some other properties is used to determine which unit to focus at. Higher camera interest increases the chance of the unit being focused.\n\n|s1= entity [[setCameraInterest]] interest\n\n|p1= entity: [[Object]]\n|p2= interest: [[Number]]\n\n|r1= [[Nothing]]\n\n|x1= <sqf>_soldier setCameraInterest 50;</sqf>\n\n|seealso= [[cameraInterest]]\n}}"
@@ -8179,7 +8730,12 @@
    "Arma 3: Scripting Commands",
    "Command Group: Sounds",
    "Command Group: Triggers",
-   "Command Group: Waypoints"
+   "Command Group: Waypoints",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
   ],
   "revid": 377584,
   "timestamp": "2026-01-02T06:56:42Z",
@@ -8187,49 +8743,131 @@
  },
  "2054": {
   "title": "setParticleCircle",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: New Scripting Commands",
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Particles",
+   "Introduced with Armed Assault version 1.00",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 378393,
   "timestamp": "2026-04-04T07:54:48Z",
   "wikitext": "{{RV|type=command\n\n|game1= arma1\n|version1= 1.00\n\n|game2= arma2\n|version2= 1.00\n\n|game3= arma2oa\n|version3= 1.50\n\n|game4= tkoh\n|version4= 1.00\n\n|game5= arma3\n|version5= 0.50\n\n|arg= global\n|eff= local\n\n|gr1= Particles\n\n|descr= Updates particle source, creates particles in circle with given radius. Velocity is transformed and added to total velocity. The random particle positioning is calculated in relation to the nearest surface. Since Arma 3 2.22, this could be overridden (will also override onSurface = true).\n\n|s1= particleSource [[setParticleCircle]] [circleRadius, circleVelocity, ignoreSurfaces]\n\n|p1= particleSource: [[Object]]\n\n|p2= circleRadius: [[Number]] - the radius (x,y plain) in which particles are generated \n\n|p3= circleVelocity: [[Vector3D]] - direction and speed of particles movement\n\n|p4= ignoreSurfaces: [[Boolean]] - (Optional) [[true]] to calculate particle position relative to the source position. Default: [[false]]\n|p4since= arma3 2.22\n\n|r1= [[Nothing]]\n\n|x1= <sqf>_myParticleSource setParticleCircle [3, [0,0,5]];</sqf>\n|x2= <sqf>_myParticleSource setParticleCircle [3, [0,0,5], true];</sqf>\n\n|seealso= [[setParticleParams]] [[setParticleRandom]] [[ParticleTemplates]] [[setParticleClass]] [[particlesQuality]] [[setParticleFire]]\n}}"
  },
  "2055": {
   "title": "setParticleParams",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: New Scripting Commands",
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Particles",
+   "Introduced with Armed Assault version 1.00",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 377766,
   "timestamp": "2026-01-03T01:02:12Z",
   "wikitext": "{{RV|type=command\n\n|game1= arma1\n|version1= 1.00\n\n|game2= arma2\n|version2= 1.00\n\n|game3= arma2oa\n|version3= 1.50\n\n|game4= tkoh\n|version4= 1.00\n\n|game5= arma3\n|version5= 0.50\n\n|arg= global\n|eff= local\n\n|gr1= Particles\n\n|descr= Set parameters to particle source. Array is in format [[ParticleArray]]. <br>\n\nSince Arma 3 version 1.11.114706 you can use this command to overwrite many values set by [[setParticleClass]], particularity those defined in [[ParticleArray]]. Correspondence between CfgCloudlets class param names and command array of params:\n<sqf>\nparticleSource setParticleParams\n[\n\t/*\n\t\tString or Array - If string then the name of the particleShape. And following default values are used:\n\t\t\tparticleFSNtieth = 1\n\t\t\tparticleFSIndex = 0\n\t\t\tparticleFSFrameCount = 1\n\t\t\tparticleFSLoop = 1\n\t*/\n\t[\n\t\tparticleShape,\t\t\t/* String */\n\t\tparticleFSNtieth,\t\t/* Number */\n\t\tparticleFSIndex,\t\t/* Number */\n\t\tparticleFSFrameCount,\t/* Number */\n\t\tparticleFSLoop\t\t\t/* Optional - Number. Default: 1 */\n\t],\n\tanimationName,\t\t\t\t/* String */\n\tparticleType,\t\t\t\t/* String - Enum: Billboard, SpaceObject */\n\ttimerPeriod,\t\t\t\t/* Number */\n\tlifeTime,\t\t\t\t\t/* Number */\n\tpos3D,\t\t\t\t\t\t/* 3D Array of numbers as relative position to particleSource or (if object at index 18 is set) object. \n\t\t\t\t\t\t\t\t\tOr (if object at index 18 is set) String as memoryPoint of object. */\n\tmoveVelocity,\t\t\t\t/* 3D Array of numbers. */\n\trotationVelocity,\t\t\t/* Number */\n\tweight,\t\t\t\t\t\t/* Number */\n\tvolume,\t\t\t\t\t\t/* Number */\n\trubbing,\t\t\t\t\t/* Number */\n\tsizeOverLifetime,\t\t\t/* Array of Numbers */\n\tcolor,\t\t\t\t\t\t/* Array of Array of RGBA Numbers */\n\tanimationSpeed,\t\t\t\t/* Array of Number */\n\trandomDirectionPeriod,\t\t/* Number */\n\trandomDirectionIntensity,\t/* Number */\n\tonTimerScript,\t\t\t\t/* String */\n\tbeforeDestroyScript,\t\t/* String */\n\tobj,\t\t\t\t\t\t/* Object */\n\tangle,\t\t\t\t\t\t/* Optional Number - Default: 0 */\n\tonSurface,\t\t\t\t\t/* Optional Boolean - Default: true */\n\tbounceOnSurface,\t\t\t/* Optional Number - Default: -1 */\n\temissiveColor,\t\t\t\t/* Optional Array of Array of RGBA Numbers - Default [0,0,0,0] */\n\tvectorDirOrVectorDirAndUp\t/* Optional vector dir or [vectorDir, vectorUp]\n\t\tSince Arma 3 v1.92 it is possible to set the initial direction of the SpaceObject\n\t\tSince Arma 3 v2.12 it is possible to use a [vectorDir, vectorUp] array */\n];\n</sqf>\n\n|s1= particleSource [[setParticleParams]] array\n\n|p1= particleSource: [[Object]]\n\n|p2= array: [[ParticleArray]]\n\n|r1= [[Nothing]]\n\n|x1= see [[ParticleArray]]\n\n|seealso= [[Arma 3: Particle Effects]] [[ParticleArray]] [[setParticleClass]] [[setParticleRandom]] [[setParticleCircle]] [[setParticleFire]] [[setDropInterval]] [[drop]]\n}}"
  },
  "2056": {
   "title": "setParticleRandom",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Particles",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Local Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 378785,
   "timestamp": "2026-06-05T12:18:37Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|arg= global\n|eff= local\n\n|gr1= Particles\n\n|descr= Sets randomization of particle source parameters. Correspondence between CfgCloudlets class param names and command array of params:\n<sqf>\nparticleSource setParticleRandom\n[\n\tlifeTimeVar,\n\tpositionVar,\n\tmoveVelocityVar,\n\trotationVelocityVar,\n\tsizeVar,\n\tcolorVar,\n\trandomDirectionPeriodVar,\n\trandomDirectionIntensityVar,\n\tangleVar,\n\tbounceOnSurfaceVar\n];\n</sqf>\n\n|s1= particleSource [[setParticleRandom]] [lifeTime, position, moveVelocity, rotationVelocity, size, color, directionPeriod, directionIntensity, angle, bounceOnSurface]\n\n|p1= particleSource: [[Object]]\n\n|p2= lifeTime: [[Number]]\n\n|p3= position: [[Array]] of [[Number]] - in format [randomX, randomY, randomZ]\n\n|p4= moveVelocity: [[Array]] of [[Number]] - in format [randomX, randomY, randomZ]\n\n|p5= rotationVelocity: [[Number]]\n\n|p6= size: [[Number]]\n\n|p7= color: [[Color|Color (RGBA)]]\n\n|p8= directionPeriod: [[Number]]\n\n|p9= directionIntensity: [[Number]]\n\n|p10= angle: [[Number]] - (Optional)\n\n|p11= bounceOnSurface: [[Number]] - (Optional)\n|p11since= arma3 0.74\n\n|r1= [[Nothing]]\n\n|x1= <sqf>_particleSource setParticleRandom [0, [0.1, 0.1, 0.1], [0, 0, 0.5], 0, 0.1, [0, 0, 0, 0], 0, 0, 45, 0];</sqf>\n\n|seealso= [[ParticleArray]] [[setParticleCircle]] [[setParticleParams]] [[ParticleTemplates]] [[setParticleClass]] [[particlesQuality]] [[setParticleFire]]\n}}\n\n{{Note\n|user= DarkDruid\n|timestamp= 20130703153500\n|text= Support of parameter <i>bounceOnSurface</i> ([[Number]] - 0-1) is in the game since Arma 3 version 0.74. It's variability in speed's loosing in collision with ground. Requires collisions with ground enabled by script command [[setParticleParams]].\n}}"
  },
  "2057": {
   "title": "setPosASL",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Positions",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Scripting Commands: Global Effect",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 377438,
   "timestamp": "2026-01-02T06:46:46Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= ofp\n|version2= 1.99\n\n|game3= arma1\n|version3= 1.00\n\n|game4= arma2\n|version4= 1.00\n\n|game5= arma2oa\n|version5= 1.50\n\n|game6= tkoh\n|version6= 1.00\n\n|game7= arma3\n|version7= 0.50\n\n|arg= global\n\n|eff= global\n\n|gr1= Positions\n\n|descr= Sets the object position above sea level. Given position must be in [[Position#PositionASL|PositionASL]] format.\n\n|s1= object [[setPosASL]] pos\n\n|p1= object: [[Object]]\n\n|p2= pos: [[Position#PositionASL|PositionASL]]\n\n|r1= [[Nothing]]\n\n|x1= <sqf>player setPosASL [getPosASL player select 0, (getPosASL player select 1) + 10, getPosASL player select 2];</sqf>\n\n|x2= <sqf>\n_position = getPosASL _object;\n_position set [2, 10]; // 10m above sea level\n_object setPosASL _position;\n</sqf>\n\n|seealso= [[ASLToATL]] [[ATLToASL]] [[getPos]] [[getPosASL]] [[getPosATL]] [[position]] [[setPos]] [[setPosASL2]] [[setPosATL]] [[getTerrainHeightASL]] [[setPosWorld]] [[setVehiclePosition]]\n}}\n\n{{Note\n|user= Hypoxic125\n|timestamp= 20230226035906\n|text= As of Verson 2.10, if you use setPosX commands on a remote unit within a vehicle, the unit will remain in the vehicle. In order to avoid this, remoteExec the command to the remote client.\n<sqf>\nif !(isNull objectParent _unit) then {\n\t[_unit, [0,0,0]] remoteExec [\"setPosASL\", _unit];\n};\n</sqf>\n}}"
  },
  "2058": {
   "title": "setSoundEffect",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: New Scripting Commands",
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Sounds",
+   "Command Group: Triggers",
+   "Command Group: Waypoints",
+   "Introduced with Armed Assault version 1.00",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 377738,
   "timestamp": "2026-01-03T00:57:45Z",
   "wikitext": "{{RV|type=command\n\n|game1= arma1\n|version1= 1.00\n\n|game2= arma2\n|version2= 1.00\n\n|game3= arma2oa\n|version3= 1.50\n\n|game4= tkoh\n|version4= 1.00\n\n|game5= arma3\n|version5= 0.50\n\n|gr1= Sounds\n\n|gr2= Triggers\n\n|gr3= Waypoints\n\n|descr= Defines the different sound effects for a trigger or a waypoint. To stop any sound, deactivate the trigger (might take up to 0.5 seconds to stop) or delete the trigger/waypoint (immediate).\n\n|s1= trigger [[setSoundEffect]] [sound, voice, soundEnv, soundDet]\n\n|p1= trigger: [[Object]]\n\n|p2= sound: [[String]] - plays a 2D sound as if [[playSound]] was used from CfgSounds (mission or main config). Use {{hl|\"$NONE$\"}} for an empty sound\n\n|p3= voice: [[String]] - attaches a 3D sound from CfgSounds (mission or main config) to the object that activated the trigger and plays it as if [[say3D]] was used\n\n|p4= soundEnv: [[String]] - plays an environmental sound from CfgEnvSounds (mission or main config)\n\n|p5= soundDet: [[String]] - creates a dynamic sound object attached to a trigger defined in [[CfgSFX]] (mission or main config)\n\n|r1= [[Nothing]]\n\n|s2= waypoint [[setSoundEffect]] [sound, voice]\n\n|p21= waypoint: [[Waypoint]]\n\n|p22= sound: [[String]] - plays a 2D sound as if [[playSound]] was used from CfgSounds (mission or main config)\n\n|p23= voice: [[String]] - attaches a 3D sound from CfgSounds (mission or main config) to the object that activated the trigger and plays it as if [[say3D]] was used\n\n|r2= [[Nothing]]\n\n|x1= <sqf>_trigger setSoundEffect [\"Alarm\", \"\", \"\", \"\"];</sqf>\n\n|x2= <sqf>[_group1, 2] setSoundEffect [\"Alarm\", \"\"];</sqf>\n\n|x3= <sqf>_trigger setSoundEffect [\"$NONE$\", \"Alarm\", \"\", \"\"];</sqf>\n\n|x4= <sqf>_trigger setSoundEffect [\"$NONE$\", \"\", \"BattlefieldExplosions3\", \"\"];</sqf>\n\n|x5= <sqf>_trigger setSoundEffect [\"$NONE$\", \"\", \"\", \"Owl\"];</sqf>\n\n|seealso= [[createTrigger]] [[setMusicEffect]] [[setTitleEffect]]\n}}"
  },
  "2059": {
   "title": "setTargetAge",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Object Manipulation",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 363641,
   "timestamp": "2024-04-09T21:20:52Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|gr1= Object Manipulation\n\n|descr= Sets how the target is known to the other centers. They behave like the target was seen age seconds ago.\n\n|s1= object [[setTargetAge]] age\n\n|p1= object: [[Object]]\n\n|p2= age: [[String]] - can be:\n* \"ACTUAL\"\n* \"5 MIN\"\n* \"10 MIN\"\n* \"15 MIN\"\n* \"30 MIN\"\n* \"60 MIN\"\n* \"120 MIN\"\n* \"UNKNOWN\"\n\n|r1= [[Nothing]]\n\n|x1= <sqf>player setTargetAge \"10 MIN\";</sqf>\n\n|seealso= [[targets]] [[targetsQuery]] [[nearTargets]] [[targetsAggregate]] [[targetKnowledge]] [[knowsAbout]] [[reveal]] [[forgetTarget]] [[getHideFrom]]\n}}"
  },
  "2060": {
   "title": "setTitleEffect",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Triggers",
+   "Command Group: Waypoints",
+   "Introduced with Operation Flashpoint: Elite version 1.00",
+   "Operation Flashpoint: Elite: New Scripting Commands",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 377582,
   "timestamp": "2026-01-02T06:56:39Z",
   "wikitext": "{{RV|type=command\n\n|game1= ofpe\n|version1= 1.00\n\n|game2= arma1\n|version2= 1.00\n\n|game3= arma2\n|version3= 1.00\n\n|game4= arma2oa\n|version4= 1.50\n\n|game5= tkoh\n|version5= 1.00\n\n|game6= arma3\n|version6= 0.50\n\n|gr1= Triggers\n\n|gr2= Waypoints\n\n|descr= Defines the title effect to show on activation via [Type, Effect, Text] where\n\n'Type' \n\nThe title effect does not disappear on deactivation, this should be done manually if required.\n\n|s1= triggerOrWaypoint [[setTitleEffect]] [type, effect, text]\n\n|p1= triggerOrWaypoint: [[Object]] or [[Waypoint]]\n\n|p2= type: [[String]] - defines [[Title Effect Type]] when not NONE, can be one of:\n* \"NONE\"\n* \"OBJECT\" - ''text'' defines the shown object , a subclass of {{hl|CfgTitles}} (see [[cutObj]])\n* \"RES\" - ''text'' defines a resource class, a subclass of RscTitles (see [[cutRsc]])\n* \"TEXT\" - ''text'' defines text string to show (see [[cutText]])\n\n|p3= effect: [[String]]\n\n|p4= text: [[String]]\n\n|r1= [[Nothing]]\n\n|x1= <sqf>_trigger setTitleEffect [\"TEXT\", \"PLAIN DOWN\", \"Hello world.\"];</sqf>\n\n|seealso= [[createTrigger]] [[setSoundEffect]] [[setMusicEffect]]\n}}"
@@ -9087,14 +9725,34 @@
  },
  "2534": {
   "title": "rain",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: New Scripting Commands",
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Environment",
+   "Introduced with Armed Assault version 1.00",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 348549,
   "timestamp": "2023-11-08T13:10:02Z",
   "wikitext": "{{RV|type=command\n\n|game1= arma1\n|version1= 1.00\n\n|game2= arma2\n|version2= 1.00\n\n|game3= arma2oa\n|version3= 1.50\n\n|game4= tkoh\n|version4= 1.00\n\n|game5= arma3\n|version5= 0.50\n\n|gr1= Environment\n\n|descr= Returns the current value of rain density.\n\n|s1= [[rain]]\n\n|r1= [[Number]] in range 0..1\n\n|x1= <sqf>_rainLevel = rain;</sqf>\n\n|mp= Pre-{{arma3}}, each client and the server could have different rain values. Since {{arma3}} the value is synced over network.\n\n|seealso= [[setRain]] [[fog]]\n}}"
  },
  "2535": {
   "title": "rank",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: New Scripting Commands",
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Unit Identity",
+   "Introduced with Armed Assault version 1.00",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 337318,
   "timestamp": "2023-01-16T09:46:20Z",
   "wikitext": "{{RV|type=command\n\n|game1= arma1\n|version1= 1.00\n\n|game2= arma2\n|version2= 1.00\n\n|game3= arma2oa\n|version3= 1.50\n\n|game4= tkoh\n|version4= 1.00\n\n|game5= arma3\n|version5= 0.50\n\n|arg= global\n\n|gr1= Unit Identity\n\n|descr= Returns the rank of the given unit. Rank can be one of the following:\n* {{hl|\"PRIVATE\"}}\n* {{hl|\"CORPORAL\"}}\n* {{hl|\"SERGEANT\"}}\n* {{hl|\"LIEUTENANT\"}}\n* {{hl|\"CAPTAIN\"}}\n* {{hl|\"MAJOR\"}}\n* {{hl|\"COLONEL\"}}\n\n|s1= [[rank]] unit\n\n|p1= unit: [[Object]]\n\n|r1= [[String]]\n\n|x1= <sqf>_rank = rank player;</sqf>\n\n|seealso= [[rankId]] [[rating]] [[addRating]] [[setUnitRank]] [[ArmA: Rating Values|Rating Values]]\n}}"
@@ -11460,7 +12118,15 @@
   "categories": [
    "ArmA: Armed Assault: Scripting Commands",
    "Arma 2: Operation Arrowhead: Scripting Commands",
-   "Arma 2: Scripting Commands"
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Sides",
+   "Introduced with Operation Flashpoint version 1.90",
+   "Operation Flashpoint: Elite: Scripting Commands",
+   "Operation Flashpoint: New Scripting Commands",
+   "Operation Flashpoint: Scripting Commands",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
   ],
   "revid": 341626,
   "timestamp": "2023-06-12T19:02:53Z",
@@ -11468,7 +12134,17 @@
  },
  "2864": {
   "title": "sleep",
-  "categories": [],
+  "categories": [
+   "ArmA: Armed Assault: New Scripting Commands",
+   "ArmA: Armed Assault: Scripting Commands",
+   "Arma 2: Operation Arrowhead: Scripting Commands",
+   "Arma 2: Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Command Group: Program Flow",
+   "Introduced with Armed Assault version 1.00",
+   "Scripting Commands",
+   "Take On Helicopters: Scripting Commands"
+  ],
   "revid": 370495,
   "timestamp": "2024-12-26T17:40:41Z",
   "wikitext": "{{RV|type=command\n\n|game1= arma1\n|version1= 1.00\n\n|game2= arma2\n|version2= 1.00\n\n|game3= arma2oa\n|version3= 1.50\n\n|game4= tkoh\n|version4= 1.00\n\n|game5= arma3\n|version5= 0.50\n\n|gr1= Program Flow\n\n|descr= Suspends code execution for given [[time]] in seconds. The sleep precision is given by a framerate, the delay given is the minimal delay expected. Must be called inside of a context which is interruptible, i.e. a [[Script Handle|script]] executed by [[execVM]] or [[spawn]].\n{{Feature | Informative |\n* this command will suspend the code for '''''at least''''' the given amount of time, and can be way more if the [[Scheduler|script scheduler]] is busy.\n* this command will suspend the script as the game gets paused in single player (and will resume with it). To avoid this, use [[uiSleep]].\n}}\n\n|s1= [[sleep]] delay\n\n|p1= delay: [[Number]] - in seconds. Negative values will not be considered.\n\n|r1= [[Nothing]]\n\n|x1= <sqf>\n0 spawn {\n\tsleep 5;\n\thint \"after (at least) 5 seconds...\";\n};\n</sqf>\n\n|x2= <sqf>\nsleep 5 + random 10;\t// incorrect - will only sleep for 5 seconds, as it will be interpreted as (sleep 5) (+(random 10))\nsleep (5 + random 10);\t// correct\n</sqf>\n\n|seealso= [[time]] [[uiSleep]] [[waitUntil]] [[canSuspend]] [[execVM]] [[spawn]] [[sleep vs uiSleep]] [[Control Structures]]\n}}\n\n{{Note\n|user= CrashDome\n|timestamp= 20061220205300\n|text= Sleep suspends both SQF functions and SQF scripts. In functions, the calling script is still in suspension due to waiting for a return from the [[call]] command. The game engine will continue, however. See [[Function]] for more detail.\n}}\n\n{{Note\n|user= Kronzky\n|timestamp= 20070212201600\n|text= Sleep durations between .0005 and .02 will cause the same delay (roughly .02 seconds).<br>\nDelays of .0005 and less have '''no''' effect (i.e, the sleep call will return immediately).\n}}\n\n{{Note\n|user= Sbsmac\n|timestamp= 20070213223200\n|text= The comment above is a little misleading. The game engine appears to work by processing frames and then checking to see whether scripts are available to execute.\nSleep causes the script/function to be suspended until at least the specified time has elapsed.\nTo wait for the next frame, or give other scripts a chance to run, use Sleep 0.001. \n}}\n\n{{Note\n|user= Inkompetent\n|timestamp= 20070616001300\n|text= For scripts called by the [[Arma 3: Event Handlers#Init|Init Event Handler]] the first sleep command will suspend the script at the briefing screen at the start of a mission. The script will continue after the briefing screen, when actually \"in game\".\n}}"
