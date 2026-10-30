@@ -103,6 +103,7 @@
         "since": {"type": ["string", "null"]},
         "effect": {"type": ["string", "null"], "description": "Overrides the record's effect locality for this syntax."},
         "exec": {"type": ["string", "null"], "description": "Execution requirement for this syntax, e.g. server."},
+        "note": {"type": "string", "description": "Only when the wiki puts a note into the syntax field: that note as Markdown (e.g. that the syntax is obsolete)."},
         "form": {"enum": ["nullary", "unary", "binary", null], "description": "Commands only. nullary: `time`; unary: `alive unit`; binary: `unit setPos pos`. null when the wiki syntax line is irregular."},
         "operator": {"type": ["string", "null"], "description": "Commands only: the symbol for operator pages (\"!=\", \">>\", \"#\")."},
         "left": {"$ref": "#/$defs/operand", "description": "Commands only: the operand before the command (binary form)."},
@@ -196,7 +197,7 @@
         "revid": {"type": "integer"},
         "updated": {"type": ["string", "null"], "format": "date-time"},
         "aliases": {"type": "array", "items": {"type": "string"}, "description": "Wiki titles that redirect here, e.g. PositionAGL for Position."},
-        "groups": {"type": "array", "items": {"enum": ["Data Types", "Event Handlers", "Scripting", "GUI", "Multiplayer and Server", "Mission Editing", "Tools and File Formats", "Reference Lists", "Configuration", "General"]}},
+        "groups": {"type": "array", "items": {"enum": ["Data Types", "Event Handlers", "Scripting", "GUI", "Multiplayer and Server", "Mission Editing", "Tools and File Formats", "Reference Lists", "Configuration", "Change Logs", "Modding", "Game and Troubleshooting", "General"]}},
         "markdown": {"$ref": "#/$defs/markdown", "description": "The whole page."},
         "sections": {
           "type": "array",
