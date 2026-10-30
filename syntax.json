@@ -713,8 +713,8 @@
 ],
 "status": "ok",
 "syntax": [
-"unitName addMagazine magazineName Local argumentGlobal effect",
-"unitName addMagazine [magazineName, ammoCount] Arma 2: Operation Arrowhead v1.62 Local argumentGlobal effect Arma 3 v1.00 Global argumentGlobal effect"
+"unitName addMagazine magazineName",
+"unitName addMagazine [magazineName, ammoCount]"
 ]
 },
 "addmagazineammocargo": {
@@ -15229,7 +15229,7 @@
 "status": "ok",
 "syntax": [
 "local object",
-"local variable = value From Arma 2 v1.00 until Arma 3 v1.54 - see private for later versions"
+"local variable = value"
 ]
 },
 "localize": {
@@ -17877,7 +17877,7 @@
 "syntax": [
 "private variableName",
 "private variableNameList",
-"private _identifier = value From Arma 2 v1.00 to Arma 3 v1.52: see local"
+"private _identifier = value"
 ]
 },
 "privateall": {

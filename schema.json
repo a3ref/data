@@ -9,7 +9,7 @@
     "types": {
       "type": "array",
       "items": {"type": "string"},
-      "description": "Data types linked in the wiki text, e.g. [\"Array\", \"String\"] for \"Array of Strings\". Each has a topic page (topics/<type>.md) when mirrored. Empty when the wiki describes the type in free text.",
+      "description": "Data types in the type position of the wiki text (not links in notes or prose after it), e.g. [\"Array\", \"String\"] for \"Array of Strings\". Each has a topic page (topics/<type>.md) when mirrored. Empty when the wiki describes the type in free text.",
       "examples": [["Object"], ["Array", "Position"]]
     },
     "typeExpr": {
@@ -51,6 +51,7 @@
         "default": {"type": ["string", "null"], "description": "Default value as written on the wiki, may contain Markdown code."},
         "description": {"anyOf": [{"$ref": "#/$defs/markdown"}, {"type": "null"}]},
         "since": {"type": ["string", "null"], "description": "Game and version that added this parameter, e.g. \"arma3 2.10\"."},
+        "optional_since": {"type": "string", "description": "Only when the wiki writes \"(Optional since 2.20, ...)\": the game and version from which an existing parameter may be left out, e.g. \"arma3 2.20\". Older versions require it.", "examples": ["arma3 2.20"]},
         "text": {"$ref": "#/$defs/markdown", "description": "The complete original parameter text; use it when the split fields are not enough."},
         "source": {"const": "docblock", "description": "Present when the parameter comes from the function header comment, not the wiki fields."}
       }
