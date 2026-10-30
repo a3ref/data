@@ -713,8 +713,8 @@
 ],
 "status": "ok",
 "syntax": [
-"unitName addMagazine magazineName Local ArgumentGlobal Effect",
-"unitName addMagazine [magazineName, ammoCount] Arma 2: Operation Arrowhead v1.62 Local ArgumentGlobal Effect Arma 3 v1.00 Global ArgumentGlobal Effect"
+"unitName addMagazine magazineName Local argumentGlobal effect",
+"unitName addMagazine [magazineName, ammoCount] Arma 2: Operation Arrowhead v1.62 Local argumentGlobal effect Arma 3 v1.00 Global argumentGlobal effect"
 ]
 },
 "addmagazineammocargo": {
