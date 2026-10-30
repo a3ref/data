@@ -19,7 +19,7 @@ agents with MCP can use **[a3ref/mcp](https://github.com/a3ref/mcp)** (search, p
 | `topics.json` (1 MB) | concept pages (data types, Position, Multiplayer Scripting, event handler lists, Description.ext, ...) as Markdown split into sections |
 | `syntax.json` (0.5 MB) | compact lookup for linters: forms (nullary/unary/binary), status, replacements and syntax lines of every name |
 | `schema.json` | JSON Schema 2020-12 of all of the above |
-| `raw/*.json` | source wikitext of each page with its revision id, keyed by page id |
+| `raw/*.json` | source wikitext of each page with its revision id, keyed by page id: `commands.json`, `functions.json`, `topics.json`, and `templates.json`, the wiki templates those pages transclude, which the build renders them with |
 
 The bundles are `{"updated": ..., "count": ..., "items": [...]}` with one item per line, so diffs stay readable.
 `updated` is the time of the newest wiki edit in the data, not the build time: a file only changes when the wiki does,
