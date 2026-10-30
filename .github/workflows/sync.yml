@@ -47,8 +47,9 @@ jobs:
       # The wiki is behind a Cloudflare challenge: run the real Chrome preinstalled on the runner in a virtual display.
       - working-directory: .tool
         run: xvfb-run --auto-servernum python -m biwiki --raw "$GITHUB_WORKSPACE/raw" sync ${{ inputs.full && '--full' || '' }} ${{ (inputs.walk || github.event.schedule == '17 10 * * 0') && '--walk' || '' }}
+      # The JSON is all this build is for: no preview images (the site's own deploy draws them).
       - working-directory: .tool
-        run: python -m biwiki --raw "$GITHUB_WORKSPACE/raw" --dataset "$GITHUB_WORKSPACE" --out "$RUNNER_TEMP/out" build
+        run: python -m biwiki --raw "$GITHUB_WORKSPACE/raw" --dataset "$GITHUB_WORKSPACE" --out "$RUNNER_TEMP/out" build --no-og-images
       - run: |
           git add raw commands.json functions.json topics.json index.json syntax.json schema.json
           if git diff --cached --quiet; then
