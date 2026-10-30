@@ -1,16 +1,23 @@
 # Twice a day: pull pages edited on the BI wiki since the last run, re-parse them and commit the result.
 # The code lives in a3ref/a3ref.github.io; that repository deploys the site once this data changes.
 # GitHub may delay or drop scheduled runs under load, so there are two; a sync with no wiki edits commits nothing.
+# Those runs read only the wiki's recent changes; once a week a walk lists every member page, which also catches
+# pages that join or leave a category through a template.
 name: Sync from wiki
 
 on:
   schedule:
     - cron: "17 4 * * *"
     - cron: "17 16 * * *"
+    - cron: "17 10 * * 0"  # the weekly walk; keep in step with the sync step below
   workflow_dispatch:
     inputs:
       full:
         description: "Re-download every page instead of only the changed ones"
+        type: boolean
+        default: false
+      walk:
+        description: "List every member page instead of reading only the wiki's recent changes"
         type: boolean
         default: false
 
@@ -38,7 +45,7 @@ jobs:
       - run: sudo apt-get install -y xvfb
       # The wiki is behind a Cloudflare challenge: run the real Chrome preinstalled on the runner in a virtual display.
       - working-directory: .tool
-        run: xvfb-run --auto-servernum python -m biwiki --raw "$GITHUB_WORKSPACE/raw" sync ${{ inputs.full && '--full' || '' }}
+        run: xvfb-run --auto-servernum python -m biwiki --raw "$GITHUB_WORKSPACE/raw" sync ${{ inputs.full && '--full' || '' }} ${{ (inputs.walk || github.event.schedule == '17 10 * * 0') && '--walk' || '' }}
       - working-directory: .tool
         run: python -m biwiki --raw "$GITHUB_WORKSPACE/raw" --dataset "$GITHUB_WORKSPACE" --out "$RUNNER_TEMP/out" build
       - run: |
