@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-31T00:12:47Z",
+"updated": "2026-10-31T00:52:10Z",
 "commands": {
 "!": {
 "name": "! a",
@@ -5138,12 +5138,10 @@
 "ctrlsetdisabledcolor": {
 "name": "ctrlSetDisabledColor",
 "forms": [
-"binary",
-"unary"
+"binary"
 ],
 "status": "ok",
 "syntax": [
-"ctrlSetDisabledColor [idc, color]",
 "ctrl ctrlSetDisabledColor color"
 ]
 },
@@ -14214,24 +14212,20 @@
 "lbsetpicturerightcolor": {
 "name": "lbSetPictureRightColor",
 "forms": [
-"binary",
-"unary"
+"binary"
 ],
 "status": "ok",
 "syntax": [
-"lbSetPictureRightColor [idc, index, color]",
 "control lbSetPictureRightColor [index, color]"
 ]
 },
 "lbsetpicturerightcolordisabled": {
 "name": "lbSetPictureRightColorDisabled",
 "forms": [
-"binary",
-"unary"
+"binary"
 ],
 "status": "ok",
 "syntax": [
-"lbSetPictureRightColorDisabled [idc, index, color]",
 "control lbSetPictureRightColorDisabled [index, color]"
 ]
 },
@@ -25585,12 +25579,10 @@
 "tvsetcolor": {
 "name": "tvSetColor",
 "forms": [
-"binary",
-"unary"
+"binary"
 ],
 "status": "ok",
 "syntax": [
-"tvSetColor [idc, path, color]",
 "control tvSetColor [path, color]"
 ]
 },

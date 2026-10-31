@@ -28,9 +28,9 @@
    "Introduced with Arma 2 version 1.00",
    "Take On Helicopters: Functions"
   ],
-  "revid": 348808,
-  "timestamp": "2023-11-08T14:38:16Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Systems\n\n|arg=\n\n|eff=\n\n|descr= Creates or registers location logics (used in various modules, like [[Ambient Civilians]], [[Ambient Civilian Vehicles]] or Warfare 2).\n\nUpon registering, function will set following variables into location logic's variable space:\n* \"class\" - unique class of location (either {{hl|BIS_loc_<configname>}} or {{hl|BIS_loc_custom_<ID>}})\n* \"name\" - name of location from config or [[setName]] command. If none is defined, class is used\n* \"type\" - config type\n* \"neighbors\" - config defined neighbor locations\n\nIf you are registering currently existing object and some of variables above is already stored in it, it will '''not''' be replaced.\n\n|s1= [types, area, debug] call [[BIS_fnc_locations]]\n\n|p1= types: [[String]] or [[Array]] of [[String]]s\n\n|p2= area: [[Array]] in format [center, distance]\n\n|p3= debug: [[Boolean]] (Optional)\n\n|r1= [[Array]] - list of registered locations\n\n|s2= [objects] call [[BIS_fnc_locations]]\n\n|p21= objects: Array of [[Object]]s or [[Location]]s - list of specific locations to be registered\n\n|r2= [[Array]] - list of registered locations\n \n|x1= <sqf>[\"CityCenter\", [getPosATL player, 1000]] call BIS_fnc_locations;</sqf>\n\n|x2= <sqf>[[\"acityc_dolina\"]] call BIS_fnc_locations;</sqf>\n\n|x3= <sqf>[[myLocation1, myLocation2], [], true] call BIS_fnc_locations;</sqf>\n\n|seealso= [[Functions Library]]\n}}\n\n{{Note\n|user= Str\n|timestamp= 20090531151500\n|text= You can also use <sqf inline>\"\" call BIS_fnc_locations</sqf> for quick debug of all locations on landscape\n}}"
+  "revid": 379501,
+  "timestamp": "2026-10-31T00:27:10Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Systems\n\n|arg=\n\n|eff=\n\n|descr= Creates or registers location logics (used in various modules, like [[Ambient Civilians]], [[Ambient Civilian Vehicles]] or Warfare 2).\n\nUpon registering, function will set following variables into location logic's variable space:\n* \"class\" - unique class of location (either {{hl|BIS_loc_<configname>}} or {{hl|BIS_loc_custom_<ID>}})\n* \"name\" - name of location from config or [[setName]] command. If none is defined, class is used\n* \"type\" - config type\n* \"neighbors\" - config defined neighbor locations\n\nIf you are registering currently existing object and some of variables above is already stored in it, it will '''not''' be replaced.\n\n|s1= [types, area, debug] call [[BIS_fnc_locations]]\n\n|p1= types: [[String]] or [[Array]] of [[String]]s\n\n|p2= area: [[Array]] in format [center, distance]\n\n|p3= debug: [[Boolean]] (Optional)\n\n|r1= [[Array]] - list of registered locations\n\n|s2= [objects] call [[BIS_fnc_locations]]\n\n|p21= objects: [[Array]] of [[Object]]s or [[Location]]s - list of specific locations to be registered\n\n|r2= [[Array]] - list of registered locations\n \n|x1= <sqf>[\"CityCenter\", [getPosATL player, 1000]] call BIS_fnc_locations;</sqf>\n\n|x2= <sqf>[[\"acityc_dolina\"]] call BIS_fnc_locations;</sqf>\n\n|x3= <sqf>[[myLocation1, myLocation2], [], true] call BIS_fnc_locations;</sqf>\n\n|seealso= [[Functions Library]]\n}}\n\n{{Note\n|user= Str\n|timestamp= 20090531151500\n|text= You can also use <sqf inline>\"\" call BIS_fnc_locations</sqf> for quick debug of all locations on landscape\n}}"
  },
  "9122": {
   "title": "BIS fnc taskDefend",
@@ -60,9 +60,9 @@
    "Introduced with Arma 2 version 1.00",
    "Take On Helicopters: Functions"
   ],
-  "revid": 364486,
-  "timestamp": "2024-05-16T20:41:57Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Tasks\n\n|arg=\n\n|eff=\n\n|descr= Create a random patrol of several [[Waypoint|waypoints]] around a given [[position]].\n{{Feature|informative|In {{arma2}}, the [[Functions Library|Functions Module]] is required.}}\n\n|s1= [group, position, distance, blacklist] call [[BIS_fnc_taskPatrol]]\n\n|p1= group: [[Group]] - the [[group]] to patrol\n\n|p2= position: [[Position]] - the [[position]] on which to base the patrol\n\n|p3= distance: [[Number]] - maximum [[distance]] between waypoints in meters\n\n|p4= blacklist: [[Array]] - (optional) blacklist of areas\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[group _unit, getPos _unit, 1000] call BIS_fnc_taskPatrol;</sqf>\n\n|seealso= [[Functions Library]] [[BIS_fnc_taskAttack]] [[BIS_fnc_taskDefend]]\n}}"
+  "revid": 379512,
+  "timestamp": "2026-10-31T00:28:37Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Tasks\n\n|arg=\n\n|eff=\n\n|descr= Create a random patrol of several [[Waypoint|waypoints]] around a given [[position]].\n{{Feature|informative|In {{arma2}}, the [[Functions Library|Functions Module]] is required.}}\n\n|s1= [group, position, distance, blacklist] call [[BIS_fnc_taskPatrol]]\n\n|p1= group: [[Group]] - the [[group]] to patrol\n\n|p2= position: [[Position]] - the [[position]] on which to base the patrol\n\n|p3= distance: [[Number]] - maximum [[distance]] between waypoints in meters\n\n|p4= blacklist: [[Array]] - (Optional) blacklist of areas\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[group _unit, getPos _unit, 1000] call BIS_fnc_taskPatrol;</sqf>\n\n|seealso= [[Functions Library]] [[BIS_fnc_taskAttack]] [[BIS_fnc_taskDefend]]\n}}"
  },
  "9169": {
   "title": "BIS fnc spawnVehicle",
@@ -751,9 +751,9 @@
    "Introduced with Arma 2 version 1.00",
    "Take On Helicopters: Functions"
   ],
-  "revid": 327400,
-  "timestamp": "2022-07-12T22:11:58Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Diagnostic\n\n|descr= Can be used to recompile functions.\n{{Feature|informative|As a security measure, functions are by default protected against rewriting during the mission. This restriction does '''not''' apply to:\n* missions previewed from the editor\n* missions with the following attribute in [[Description.ext]]: <syntaxhighlight lang=\"cpp\">allowFunctionsRecompile = 1;</syntaxhighlight>\n}}\n\n|s1= [mode] call [[BIS_fnc_recompile]]\n\n|p1= mode (Optional, default 0):\n* [[String]] - name of the function to be recompiled\n* [[Number]] - can be:\n** 0 - Autodetect what compile type should be used\n** 1 - Forced recompile of all the things\n** 2 - Create only uiNamespace variables (used in UI)\n** 3 - Create missionNamespace variables and initialize mission\n** 4 - Create only missionNamespace variables\n** 5 - Recompile all functions, and initialize mission (used for editor preview with function recompile)\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[] call BIS_fnc_recompile;</sqf>\n\n|x2= <sqf>[3] call BIS_fnc_recompile;</sqf>\n\n|x3= <sqf>[\"BIS_fnc_spawnVehicle\"] call BIS_fnc_recompile;</sqf>\n\n|seealso= [[compile]] [[compileFinal]]\n}}"
+  "revid": 379508,
+  "timestamp": "2026-10-31T00:28:06Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Diagnostic\n\n|descr= Can be used to recompile functions.\n{{Feature|informative|As a security measure, functions are by default protected against rewriting during the mission. This restriction does '''not''' apply to:\n* missions previewed from the editor\n* missions with the following attribute in [[Description.ext]]: <syntaxhighlight lang=\"cpp\">allowFunctionsRecompile = 1;</syntaxhighlight>\n}}\n\n|s1= [mode] call [[BIS_fnc_recompile]]\n\n|p1= mode: [[String]] or [[Number]] - (Optional, default 0)\n* [[String]] - name of the function to be recompiled\n* [[Number]] - can be:\n** 0 - Autodetect what compile type should be used\n** 1 - Forced recompile of all the things\n** 2 - Create only uiNamespace variables (used in UI)\n** 3 - Create missionNamespace variables and initialize mission\n** 4 - Create only missionNamespace variables\n** 5 - Recompile all functions, and initialize mission (used for editor preview with function recompile)\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[] call BIS_fnc_recompile;</sqf>\n\n|x2= <sqf>[3] call BIS_fnc_recompile;</sqf>\n\n|x3= <sqf>[\"BIS_fnc_spawnVehicle\"] call BIS_fnc_recompile;</sqf>\n\n|seealso= [[compile]] [[compileFinal]]\n}}"
  },
  "12773": {
   "title": "BIS fnc sideName",
@@ -790,9 +790,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.16"
   ],
-  "revid": 327104,
-  "timestamp": "2022-07-12T21:44:50Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= Diagnostic\n\n|descr= Export list of objects for Community Wiki ([[:Category:Arma_3:_Assets|Assets]]).\n\n|s1= [mode,sides,classes,useAI] call [[BIS_fnc_exportCfgVehicles]]\n\n|p1= mode: [[String]] - mode, can be one of:\n* \"config\" - copy the objects table to clipboard\n* \"screenshots\" - create objects one by one and take their screenshot. Works only on \"[[Render_Worlds|Render]]\" terrain.\n* \"screenshotsTest\" - create objects one by one without taking screen (to verify everything is ok)\n\n|p2= sides: [[Array]] of [[Side]]s - only objects of these sides will be used\n\n|p3= classes: [[Array]]of [[String]]s- list of CfgPatches classes. Only objects belonging to these addons will be used\n\n|p4= useAI: [[Boolean]] - true to use only AI units (soldiers, vehicles), false to use empty ones\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[] call BIS_fnc_exportCfgVehicles;</sqf>\n\n|x2= <sqf>[\"config\", [3], [\"A3_Characters_F_Beta\",\"A3_Characters_F_EPA\",\"A3_Characters_F_EPB\"], true] call BIS_fnc_exportCfgVehicles;</sqf>\n\n|seealso=\n}}"
+  "revid": 379496,
+  "timestamp": "2026-10-31T00:26:30Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= Diagnostic\n\n|descr= Export list of objects for Community Wiki ([[:Category:Arma_3:_Assets|Assets]]).\n\n|s1= [mode,sides,classes,useAI] call [[BIS_fnc_exportCfgVehicles]]\n\n|p1= mode: [[String]] - mode, can be one of:\n* \"config\" - copy the objects table to clipboard\n* \"screenshots\" - create objects one by one and take their screenshot. Works only on \"[[Render_Worlds|Render]]\" terrain.\n* \"screenshotsTest\" - create objects one by one without taking screen (to verify everything is ok)\n\n|p2= sides: [[Array]] of [[Side]]s - only objects of these sides will be used\n\n|p3= classes: [[Array]] of [[String]]s - list of CfgPatches classes. Only objects belonging to these addons will be used\n\n|p4= useAI: [[Boolean]] - true to use only AI units (soldiers, vehicles), false to use empty ones\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[] call BIS_fnc_exportCfgVehicles;</sqf>\n\n|x2= <sqf>[\"config\", [3], [\"A3_Characters_F_Beta\",\"A3_Characters_F_EPA\",\"A3_Characters_F_EPB\"], true] call BIS_fnc_exportCfgVehicles;</sqf>\n\n|seealso=\n}}"
  },
  "15040": {
   "title": "BIS fnc loop",
@@ -1199,9 +1199,9 @@
    "Introduced with Arma 2 version 1.00",
    "Take On Helicopters: Functions"
   ],
-  "revid": 349391,
-  "timestamp": "2023-11-08T16:27:25Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Arrays\n\n|descr= Searches an array for a specific value and returns its index.\n\n|s1= [array,value] call [[BIS_fnc_arrayFindDeep]]\n\n|p1= array: [[Array]] - array to be searched\n\n|p2= value [[Anything]] - value to be searched for\n\n|r1= [[Array]] - returns array with index of found element, if it was not found it returns -1\n\n|x1= <sqf>[[1,2,3,4,5], 3] call BIS_fnc_arrayFindDeep;//Returns [2]</sqf>\n\n|seealso= [[BIS_fnc_addToPairs]] [[find]] [[select]] [[BIS_fnc_removeIndex]]\n}}"
+  "revid": 379490,
+  "timestamp": "2026-10-31T00:25:42Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Arrays\n\n|descr= Searches an array for a specific value and returns its index.\n\n|s1= [array,value] call [[BIS_fnc_arrayFindDeep]]\n\n|p1= array: [[Array]] - array to be searched\n\n|p2= value: [[Anything]] - value to be searched for\n\n|r1= [[Array]] - returns array with index of found element, if it was not found it returns -1\n\n|x1= <sqf>[[1,2,3,4,5], 3] call BIS_fnc_arrayFindDeep;//Returns [2]</sqf>\n\n|seealso= [[BIS_fnc_addToPairs]] [[find]] [[select]] [[BIS_fnc_removeIndex]]\n}}"
  },
  "15636": {
   "title": "BIS fnc conditionalSelect",
@@ -1598,9 +1598,9 @@
    "Introduced with Arma 2 version 1.00",
    "Take On Helicopters: Functions"
   ],
-  "revid": 327746,
-  "timestamp": "2022-07-13T11:00:20Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Sides\n\n|descr= Gets list and sides of current factions.\n\n|s1= [parameter] call [[BIS_fnc_getFactions]]\n\n|p1= parameter:\n* [[Nothing]] or empty [[Array]] - returns all factions\n* [[Object]] - returns index of the object side\n* [[Array]] - [[side]] of the first element is returned, others are ignored\n\n|r1=\n* [[Array]] of [[String]]s\n* [[Array]] of [[Side]]s\n* [[Number]] - an index\n\n|x1= <sqf>call BIS_fnc_getFactions; // returns all factions</sqf>\n\n|x2= <sqf>[] call BIS_fnc_getFactions; // same as Example 1</sqf>\n\n|x3= <sqf>[player] call BIS_fnc_getFactions; // returns index of player's faction</sqf>\n\n|x4= <sqf>[\"BLU_F\"] call BIS_fnc_getFactions; // returns index of given faction</sqf>\n\n|x5= <sqf>[[]] call BIS_fnc_getFactions; // will return all faction sides</sqf>\n\n|x6= <sqf>[[player]] call BIS_fnc_getFactions; // will return player's side</sqf>\n\n|seealso= [[faction]] [[side]]\n}}"
+  "revid": 379498,
+  "timestamp": "2026-10-31T00:26:46Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma2\n|version1= 1.00\n\n|game2= arma2oa\n|version2= 1.50\n\n|game3= tkoh\n|version3= 1.00\n\n|game4= arma3\n|version4= 0.50\n\n|gr1= Sides\n\n|descr= Gets list and sides of current factions.\n\n|s1= [parameter] call [[BIS_fnc_getFactions]]\n\n|p1= parameter: [[Nothing]], [[Object]] or [[Array]]\n* [[Nothing]] or empty [[Array]] - returns all factions\n* [[Object]] - returns index of the object side\n* [[Array]] - [[side]] of the first element is returned, others are ignored\n\n|r1=\n* [[Array]] of [[String]]s\n* [[Array]] of [[Side]]s\n* [[Number]] - an index\n\n|x1= <sqf>call BIS_fnc_getFactions; // returns all factions</sqf>\n\n|x2= <sqf>[] call BIS_fnc_getFactions; // same as Example 1</sqf>\n\n|x3= <sqf>[player] call BIS_fnc_getFactions; // returns index of player's faction</sqf>\n\n|x4= <sqf>[\"BLU_F\"] call BIS_fnc_getFactions; // returns index of given faction</sqf>\n\n|x5= <sqf>[[]] call BIS_fnc_getFactions; // will return all faction sides</sqf>\n\n|x6= <sqf>[[player]] call BIS_fnc_getFactions; // will return player's side</sqf>\n\n|seealso= [[faction]] [[side]]\n}}"
  },
  "15661": {
   "title": "BIS fnc inTrigger",
@@ -3295,9 +3295,9 @@
    "Take On Helicopters: Functions",
    "Take On Helicopters: New Functions"
   ],
-  "revid": 328437,
-  "timestamp": "2022-07-13T16:00:51Z",
-  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Database\n\n|descr= Checks if string is class definition.\n\n|s1= text call [[BIS_fnc_dbIsClass]]\n\n|p1= text - [[String]]: Check if text is in class format\n\n|r1= [[Boolean]]: true when the argument starts with \"#\" (class symbol returned with [[BIS_fnc_dbSymbolClass]])\n\n|x1= <sqf>\"#MYCLASS\" call BIS_fnc_dbIsClass; // true\n\"#myclass\" call BIS_fnc_dbIsClass; // true\n\"MYCLASS\" call BIS_fnc_dbIsClass; // false\n1234 call BIS_fnc_dbIsClass; // false</sqf>\n\n|seealso= [[:Category:Function Group: Database|Database functions]] [[BIS_fnc_dbClassCheck]] [[BIS_fnc_dbClassId]] [[BIS_fnc_dbClassIndex]] [[BIS_fnc_dbClassList]] [[BIS_fnc_dbClassRemove]] [[BIS_fnc_dbClassReturn]] [[BIS_fnc_dbClassSet]] [[BIS_fnc_dbConfigPath]] [[BIS_fnc_dbImportConfig]] [[BIS_fnc_dbImportXML]] [[BIS_fnc_dbIsValue]] [[BIS_fnc_dbPrint]][[BIS_fnc_dbSymbolClass]] [[BIS_fnc_dbSymbolValue]] [[BIS_fnc_dbValueCheck]] [[BIS_fnc_dbValueId]] [[BIS_fnc_dbValueIndex]] [[BIS_fnc_dbValueList]] [[BIS_fnc_dbValueRemove]] [[BIS_fnc_dbValueReturn]] [[BIS_fnc_dbValueSet]]\n}}"
+  "revid": 379492,
+  "timestamp": "2026-10-31T00:25:58Z",
+  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Database\n\n|descr= Checks if string is class definition.\n\n|s1= text call [[BIS_fnc_dbIsClass]]\n\n|p1= text: [[String]] - Check if text is in class format\n\n|r1= [[Boolean]] - true when the argument starts with \"#\" (class symbol returned with [[BIS_fnc_dbSymbolClass]])\n\n|x1= <sqf>\"#MYCLASS\" call BIS_fnc_dbIsClass; // true\n\"#myclass\" call BIS_fnc_dbIsClass; // true\n\"MYCLASS\" call BIS_fnc_dbIsClass; // false\n1234 call BIS_fnc_dbIsClass; // false</sqf>\n\n|seealso= [[:Category:Function Group: Database|Database functions]] [[BIS_fnc_dbClassCheck]] [[BIS_fnc_dbClassId]] [[BIS_fnc_dbClassIndex]] [[BIS_fnc_dbClassList]] [[BIS_fnc_dbClassRemove]] [[BIS_fnc_dbClassReturn]] [[BIS_fnc_dbClassSet]] [[BIS_fnc_dbConfigPath]] [[BIS_fnc_dbImportConfig]] [[BIS_fnc_dbImportXML]] [[BIS_fnc_dbIsValue]] [[BIS_fnc_dbPrint]][[BIS_fnc_dbSymbolClass]] [[BIS_fnc_dbSymbolValue]] [[BIS_fnc_dbValueCheck]] [[BIS_fnc_dbValueId]] [[BIS_fnc_dbValueIndex]] [[BIS_fnc_dbValueList]] [[BIS_fnc_dbValueRemove]] [[BIS_fnc_dbValueReturn]] [[BIS_fnc_dbValueSet]]\n}}"
  },
  "15773": {
   "title": "BIS fnc dbIsValue",
@@ -3309,9 +3309,9 @@
    "Take On Helicopters: Functions",
    "Take On Helicopters: New Functions"
   ],
-  "revid": 328377,
-  "timestamp": "2022-07-13T16:00:48Z",
-  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Database\n\n|descr= Checks if string is value definition.\n\n|s1= text call [[BIS_fnc_dbIsValue]]\n\n|p1= text - [[String]]: Check if text is in value format\n\n|r1= [[Boolean]]: [[true]] when the argument starts with \"&amp;\" (value symbol returned with [[BIS_fnc_dbSymbolValue]])\n\n|x1= <sqf>\"&MYVALUE\" call BIS_fnc_dbIsValue; // true\n\"&myvalue\" call BIS_fnc_dbIsValue; // true\n\"MYVALUE\" call BIS_fnc_dbIsValue; // false\n1234 call BIS_fnc_dbIsValue; // false</sqf>\n\n|seealso= [[:Category:Function Group: Database|Database functions]] [[BIS_fnc_dbClassCheck]] [[BIS_fnc_dbClassId]] [[BIS_fnc_dbClassIndex]] [[BIS_fnc_dbClassList]] [[BIS_fnc_dbClassRemove]] [[BIS_fnc_dbClassReturn]] [[BIS_fnc_dbClassSet]] [[BIS_fnc_dbConfigPath]] [[BIS_fnc_dbImportConfig]] [[BIS_fnc_dbImportXML]] [[BIS_fnc_dbIsClass]] [[BIS_fnc_dbPrint]][[BIS_fnc_dbSymbolClass]] [[BIS_fnc_dbSymbolValue]] [[BIS_fnc_dbValueCheck]] [[BIS_fnc_dbValueId]] [[BIS_fnc_dbValueIndex]] [[BIS_fnc_dbValueList]] [[BIS_fnc_dbValueRemove]] [[BIS_fnc_dbValueReturn]] [[BIS_fnc_dbValueSet]]\n}}"
+  "revid": 379493,
+  "timestamp": "2026-10-31T00:26:06Z",
+  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Database\n\n|descr= Checks if string is value definition.\n\n|s1= text call [[BIS_fnc_dbIsValue]]\n\n|p1= text: [[String]] - Check if text is in value format\n\n|r1= [[Boolean]] - [[true]] when the argument starts with \"&amp;\" (value symbol returned with [[BIS_fnc_dbSymbolValue]])\n\n|x1= <sqf>\"&MYVALUE\" call BIS_fnc_dbIsValue; // true\n\"&myvalue\" call BIS_fnc_dbIsValue; // true\n\"MYVALUE\" call BIS_fnc_dbIsValue; // false\n1234 call BIS_fnc_dbIsValue; // false</sqf>\n\n|seealso= [[:Category:Function Group: Database|Database functions]] [[BIS_fnc_dbClassCheck]] [[BIS_fnc_dbClassId]] [[BIS_fnc_dbClassIndex]] [[BIS_fnc_dbClassList]] [[BIS_fnc_dbClassRemove]] [[BIS_fnc_dbClassReturn]] [[BIS_fnc_dbClassSet]] [[BIS_fnc_dbConfigPath]] [[BIS_fnc_dbImportConfig]] [[BIS_fnc_dbImportXML]] [[BIS_fnc_dbIsClass]] [[BIS_fnc_dbPrint]][[BIS_fnc_dbSymbolClass]] [[BIS_fnc_dbSymbolValue]] [[BIS_fnc_dbValueCheck]] [[BIS_fnc_dbValueId]] [[BIS_fnc_dbValueIndex]] [[BIS_fnc_dbValueList]] [[BIS_fnc_dbValueRemove]] [[BIS_fnc_dbValueReturn]] [[BIS_fnc_dbValueSet]]\n}}"
  },
  "15774": {
   "title": "BIS fnc dbClassId",
@@ -4162,9 +4162,9 @@
    "Take On Helicopters: Functions",
    "Take On Helicopters: New Functions"
   ],
-  "revid": 328874,
-  "timestamp": "2022-07-15T17:37:41Z",
-  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Map and Markers\n\n|eff= local\n\n|descr= Creates (or returns if it already exists) trigger with size of map.\n\n|s1= call [[BIS_fnc_worldArea]]\n\n|r1= [[Object]]: a [[Trigger|trigger]] covering the whole ''defined'' terrain. Referenced by '''hsim_worldArea''' variable\n\n|x1= <sqf>private _bigTrigger = call BIS_fnc_worldArea;</sqf>\n\n|seealso= [[worldSize]] [[2D Editor: Triggers]] [[Eden Editor: Trigger]] [[createTrigger]]\n}}"
+  "revid": 379515,
+  "timestamp": "2026-10-31T00:29:01Z",
+  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Map and Markers\n\n|eff= local\n\n|descr= Creates (or returns if it already exists) trigger with size of map.\n\n|s1= call [[BIS_fnc_worldArea]]\n\n|r1= [[Object]] - a [[Trigger|trigger]] covering the whole ''defined'' terrain. Referenced by '''hsim_worldArea''' variable\n\n|x1= <sqf>private _bigTrigger = call BIS_fnc_worldArea;</sqf>\n\n|seealso= [[worldSize]] [[2D Editor: Triggers]] [[Eden Editor: Trigger]] [[createTrigger]]\n}}"
  },
  "15837": {
   "title": "BIS fnc randomPos",
@@ -4190,9 +4190,9 @@
    "Take On Helicopters: Functions",
    "Take On Helicopters: New Functions"
   ],
-  "revid": 376281,
-  "timestamp": "2025-09-24T15:32:14Z",
-  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Map and Markers\n\n|descr= Selects random position within trigger, marker, location area or area defined by array\n\n|s1= param call [[BIS_fnc_randomPosTrigger]]\n\n|p1= param: can be one of:\n* [[Object]] - trigger\n* [[String]] - marker\n* [[Location]] - location\n* [[Array]] - array in format [center, distance] or [center, [a, b, angle, rect]] or [center, [a, b, angle, rect, height]]\n\n{{Feature|informative|Be aware that the {{hl|height}} value is ignored.}}\n\n|r1= [[Array]] - random position in format [x,y,z]\n\n|x1= <sqf>marker1 call BIS_fnc_randomPosTrigger;</sqf>\n\n|seealso= [[BIS_fnc_findSafePos]]\n}}"
+  "revid": 379507,
+  "timestamp": "2026-10-31T00:27:58Z",
+  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= Map and Markers\n\n|descr= Selects random position within trigger, marker, location area or area defined by array\n\n|s1= param call [[BIS_fnc_randomPosTrigger]]\n\n|p1= param: [[Object]], [[String]], [[Location]] or [[Array]]\n* [[Object]] - trigger\n* [[String]] - marker\n* [[Location]] - location\n* [[Array]] - array in format [center, distance] or [center, [a, b, angle, rect]] or [center, [a, b, angle, rect, height]]\n\n{{Feature|informative|Be aware that the {{hl|height}} value is ignored.}}\n\n|r1= [[Array]] - random position in format [x,y,z]\n\n|x1= <sqf>marker1 call BIS_fnc_randomPosTrigger;</sqf>\n\n|seealso= [[BIS_fnc_findSafePos]]\n}}"
  },
  "15839": {
   "title": "BIS fnc markerCreate",
@@ -4848,9 +4848,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 326899,
-  "timestamp": "2022-07-12T21:44:37Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Combat\n\n|descr= Return list of nearby enemy targets for given unit.\n\n|s1= unit call [[BIS_fnc_enemyTargets]]\n\n|p1= unit - [[Object]]: unit that is inspected\n\n|r1= [[Array]] of enemies, empty if unit doesn't know about any enemy\n\n|x1= <sqf>private _targets = _unit call BIS_fnc_enemyTargets;</sqf>\n\n|seealso= [[BIS_fnc_enemyDetected]]\n}}"
+  "revid": 379495,
+  "timestamp": "2026-10-31T00:26:22Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Combat\n\n|descr= Return list of nearby enemy targets for given unit.\n\n|s1= unit call [[BIS_fnc_enemyTargets]]\n\n|p1= unit: [[Object]] - unit that is inspected\n\n|r1= [[Array]] of enemies, empty if unit doesn't know about any enemy\n\n|x1= <sqf>private _targets = _unit call BIS_fnc_enemyTargets;</sqf>\n\n|seealso= [[BIS_fnc_enemyDetected]]\n}}"
  },
  "15889": {
   "title": "BIS fnc enemyDetected",
@@ -4861,9 +4861,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 338733,
-  "timestamp": "2023-04-03T17:50:12Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Combat\n\n|descr= Returns true if unit knows about nearby enemy unit or driven vehicle.\n\n|s1= unit call [[BIS_fnc_enemyDetected]]\n\n|p1= unit - [[Object]]: unit that is inspected\n\n|r1= [[Boolean]]: True if an enemy was detected\n\n|x1= <sqf>private _enemyDetected = _unit call BIS_fnc_enemyDetected;</sqf>\n\n|seealso= [[BIS_fnc_enemyTargets]]\n|p2=distance - [[Number]]: radius around unit to check|x2=<sqf>private _enemyDetected = [_unit, 100] call BIS_fnc_enemyDetected;</sqf>}}"
+  "revid": 379494,
+  "timestamp": "2026-10-31T00:26:14Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Combat\n\n|descr= Returns true if unit knows about nearby enemy unit or driven vehicle.\n\n|s1= unit call [[BIS_fnc_enemyDetected]]\n\n|p1= unit: [[Object]] - unit that is inspected\n\n|r1= [[Boolean]] - True if an enemy was detected\n\n|x1= <sqf>private _enemyDetected = _unit call BIS_fnc_enemyDetected;</sqf>\n\n|seealso= [[BIS_fnc_enemyTargets]]\n|p2=distance - [[Number]]: radius around unit to check|x2=<sqf>private _enemyDetected = [_unit, 100] call BIS_fnc_enemyDetected;</sqf>}}"
  },
  "15890": {
   "title": "BIS fnc configPath",
@@ -4952,9 +4952,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 327150,
-  "timestamp": "2022-07-12T21:45:23Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Weapons\n\n|descr= Return addon from CfgPatches to which a given weapon class belongs to.\n{{Feature | important | This function is quite performance heavy, use only when absolutely necessary!}}\n\n|s1= classname call [[BIS_fnc_weaponAddon]]\n\n|p1= classname [[String]] - weapon's classname\n\n|r1= [[String]] - addon's config name\n\n|x1= <sqf>\"arifle_MX_F\" call BIS_fnc_weaponAddon; // returns \"A3_Weapons_F_Rifles_MX\"</sqf>\n\n|seealso=\n}}"
+  "revid": 379514,
+  "timestamp": "2026-10-31T00:28:53Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Weapons\n\n|descr= Return addon from CfgPatches to which a given weapon class belongs to.\n{{Feature | important | This function is quite performance heavy, use only when absolutely necessary!}}\n\n|s1= classname call [[BIS_fnc_weaponAddon]]\n\n|p1= classname: [[String]] - weapon's classname\n\n|r1= [[String]] - addon's config name\n\n|x1= <sqf>\"arifle_MX_F\" call BIS_fnc_weaponAddon; // returns \"A3_Weapons_F_Rifles_MX\"</sqf>\n\n|seealso=\n}}"
  },
  "15897": {
   "title": "BIS fnc returnChildren",
@@ -6755,9 +6755,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 326904,
-  "timestamp": "2022-07-12T21:44:37Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= GUI\n\n|descr= Returns DIK code of a given key.\n\n|s1= input call [[BIS_fnc_keyCode]]\n\n|p1= input:\n* [[Number]]: Key code\n* [[String]]: Key name\n* [[Boolean]]: Return key definitions\n\n|x1= <sqf>13 call BIS_fnc_keyCode; // Returns \"EQUALS\"</sqf>\n\n|x2= <sqf>\"EQUALS\" call BIS_fnc_keyCode; // returns 13</sqf>\n\n|x3= <sqf>true call BIS_fnc_keyCode; // returns [\"ESCAPE\",1,\"1\",2,\"2\",3,\"3\",4,\"4\",5,\"5\",6,\"6\",7,\"7\",8,\"8\",9,\"9\",10,\"0\",11,\"MINUS\",12,\"EQUALS\",13...]</sqf>\n\n|r1= [[String]], [[Number]] or [[Array]]\n\n|seealso= [[DIK KeyCodes]]\n}}"
+  "revid": 379500,
+  "timestamp": "2026-10-31T00:27:02Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= GUI\n\n|descr= Returns DIK code of a given key.\n\n|s1= input call [[BIS_fnc_keyCode]]\n\n|p1= input: [[Number]], [[String]] or [[Boolean]]\n* [[Number]]: Key code\n* [[String]]: Key name\n* [[Boolean]]: Return key definitions\n\n|x1= <sqf>13 call BIS_fnc_keyCode; // Returns \"EQUALS\"</sqf>\n\n|x2= <sqf>\"EQUALS\" call BIS_fnc_keyCode; // returns 13</sqf>\n\n|x3= <sqf>true call BIS_fnc_keyCode; // returns [\"ESCAPE\",1,\"1\",2,\"2\",3,\"3\",4,\"4\",5,\"5\",6,\"6\",7,\"7\",8,\"8\",9,\"9\",10,\"0\",11,\"MINUS\",12,\"EQUALS\",13...]</sqf>\n\n|r1= [[String]], [[Number]] or [[Array]]\n\n|seealso= [[DIK KeyCodes]]\n}}"
  },
  "16037": {
   "title": "BIS fnc addScriptedEventHandler",
@@ -7114,9 +7114,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 348251,
-  "timestamp": "2023-11-08T11:40:33Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Modules\n\n|descr= Scans synchronized objects and returns synchronized modules\n\n|s1= [module] call BIS_fnc_moduleModules\n\n|r1=Array - array of Objects - Modules\n\n|x1= <!-- <sqf>[] call BIS_fnc_moduleModules;</sqf> -->\n\n|seealso=\n}}"
+  "revid": 379505,
+  "timestamp": "2026-10-31T00:27:42Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Modules\n\n|descr= Scans synchronized objects and returns synchronized modules\n\n|s1= [module] call BIS_fnc_moduleModules\n\n|r1= [[Array]] of [[Object]]s - Modules\n\n|x1= <!-- <sqf>[] call BIS_fnc_moduleModules;</sqf> -->\n\n|seealso=\n}}"
  },
  "16064": {
   "title": "BIS fnc moduleTriggers",
@@ -7312,9 +7312,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 376478,
-  "timestamp": "2025-10-18T18:39:39Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Strings\n\n|descr= {{Feature|obsolete|See [[find]] and [[in]] commands's alternative syntaxes that replace this function.}}\nFind a string within a string.\n\n|s1= [searchTerm, searchText, caseSensitive] call [[BIS_fnc_inString]] \n\n|p1= searchTerm: [[String]] - string to find\n\n|p2= searchText: [[String]] - string to search in\n\n|p3= caseSensitive (optional): [[Boolean]] - defines whether the search is case-sensitive (true) or not (false, by default)\n\n|r1= [[Boolean]] - true if search term is found, false if not\n\n|x1= <sqf>[\"rabbit\", \"I ate a rabbit today\"] call BIS_fnc_inString // will return true</sqf>\n\n|x2= <sqf>[\"RaBbiT\", \"I ate a rabbit today\"] call BIS_fnc_inString // will return true</sqf>\n\n|x3= <sqf>[\"RaBbiT\", \"I ate a rabbit today\", true] call BIS_fnc_inString // will return false because of case sensitivity</sqf>\n\n|seealso= [[find]] [[BIS_fnc_filterString]] [[splitString]] [[joinString]]\n}}"
+  "revid": 379499,
+  "timestamp": "2026-10-31T00:26:54Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Strings\n\n|descr= {{Feature|obsolete|See [[find]] and [[in]] commands's alternative syntaxes that replace this function.}}\nFind a string within a string.\n\n|s1= [searchTerm, searchText, caseSensitive] call [[BIS_fnc_inString]] \n\n|p1= searchTerm: [[String]] - string to find\n\n|p2= searchText: [[String]] - string to search in\n\n|p3= caseSensitive: [[Boolean]] - (Optional, default [[false]]) defines whether the search is case-sensitive (true) or not (false)\n\n|r1= [[Boolean]] - true if search term is found, false if not\n\n|x1= <sqf>[\"rabbit\", \"I ate a rabbit today\"] call BIS_fnc_inString // will return true</sqf>\n\n|x2= <sqf>[\"RaBbiT\", \"I ate a rabbit today\"] call BIS_fnc_inString // will return true</sqf>\n\n|x3= <sqf>[\"RaBbiT\", \"I ate a rabbit today\", true] call BIS_fnc_inString // will return false because of case sensitivity</sqf>\n\n|seealso= [[find]] [[BIS_fnc_filterString]] [[splitString]] [[joinString]]\n}}"
  },
  "16079": {
   "title": "BIS fnc ordinalNumber",
@@ -7482,9 +7482,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 376826,
-  "timestamp": "2025-11-22T11:52:27Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Object Manipulation\n\n|descr= Return all synchronised objects, including those synced to synced and so on.\n\n|s1= [object, filter] call [[BIS_fnc_allSynchronizedObjects]]\n\n|p1= object: [[Object]] - parent object\n\n|p2= filter: [[String]] or [[Array]] of strings - (Optional, default \"\") class name filter. 1 or more class name of objects we are interested in\n\n|r1= [[Array]] - synchronized objects\n\n|x1= <sqf>[BIS_Poliakko, \"LocationArea_F\"] call BIS_fnc_allSynchronizedObjects;</sqf>\n\n|seealso= [[BIS_fnc_synchronizedObjects]]\n}}"
+  "revid": 379488,
+  "timestamp": "2026-10-31T00:25:25Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Object Manipulation\n\n|descr= Return all synchronised objects, including those synced to synced and so on.\n\n|s1= [object, filter] call [[BIS_fnc_allSynchronizedObjects]]\n\n|p1= object: [[Object]] - parent object\n\n|p2= filter: [[String]] or [[Array]] of [[String]]s - (Optional, default \"\") class name filter. 1 or more class name of objects we are interested in\n\n|r1= [[Array]] - synchronized objects\n\n|x1= <sqf>[BIS_Poliakko, \"LocationArea_F\"] call BIS_fnc_allSynchronizedObjects;</sqf>\n\n|seealso= [[BIS_fnc_synchronizedObjects]]\n}}"
  },
  "16094": {
   "title": "BIS fnc setRank",
@@ -8191,9 +8191,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 341628,
-  "timestamp": "2023-06-12T19:02:54Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Sides\n\n|descr= Returns sides allied to the given side / object.\n\n|s1= toCheck call [[BIS_fnc_friendlySides]]\n\n|p1= toCheck - [[Side]] or [[Object]]: Side or object whose friendly sides should be returned\n\n|r1= [[Array]] of [[Side]]s\n\n|x1= <sqf>player call BIS_fnc_friendlySides; // -can- return [FRIENDLY,WEST,GUER,CIV]</sqf>\n\n|seealso= [[CfgVehicles_Config_Reference#side|CfgVehicles config side value]] [[Side]] [[playerSide]] [[west]] [[east]] [[resistance]] [[civilian]] [[sideLogic]] [[sideFriendly]] [[sideEnemy]] [[sideUnknown]] [[sideEmpty]] [[sideAmbientLife]] [[Side Relations]] [[BIS_fnc_sideID]] [[BIS_fnc_objectSide]]\n}}"
+  "revid": 379497,
+  "timestamp": "2026-10-31T00:26:38Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Sides\n\n|descr= Returns sides allied to the given side / object.\n\n|s1= toCheck call [[BIS_fnc_friendlySides]]\n\n|p1= toCheck: [[Side]] or [[Object]] - Side or object whose friendly sides should be returned\n\n|r1= [[Array]] of [[Side]]s\n\n|x1= <sqf>player call BIS_fnc_friendlySides; // -can- return [FRIENDLY,WEST,GUER,CIV]</sqf>\n\n|seealso= [[CfgVehicles_Config_Reference#side|CfgVehicles config side value]] [[Side]] [[playerSide]] [[west]] [[east]] [[resistance]] [[civilian]] [[sideLogic]] [[sideFriendly]] [[sideEnemy]] [[sideUnknown]] [[sideEmpty]] [[sideAmbientLife]] [[Side Relations]] [[BIS_fnc_sideID]] [[BIS_fnc_objectSide]]\n}}"
  },
  "16148": {
   "title": "BIS fnc areFriendly",
@@ -8243,9 +8243,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 348592,
-  "timestamp": "2023-11-08T13:44:37Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Sides\n\n|descr= Returns side type based on side ID. See [[BIS_fnc_sideID]] for more information.\n\n|s1= sideID call [[BIS_fnc_sideType]]\n\n|p1= sideID - [[Number]] - Side ID.\n\n|r1= [[Side]] - side based on side ID\n\n|x1= <sqf>0 call BIS_fnc_sideType; // returns EAST</sqf>\n\n|seealso= [[Side]] [[BIS_fnc_sideID]] [[side]] [[countSide]] [[CfgVehicles_Config_Reference#side|CfgVehicles config side value]] [[Side]] [[playerSide]] [[west]] [[east]] [[resistance]] [[civilian]] [[sideLogic]] [[sideFriendly]] [[sideEnemy]] [[sideUnknown]] [[sideEmpty]] [[sideAmbientLife]] [[Side Relations]]\n}}"
+  "revid": 379510,
+  "timestamp": "2026-10-31T00:28:22Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Sides\n\n|descr= Returns side type based on side ID. See [[BIS_fnc_sideID]] for more information.\n\n|s1= sideID call [[BIS_fnc_sideType]]\n\n|p1= sideID: [[Number]] - Side ID.\n\n|r1= [[Side]] - side based on side ID\n\n|x1= <sqf>0 call BIS_fnc_sideType; // returns EAST</sqf>\n\n|seealso= [[Side]] [[BIS_fnc_sideID]] [[side]] [[countSide]] [[CfgVehicles_Config_Reference#side|CfgVehicles config side value]] [[Side]] [[playerSide]] [[west]] [[east]] [[resistance]] [[civilian]] [[sideLogic]] [[sideFriendly]] [[sideEnemy]] [[sideUnknown]] [[sideEmpty]] [[sideAmbientLife]] [[Side Relations]]\n}}"
  },
  "16152": {
   "title": "BIS fnc objectSide",
@@ -8256,9 +8256,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 341640,
-  "timestamp": "2023-06-12T19:02:56Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Sides\n\n|descr= Returns object side as defined in config (i.e. not affected by dynamic changing like rating)\n\n|s1= [target, boolean] call [[BIS_fnc_objectSide]]\n\n|p1= target: [[Object]] - the object to be tested\n\n|p2= boolean: [[Boolean]] (optional) - false (default) to return actual object side, true to return the default config value\n\n|r1= [[Side]]\n\n|s2= target call [[BIS_fnc_objectSide]]\n\n|p21= target: [[Object]] - the object to be tested. This syntax is equal to calling the method with [[false]] as a second parameter.\n\n|r2= [[Side]]\n\n|x1= <sqf>private _realVehicleSide = [vehicle player, true] call BIS_fnc_objectSide;</sqf>\n\n|x2= <sqf>\nprivate _unknownSide = [objNull, false] call BIS_fnc_objectSide; // will return sideUnknown\nprivate _eastSide    = [objNull, true]  call BIS_fnc_objectSide; // will return east\n</sqf>\n\n|x3= <sqf>\n// same results\n_result1 = myVehicle call BIS_fnc_objectSide;\n_result2 = [myVehicle] call BIS_fnc_objectSide;\n_result3 = [myVehicle, false] call BIS_fnc_objectSide;\n</sqf>\n\n|seealso= [[side]] [[CfgVehicles_Config_Reference#side|CfgVehicles config side value]] [[Side]] [[playerSide]] [[west]] [[east]] [[resistance]] [[civilian]] [[sideLogic]] [[sideFriendly]] [[sideEnemy]] [[sideUnknown]] [[sideEmpty]] [[sideAmbientLife]] [[Side Relations]] [[BIS_fnc_sideID]]\n}}\n\n{{Note\n|user= Tankbuster\n|timestamp= 20200401172500\n|text= When using this to get the side of vehicle drivers, be aware that when the boolean parameter is true, empty vehicles will return their driver as east.\nThe same vehicle, when the boolean parameter is false, will return \"UNKNOWN\"\n}}"
+  "revid": 379506,
+  "timestamp": "2026-10-31T00:27:50Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Sides\n\n|descr= Returns object side as defined in config (i.e. not affected by dynamic changing like rating)\n\n|s1= [target, boolean] call [[BIS_fnc_objectSide]]\n\n|p1= target: [[Object]] - the object to be tested\n\n|p2= boolean: [[Boolean]] - (Optional, default [[false]]) false to return actual object side, true to return the default config value\n\n|r1= [[Side]]\n\n|s2= target call [[BIS_fnc_objectSide]]\n\n|p21= target: [[Object]] - the object to be tested. This syntax is equal to calling the method with [[false]] as a second parameter.\n\n|r2= [[Side]]\n\n|x1= <sqf>private _realVehicleSide = [vehicle player, true] call BIS_fnc_objectSide;</sqf>\n\n|x2= <sqf>\nprivate _unknownSide = [objNull, false] call BIS_fnc_objectSide; // will return sideUnknown\nprivate _eastSide    = [objNull, true]  call BIS_fnc_objectSide; // will return east\n</sqf>\n\n|x3= <sqf>\n// same results\n_result1 = myVehicle call BIS_fnc_objectSide;\n_result2 = [myVehicle] call BIS_fnc_objectSide;\n_result3 = [myVehicle, false] call BIS_fnc_objectSide;\n</sqf>\n\n|seealso= [[side]] [[CfgVehicles_Config_Reference#side|CfgVehicles config side value]] [[Side]] [[playerSide]] [[west]] [[east]] [[resistance]] [[civilian]] [[sideLogic]] [[sideFriendly]] [[sideEnemy]] [[sideUnknown]] [[sideEmpty]] [[sideAmbientLife]] [[Side Relations]] [[BIS_fnc_sideID]]\n}}\n\n{{Note\n|user= Tankbuster\n|timestamp= 20200401172500\n|text= When using this to get the side of vehicle drivers, be aware that when the boolean parameter is true, empty vehicles will return their driver as east.\nThe same vehicle, when the boolean parameter is false, will return \"UNKNOWN\"\n}}"
  },
  "16153": {
   "title": "BIS fnc playerSideFaction",
@@ -11152,9 +11152,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.16"
   ],
-  "revid": 309421,
-  "timestamp": "2022-05-05T12:04:37Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= Curator\n\n|descr= Restore unit for curators after respawn.\nWhen curator owner, it will transfer ownership to the new unit.\nWhen editable by curator, it will remove the dead unit and register the new one.\n\n|s1= [newUnit,oldUnit] call [[BIS_fnc_curatorRespawn]]\n\n|p1= newUnit: [[Object]] - new unit\n\n|p2= oldUnit [[Object]] - old, dead unit\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[BIS_newUnit,BIS_oldUnit] call BIS_fnc_curatorRespawn;</sqf>\n\n|seealso= [[Arma 3: Curator]]\n}}"
+  "revid": 379491,
+  "timestamp": "2026-10-31T00:25:50Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= Curator\n\n|descr= Restore unit for curators after respawn.\nWhen curator owner, it will transfer ownership to the new unit.\nWhen editable by curator, it will remove the dead unit and register the new one.\n\n|s1= [newUnit,oldUnit] call [[BIS_fnc_curatorRespawn]]\n\n|p1= newUnit: [[Object]] - new unit\n\n|p2= oldUnit: [[Object]] - old, dead unit\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[BIS_newUnit,BIS_oldUnit] call BIS_fnc_curatorRespawn;</sqf>\n\n|seealso= [[Arma 3: Curator]]\n}}"
  },
  "16378": {
   "title": "BIS fnc manageCuratorAddons",
@@ -11165,9 +11165,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.16"
   ],
-  "revid": 348890,
-  "timestamp": "2023-11-08T14:39:51Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= Curator\n\n|descr= Set which vision modes curator can access.\n\n|s1= [curators,classes,condition,text] call [[BIS_fnc_manageCuratorAddons]]\n\n|p1=curator: [[Object]] or [[Array]] of objects - curator(s)\n\n|p2=classes [[Array]] of [[String]]s - CfgPatches classes\n\n|p3=classes [[Code]] - unlock condition, must return [[true]]\n\n|p4=classes [[String]] - notification text\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[BIS_curator,[\"A3_Air_F_Heli\"],{count allPlayers > 15},\"Helicopters unlocked!\"] call BIS_fnc_manageCuratorAddons;</sqf>\n\n|seealso= [[Arma 3: Curator]]\n}}"
+  "revid": 379502,
+  "timestamp": "2026-10-31T00:27:18Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= Curator\n\n|descr= Set which vision modes curator can access.\n\n|s1= [curators,classes,condition,text] call [[BIS_fnc_manageCuratorAddons]]\n\n|p1=curator: [[Object]] or [[Array]] of [[Object]]s - curator(s)\n\n|p2=classes: [[Array]] of [[String]]s - CfgPatches classes\n\n|p3=classes: [[Code]] - unlock condition, must return [[true]]\n\n|p4=classes: [[String]] - notification text\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[BIS_curator,[\"A3_Air_F_Heli\"],{count allPlayers > 15},\"Helicopters unlocked!\"] call BIS_fnc_manageCuratorAddons;</sqf>\n\n|seealso= [[Arma 3: Curator]]\n}}"
  },
  "16379": {
   "title": "BIS fnc listCuratorPlayers",
@@ -11244,9 +11244,9 @@
    "Functions: Server Execution",
    "Introduced with Arma 3 version 1.16"
   ],
-  "revid": 352620,
-  "timestamp": "2024-02-16T20:51:49Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= Curator\n\n|serverExec= server\n\n|descr= Mirrors settings from one curator to another.\n\n|s1= [from, to, modes, shareType] call [[BIS_fnc_mirrorCuratorSettings]]\n\n|p1= from: [[Object]] or [[Array]] of objects - curators(s) from which settings are taken\n\n|p2= to: [[Object]] or [[Array]] of objects - curators(s) to which settings are applied to\n\n|p3= modes: [[Array]] of [[String]]s - copy modes, can be:\n* \"addons\"\n* \"objects\"\n* \"coefs\"\nAll three modes can be combined.\n\n|p4= shareType: [[Boolean]] - [[true]] to share settings both ways, [[false]] to make second curator slave to the first one\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[\n\t[curator_1, curator_2], \n\t[curator_3, curator_4], \n\t[\"addons\", \"objects\", \"coefs\"] \n] call BIS_fnc_mirrorCuratorSettings;</sqf>\n\n|seealso= [[Arma 3: Curator]]\n}}"
+  "revid": 379504,
+  "timestamp": "2026-10-31T00:27:34Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= Curator\n\n|serverExec= server\n\n|descr= Mirrors settings from one curator to another.\n\n|s1= [from, to, modes, shareType] call [[BIS_fnc_mirrorCuratorSettings]]\n\n|p1= from: [[Object]] or [[Array]] of [[Object]]s - curators(s) from which settings are taken\n\n|p2= to: [[Object]] or [[Array]] of [[Object]]s - curators(s) to which settings are applied to\n\n|p3= modes: [[Array]] of [[String]]s - copy modes, can be:\n* \"addons\"\n* \"objects\"\n* \"coefs\"\nAll three modes can be combined.\n\n|p4= shareType: [[Boolean]] - [[true]] to share settings both ways, [[false]] to make second curator slave to the first one\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[\n\t[curator_1, curator_2], \n\t[curator_3, curator_4], \n\t[\"addons\", \"objects\", \"coefs\"] \n] call BIS_fnc_mirrorCuratorSettings;</sqf>\n\n|seealso= [[Arma 3: Curator]]\n}}"
  },
  "16385": {
   "title": "BIS fnc drawCuratorLocations",
@@ -11505,9 +11505,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.16"
   ],
-  "revid": 349528,
-  "timestamp": "2023-11-08T17:16:25Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= CuratorChallenges\n\n|descr= Handle repeated curator challenges.\n\tWhen rewards defined in the argument are exceeded, refilling points bar fill be offered instead.\n\n|s1= [curator,challenges,numChallenges,rewards,defaultRewards]] call [[BIS_fnc_manageCuratorChallenges]]\n\n|p1=curator [[Object]] - curator\n\n|p2=challenges [[Array]] - (Optional, default all challenges) list of supported challenges from CfgCuratorChallenges\n\n|p3=challenges [[Number]] - (Optional, default 3) number of added challenges\n\n|p4=rewards [[Array]] of [[Array|arrays]] - (Optional, default <sqf inline>[]</sqf>) rewards and their descriptions in format:\n*0: [[Code]] - Code executed\n*1: [[String]] - Description\n\n|p5=defaultRewards [[Array]] of [[Array|arrays]] - (Optional, default <sqf inline>[]</sqf>) default reward, used when previous rewards are exausted  in format:\n*0: [[Code]] - Code executed\n*1: [[String]] - Description\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[BIS_curator, nil, 1, [[{ hint \"Message\" }, \"Description\"]]] call BIS_fnc_manageCuratorChallenges;</sqf>\n\n|seealso= [[Arma 3: Curator]] [[BIS_fnc_formatCuratorChallengeObjects]] [[BIS_fnc_finishCuratorChallenge]] [[BIS_fnc_addCuratorChallenge]]\n}}"
+  "revid": 379503,
+  "timestamp": "2026-10-31T00:27:26Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.16\n\n|gr1= CuratorChallenges\n\n|descr= Handle repeated curator challenges.\n\tWhen rewards defined in the argument are exceeded, refilling points bar fill be offered instead.\n\n|s1= [curator,challenges,numChallenges,rewards,defaultRewards]] call [[BIS_fnc_manageCuratorChallenges]]\n\n|p1=curator: [[Object]] - curator\n\n|p2=challenges: [[Array]] - (Optional, default all challenges) list of supported challenges from CfgCuratorChallenges\n\n|p3=challenges: [[Number]] - (Optional, default 3) number of added challenges\n\n|p4=rewards: [[Array]] of [[Array|arrays]] - (Optional, default <sqf inline>[]</sqf>) rewards and their descriptions in format:\n*0: [[Code]] - Code executed\n*1: [[String]] - Description\n\n|p5=defaultRewards: [[Array]] of [[Array|arrays]] - (Optional, default <sqf inline>[]</sqf>) default reward, used when previous rewards are exausted  in format:\n*0: [[Code]] - Code executed\n*1: [[String]] - Description\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[BIS_curator, nil, 1, [[{ hint \"Message\" }, \"Description\"]]] call BIS_fnc_manageCuratorChallenges;</sqf>\n\n|seealso= [[Arma 3: Curator]] [[BIS_fnc_formatCuratorChallengeObjects]] [[BIS_fnc_finishCuratorChallenge]] [[BIS_fnc_addCuratorChallenge]]\n}}"
  },
  "16405": {
   "title": "BIS fnc formatCuratorChallengeObjects",
@@ -12857,9 +12857,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 327598,
-  "timestamp": "2022-07-13T09:50:06Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= GUI\n\n|descr= Fills the first passed control with game type and version number, and positions both controls according to the game type.\n\n|s1=  [gameTypeVersionControl, modControl] call [[BIS_fnc_versionInfo]]\n\n|p1= gameTypeVersionControl - [[Control]] - Control for indication of game type (Stable/Dev) and version number (RscText)\n\n|p2= modControl - [[Control]] - Control for indication of modded game (RscActiveText)\n\n|r1= [[Nothing]]\n\n|x1= <sqf>[_ctrlVersion, _ctrlModded] call BIS_fnc_versionInfo;</sqf>\n\n|seealso= [[productVersion]]\n}}"
+  "revid": 379513,
+  "timestamp": "2026-10-31T00:28:45Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= GUI\n\n|descr= Fills the first passed control with game type and version number, and positions both controls according to the game type.\n\n|s1=  [gameTypeVersionControl, modControl] call [[BIS_fnc_versionInfo]]\n\n|p1= gameTypeVersionControl: [[Control]] - Control for indication of game type (Stable/Dev) and version number (RscText)\n\n|p2= modControl: [[Control]] - Control for indication of modded game (RscActiveText)\n\n|r1= [[Nothing]]\n\n|x1= <sqf>[_ctrlVersion, _ctrlModded] call BIS_fnc_versionInfo;</sqf>\n\n|seealso= [[productVersion]]\n}}"
  },
  "18814": {
   "title": "BIS fnc exportGUIBaseClasses",
@@ -13317,9 +13317,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 369493,
-  "timestamp": "2024-09-07T05:22:29Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Respawn\n\n|descr= Gets or sets inventory menu loadout metadata for class CfgRespawnInventory\n\n|s1= [\"get\", 0] call [[BIS_fnc_showRespawnMenuInventoryMetadata]]\n\n|p1= [[String]] - mode:\n* \"set\"\n* \"get\"\n* \"delete\"\n\n|p2= [[Number]] - List box selection for: \"BIS_RscRespawnControlsMap_ctrlRoleList\"\n\n|r1= [[Array]] of Arrays:\n* 0: [[Array]] - Array containing role data: <([[String]])DisplayName, ([[Config]])Config, ([[String]])Icon Path>\n* 1: [[Array]] - Array containing loadout data: <([[String]])Classname, ([[String]])DisplayName, ([[Config]])Config>\n\n|x1= <!-- <sqf>[] call BIS_fnc_showRespawnMenuInventoryMetadata;</sqf> -->\n\n|seealso=\n}}"
+  "revid": 379509,
+  "timestamp": "2026-10-31T00:28:14Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Respawn\n\n|descr= Gets or sets inventory menu loadout metadata for class CfgRespawnInventory\n\n|s1= [\"get\", 0] call [[BIS_fnc_showRespawnMenuInventoryMetadata]]\n\n|p1= [[String]] - mode:\n* \"set\"\n* \"get\"\n* \"delete\"\n\n|p2= [[Number]] - List box selection for: \"BIS_RscRespawnControlsMap_ctrlRoleList\"\n\n|r1= [[Array]] of [[Array]]s:\n* 0: [[Array]] - Array containing role data: <([[String]])DisplayName, ([[Config]])Config, ([[String]])Icon Path>\n* 1: [[Array]] - Array containing loadout data: <([[String]])Classname, ([[String]])DisplayName, ([[Config]])Config>\n\n|x1= <!-- <sqf>[] call BIS_fnc_showRespawnMenuInventoryMetadata;</sqf> -->\n\n|seealso=\n}}"
  },
  "18849": {
   "title": "BIS fnc showRespawnMenuPosition",
@@ -13720,9 +13720,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 376223,
-  "timestamp": "2025-09-20T13:17:32Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Object Manipulation\n\n|descr= Get all objects of given type directly synchronised to the given object. Works in [[:Category:Eden Editor|Eden Editor]] too.\n\n|s1= [object, filter, preciseMatch] call [[BIS_fnc_synchronizedObjects]]\n\n|p1= object: [[Object]] - parent object\n\n|p2= filter: [[String]] or [[Array]] of strings - class name filter; 1 or more class name of objects in which we are interested\n\n|p3= preciseMatch: [[Boolean]] - (Optional, default [[true]]) if [[true]] only precise class names are considered, if [[false]] inheritance is considered\n\n|r1= [[Array]] of synchronised objects\n\n|x1= <sqf>[BIS_Poliakko, \"LocationArea_F\"] call BIS_fnc_synchronizedObjects;</sqf>\n\n|seealso= [[BIS_fnc_allSynchronizedObjects]]\n}}"
+  "revid": 379511,
+  "timestamp": "2026-10-31T00:28:30Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Object Manipulation\n\n|descr= Get all objects of given type directly synchronised to the given object. Works in [[:Category:Eden Editor|Eden Editor]] too.\n\n|s1= [object, filter, preciseMatch] call [[BIS_fnc_synchronizedObjects]]\n\n|p1= object: [[Object]] - parent object\n\n|p2= filter: [[String]] or [[Array]] of [[String]]s - class name filter; 1 or more class name of objects in which we are interested\n\n|p3= preciseMatch: [[Boolean]] - (Optional, default [[true]]) if [[true]] only precise class names are considered, if [[false]] inheritance is considered\n\n|r1= [[Array]] of synchronised objects\n\n|x1= <sqf>[BIS_Poliakko, \"LocationArea_F\"] call BIS_fnc_synchronizedObjects;</sqf>\n\n|seealso= [[BIS_fnc_allSynchronizedObjects]]\n}}"
  },
  "18881": {
   "title": "BIS fnc ffvUpdate",
@@ -14724,9 +14724,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.68"
   ],
-  "revid": 329426,
-  "timestamp": "2022-07-27T15:50:17Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.68\n\n|arg= local\n\n|gr1= Aircraft Carrier\n\n|descr= Accelerates an aircraft off the aircraft carrier. For this to work the aircraft must be properly configured in config. See [[Arma 3: Aircraft Systems]] for information about needed config changes.\n\n|s1= [aircraft, direction] call [[BIS_fnc_aircraftCatapultLaunch]]\n\n|p1= aircraft: [[Object]] - the aircraft that should be launched\n\n|p2= direction: [[Number]] - (optional, default <sqf inline>direction _aircraft</sqf>) direction to launch the aircraft off to\n\n|r1= [[Nothing]]\n\n|x1= <sqf>[_plane] call BIS_fnc_aircraftCatapultLaunch;</sqf>\n\n|seealso= [[BIS_fnc_aircraftTailhook]]\n}}"
+  "revid": 379486,
+  "timestamp": "2026-10-31T00:25:10Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.68\n\n|arg= local\n\n|gr1= Aircraft Carrier\n\n|descr= Accelerates an aircraft off the aircraft carrier. For this to work the aircraft must be properly configured in config. See [[Arma 3: Aircraft Systems]] for information about needed config changes.\n\n|s1= [aircraft, direction] call [[BIS_fnc_aircraftCatapultLaunch]]\n\n|p1= aircraft: [[Object]] - the aircraft that should be launched\n\n|p2= direction: [[Number]] - (Optional, default <sqf inline>direction _aircraft</sqf>) direction to launch the aircraft off to\n\n|r1= [[Nothing]]\n\n|x1= <sqf>[_plane] call BIS_fnc_aircraftCatapultLaunch;</sqf>\n\n|seealso= [[BIS_fnc_aircraftTailhook]]\n}}"
  },
  "18960": {
   "title": "BIS fnc planeEjection",
@@ -16413,9 +16413,9 @@
    "Functions",
    "Introduced with Arma 3 version 1.78"
   ],
-  "revid": 336173,
-  "timestamp": "2022-12-13T16:43:33Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.78\n\n|gr1= Systems\n\n|descr= Translates (relative or absolute), scales (relative or absolute), and sets the alpha over time on the provided control.\n\n|s1= [control, durationOrSpeed, [translationPosition, isRelativeTranslation, useDuration], [scalePosition, isRelativeScale, scalePivot], alpha] call [[BIS_fnc_animatePicture]]\n\n|p1= control: [[Control]] - the control to be moved\n\n|p2= durationOrSpeed: [[Number]] - (Optional, default 2) transition duration ''or'' movement speed, depending on ''useDuration''\n\n|p3= translationPosition: [[Array]] format [[Position#Position2D|Position2D]] - (Optional, default [0,0])\n\n|p4= isRelativeTranslation - [[Boolean]] - (Optional, default [[true]]) is ''translationPosition'' relative to the original ''control''<nowiki/>'s position\n\n|p5= useDuration: [[Boolean]] - (Optional, default [[true]]) if set to [[false]], ''durationOrSpeed'' will be used as ''control'' speed (and effect duration will be recalculated from it)\n\n|p6= scalePosition: [[Number]] or [[Array]] of [[Number]]s - (Optional, default 1) define X and Y scale value\n\n|p7= isRelativeScale: [[Boolean]] - (Optional, default [[true]]) is ''scalePosition'' relative to the original ''control''<nowiki/>'s scale\n\n|p8= scalePivot: [[String]] - (Optional, default \"center\") case-'''in'''sensitive. Possible values:\n\n{{Columns|3|\n* \"topLeft\"\n* \"topCenter\"\n* \"topRight\"\n* \"centerLeft\"\n* \"center\" - fallback value\n* \"centerRight\"\n* \"bottomLeft\"\n* \"bottomCenter\"\n* \"bottomRight\"\n}}\n\n|p9= alpha: [[Number]] - (Optional, default 0) ''control''<nowiki/>'s final opacity\n\n|r1= [[Number]] - animation's duration\n\n|x1= <sqf>\nprivate _t =\n[\n\t_controlFront,\n\t1,\n\t[[0.5, 0.5], true, false],\n\t[],\n\t0.5\n] \ncall BIS_fnc_animatePicture;\n</sqf>\n\n|seealso=\n}}"
+  "revid": 379489,
+  "timestamp": "2026-10-31T00:25:34Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.78\n\n|gr1= Systems\n\n|descr= Translates (relative or absolute), scales (relative or absolute), and sets the alpha over time on the provided control.\n\n|s1= [control, durationOrSpeed, [translationPosition, isRelativeTranslation, useDuration], [scalePosition, isRelativeScale, scalePivot], alpha] call [[BIS_fnc_animatePicture]]\n\n|p1= control: [[Control]] - the control to be moved\n\n|p2= durationOrSpeed: [[Number]] - (Optional, default 2) transition duration ''or'' movement speed, depending on ''useDuration''\n\n|p3= translationPosition: [[Array]] format [[Position#Position2D|Position2D]] - (Optional, default [0,0])\n\n|p4= isRelativeTranslation: [[Boolean]] - (Optional, default [[true]]) is ''translationPosition'' relative to the original ''control''<nowiki/>'s position\n\n|p5= useDuration: [[Boolean]] - (Optional, default [[true]]) if set to [[false]], ''durationOrSpeed'' will be used as ''control'' speed (and effect duration will be recalculated from it)\n\n|p6= scalePosition: [[Number]] or [[Array]] of [[Number]]s - (Optional, default 1) define X and Y scale value\n\n|p7= isRelativeScale: [[Boolean]] - (Optional, default [[true]]) is ''scalePosition'' relative to the original ''control''<nowiki/>'s scale\n\n|p8= scalePivot: [[String]] - (Optional, default \"center\") case-'''in'''sensitive. Possible values:\n\n{{Columns|3|\n* \"topLeft\"\n* \"topCenter\"\n* \"topRight\"\n* \"centerLeft\"\n* \"center\" - fallback value\n* \"centerRight\"\n* \"bottomLeft\"\n* \"bottomCenter\"\n* \"bottomRight\"\n}}\n\n|p9= alpha: [[Number]] - (Optional, default 0) ''control''<nowiki/>'s final opacity\n\n|r1= [[Number]] - animation's duration\n\n|x1= <sqf>\nprivate _t =\n[\n\t_controlFront,\n\t1,\n\t[[0.5, 0.5], true, false],\n\t[],\n\t0.5\n] \ncall BIS_fnc_animatePicture;\n</sqf>\n\n|seealso=\n}}"
  },
  "24623": {
   "title": "BIS fnc lookAtArray",
@@ -17631,9 +17631,9 @@
    "Functions: Global Effect",
    "Introduced with Arma 3 version 1.70"
   ],
-  "revid": 351488,
-  "timestamp": "2023-12-06T09:58:25Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.70\n\n|arg= local\n|eff= global\n\n|gr1= Aircraft Functionality\n\n|descr= Handles foldable wings of aircrafts. Is supposed to be used from within class Eventhandlers of the vehicle. See [[Arma 3: Aircraft Systems]] for information about needed config changes.\n<syntaxhighlight lang=\"cpp\">\nclass Eventhandlers : Eventhandlers\n{\n\tengine = \"_this call BIS_fnc_aircraftFoldingWings\";\n\tgear = \"_this call BIS_fnc_aircraftFoldingWings\";\n};\n</syntaxhighlight>\n\n|s1= [aircraft, animationState] call [[BIS_fnc_aircraftFoldingWings]]\n\n|p1= aircraft: [[Object]]\n\n|p2= animationState: [[Boolean]] - (optional, default [[false]]) if [[false]], the function will just terminate\n\n|r1= [[Nothing]]\n\n|x1= <sqf>[_aircraft, 1] call BIS_fnc_aircraftFoldingWings;</sqf>\n\n|seealso= -\n}}"
+  "revid": 379487,
+  "timestamp": "2026-10-31T00:25:18Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.70\n\n|arg= local\n|eff= global\n\n|gr1= Aircraft Functionality\n\n|descr= Handles foldable wings of aircrafts. Is supposed to be used from within class Eventhandlers of the vehicle. See [[Arma 3: Aircraft Systems]] for information about needed config changes.\n<syntaxhighlight lang=\"cpp\">\nclass Eventhandlers : Eventhandlers\n{\n\tengine = \"_this call BIS_fnc_aircraftFoldingWings\";\n\tgear = \"_this call BIS_fnc_aircraftFoldingWings\";\n};\n</syntaxhighlight>\n\n|s1= [aircraft, animationState] call [[BIS_fnc_aircraftFoldingWings]]\n\n|p1= aircraft: [[Object]]\n\n|p2= animationState: [[Boolean]] - (Optional, default [[false]]) if [[false]], the function will just terminate\n\n|r1= [[Nothing]]\n\n|x1= <sqf>[_aircraft, 1] call BIS_fnc_aircraftFoldingWings;</sqf>\n\n|seealso= -\n}}"
  },
  "24722": {
   "title": "BIS fnc boatRack01AdjustZOffset",
