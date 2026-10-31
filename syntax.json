@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-30T21:20:52Z",
+"updated": "2026-10-31T00:12:47Z",
 "commands": {
 "!": {
 "name": "! a",
@@ -7628,6 +7628,7 @@
 "status": "ok",
 "syntax": [
 "var1 distanceSqr var2",
+"location1 distanceSqr location2",
 "a distanceSqr b"
 ]
 },
@@ -14838,11 +14839,13 @@
 "lnbdeleterow": {
 "name": "lnbDeleteRow",
 "forms": [
-"binary"
+"binary",
+"unary"
 ],
 "status": "ok",
 "syntax": [
-"_ctrl lnbDeleteRow row"
+"_ctrl lnbDeleteRow row",
+"lnbDeleteRow [idc, row]"
 ]
 },
 "lnbgetcolumnsposition": {
@@ -14852,7 +14855,8 @@
 ],
 "status": "ok",
 "syntax": [
-"lnbGetColumnsPosition _ctrl"
+"lnbGetColumnsPosition _ctrl",
+"lnbGetColumnsPosition idc"
 ]
 },
 "lnbpicture": {
@@ -15106,11 +15110,13 @@
 "lnbtext": {
 "name": "lnbText",
 "forms": [
-"binary"
+"binary",
+"unary"
 ],
 "status": "ok",
 "syntax": [
-"control lnbText [row, column]"
+"control lnbText [row, column]",
+"lnbText [idc, [row, column]]"
 ]
 },
 "lnbtextright": {
@@ -16227,11 +16233,13 @@
 "menuvalue": {
 "name": "menuValue",
 "forms": [
+"binary",
 "unary"
 ],
 "status": "ok",
 "syntax": [
-"menuValue [idc, path]"
+"menuValue [idc, path]",
+"control menuValue path"
 ]
 },
 "merge": {
@@ -20770,10 +20778,12 @@
 },
 "setdammage": {
 "name": "setDammage",
-"forms": [],
+"forms": [
+"binary"
+],
 "status": "ok",
 "syntax": [
-"-"
+"object setDammage damage"
 ]
 },
 "setdate": {
@@ -22605,10 +22615,12 @@
 },
 "settaskmarkeroffset": {
 "name": "setTaskMarkerOffset",
-"forms": [],
+"forms": [
+"binary"
+],
 "status": "ok",
 "syntax": [
-"obj setTaskState position"
+"obj setTaskMarkerOffset position"
 ]
 },
 "settaskresult": {
