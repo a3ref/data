@@ -41153,5 +41153,19 @@
   "revid": 379135,
   "timestamp": "2026-10-12T14:41:15Z",
   "wikitext": "{{RV|type=command\n\n|game1= arma3\n|version1= 2.24\n\n|branch= dev\n\n|arg= local \n\n|eff= local\n\n|gr1= GUI Control\n\n|descr= Sets one or multiple given properties of given control.\n\n|s1= control [[ctrlSetProperty]] property\n\n|p1= control: [[Control]]\n\n|p2= property: [[Array]] in format [name, value]:\n* name: [[String]] - Name of the property, case insensitive\n* value: [[Anything]]- Value depends on the property\n\n|r1= [[Nothing]]\n\n|s2= control [[ctrlSetProperty]] properties\n\n|p21= control: [[Control]]\n\n|p22= properties: [[HashMap]] in format:\n* key: [[String]] - Name of the property, case insensitive\n* value: [[Anything]] - Value depends on the property\n\n|x1= <sqf>_ctrl ctrlSetProperty [\"x\", 0.015];</sqf>\n\n|x2= <sqf>_ctrl ctrlSetProperty #{\n\t\"x\": 0.015, \n\t\"colorBackground\": [1, 0.4, 1, 1]\n}</sqf>\n\n|seealso= [[ctrlGetProperty]] [[:Category: Control Types|Control Types]]\n}}"
+ },
+ "49462": {
+  "title": "webRequest",
+  "categories": [
+   "Arma 3: New Scripting Commands",
+   "Arma 3: Scripting Commands",
+   "Arma 3: Scripting Commands: Development Branch",
+   "Command Group: System",
+   "Introduced with Arma 3 version 2.24",
+   "Scripting Commands"
+  ],
+  "revid": 379580,
+  "timestamp": "2026-11-02T16:56:42Z",
+  "wikitext": "{{RV|type=command\n\n|game1= arma3\n|version1= 2.24\n\n|branch= dev\n\n|gr1= System\n\n|descr= Create a web request returning an SQF promise, allowing communication with web servers in game.\n{{Feature|informative|See {{Link|Arma 3: WebAPI|WebAPI}} for a full tutorial.}}\n\n|s1= [[webRequest]] request\n\n|p1= request: [[HashMap]]\n\n|r1= [[Script Handle]] - a {{Link|Script Handle#Promise Handles|promise}}\n\n|x1= <sqf>\nspawn {\n\tprivate _handle = webRequest #{\n\t\t\"type\": \"http\",\n\t\t//\"method\": \"GET\", \"GET\" is default\n\t\t\"origin\": \"test\",\n\t\t\"url\": \"https://myip.wtf/text\"\n\t};\n\tprivate _result = waitUntil _handle; // suspend until it is ready\n\t_result params [\"_request\", \"_result\"];\n\tsystemChat format [\"My IP is: %1\", _result get \"body\"];\n};\n</sqf>\n\n|seealso= [[callExtension]] [[connectToServer]]\n}}"
  }
 }

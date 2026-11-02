@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-31T20:07:59Z",
+"updated": "2026-11-02T17:05:20Z",
 "commands": {
 "!": {
 "name": "! a",
@@ -27160,6 +27160,19 @@
 "status": "ok",
 "syntax": [
 "vehicle weaponsTurret turretPath"
+]
+},
+"webrequest": {
+"name": "webRequest",
+"forms": [
+"unary"
+],
+"status": "ok",
+"syntax": [
+"webRequest request"
+],
+"branch": [
+"dev"
 ]
 },
 "weightrtd": {
