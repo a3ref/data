@@ -32744,12 +32744,11 @@
    "Command Group: Interaction",
    "Introduced with Arma 3 version 1.64",
    "Scripting Commands",
-   "Scripting Commands: Local Effect",
-   "Stubs"
+   "Scripting Commands: Local Effect"
   ],
-  "revid": 379233,
-  "timestamp": "2026-10-30T23:10:24Z",
-  "wikitext": "{{RV|type=command\n\n|game1= arma3\n|version1= 1.64\n\n|arg= global\n\n|eff= local\n\n|gr1= Interaction\n\n|descr= \n\n|s1= [[actionIDs]] entity\n\n|p1= entity: [[Object]] - entity with added user actions\n\n|r1= [[Array]] of [[Number]]s - IDs of all user actions added to given entity with [[addAction]] command\n\n|x1= <sqf>_actions = actionIDs player;</sqf>\n|seealso= [[actionParams]] [[addAction]] [[setUserActionText]] [[inGameUISetEventHandler]] [[showHUD]] [[inputAction]] [[removeAction]] [[removeAllActions]] [[action]]\n}}\n\n{{Note\n|user= KC Grimes\n|timestamp= 20180422141900\n|text= The argument for this command can be global (ie, not local to the executing machine), however the returned array will only contain action IDs for locally executed [[addAction]].\n}}"
+  "revid": 379592,
+  "timestamp": "2026-11-04T21:31:31Z",
+  "wikitext": "{{RV|type=command\n\n|game1= arma3\n|version1= 1.64\n\n|arg= global\n\n|eff= local\n\n|gr1= Interaction\n\n|descr= Lists the user actions currently on an entity, so they can be inspected with [[actionParams]], changed with [[setUserActionText]] or removed with [[removeAction]] without keeping track of the IDs [[addAction]] returned.\n\n|s1= [[actionIDs]] entity\n\n|p1= entity: [[Object]] - entity with added user actions\n\n|r1= [[Array]] of [[Number]]s - IDs of all user actions added to given entity with [[addAction]] command\n\n|x1= <sqf>_actions = actionIDs player;</sqf>\n|seealso= [[actionParams]] [[addAction]] [[setUserActionText]] [[inGameUISetEventHandler]] [[showHUD]] [[inputAction]] [[removeAction]] [[removeAllActions]] [[action]]\n}}\n\n{{Note\n|user= KC Grimes\n|timestamp= 20180422141900\n|text= The argument for this command can be global (ie, not local to the executing machine), however the returned array will only contain action IDs for locally executed [[addAction]].\n}}"
  },
  "18377": {
   "title": "actionParams",

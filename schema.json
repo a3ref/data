@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://a3ref.github.io/schema.json",
+  "$id": "https://wiki.arma3.io/schema.json",
   "title": "a3ref: Arma 3 scripting reference record",
   "version": 2,
-  "description": "Records of the a3ref mirror of the Bohemia Interactive Community Wiki, format version 2 (\"version\" above; format 1 had every field in every command and function record). The root schema describes one page (commands/<name>.json, functions/<name>.json, topics/<name>.json). $defs/bundle describes commands.json, functions.json and topics.json; $defs/index describes index.json; $defs/syntaxIndex describes syntax.json. Command and function records leave out every optional field whose value is empty (null, [], {}, false or \"\"): read a missing field as that empty value. They also leave out what follows from other fields, as each field's description says: derivable categories, a parameter's or return value's text, an example's text, types lists, a syntax's operator. Topic records have every field.",
+  "description": "Records of the a3ref mirror of the Bohemia Interactive Community Wiki, format version 2 (\"version\" above; format 1 had every field in every command and function record). The root schema describes one page (commands/<name>.json, functions/<name>.json, topics/<name>.json). $defs/bundle describes commands.json, functions.json and topics.json; $defs/index describes index.json; $defs/events describes events.json; $defs/syntaxIndex describes syntax.json. Command and function records leave out every optional field whose value is empty (null, [], {}, false or \"\"): read a missing field as that empty value. They also leave out what follows from other fields, as each field's description says: derivable categories, a parameter's or return value's text, an example's text, types lists, a syntax's operator. Topic records have every field.",
   "anyOf": [{"$ref": "#/$defs/record"}, {"$ref": "#/$defs/topic"}],
   "$defs": {
     "markdown": {"type": "string", "description": "GitHub-flavoured Markdown converted from wikitext; links are plain text in JSON."},
@@ -232,6 +232,34 @@
               "status": {"$ref": "#/$defs/status"},
               "operator": {"type": ["string", "null"]},
               "aliases": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "object",
+      "description": "events.json: the event handlers of the topic pages Arma 3: Event Handlers, Arma 3: Mission Event Handlers, User Interface Event Handlers and Arma 3: Eden Editor Event Handlers, one per section, sorted by name.",
+      "required": ["updated", "count", "items"],
+      "properties": {
+        "updated": {"type": ["string", "null"], "format": "date-time"},
+        "count": {"type": "integer"},
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "kind", "page", "section", "html", "anchor", "md", "json", "summary", "arma3_since"],
+            "properties": {
+              "name": {"type": "string", "description": "Event name as scripts pass it, \"AnimStateChanged\"; UI events as their config attribute, \"onLoad\". Not unique: \"Deleted\" is an object, group and projectile event."},
+              "kind": {"type": "string", "description": "Which handler takes it, from the page or its level-3 section.", "examples": ["object", "multiplayer", "curator", "user action", "projectile", "group", "music", "mission", "UI", "Eden Editor", "Eden object"]},
+              "page": {"type": "string", "description": "Title of the topic page."},
+              "section": {"type": "string", "description": "Heading of the event's section in the page's sections, \"Deleted (Entity) (Arma 3 v1.68)\"."},
+              "html": {"type": "string", "description": "Path of the HTML page, relative to the site root; with #anchor it opens the event."},
+              "anchor": {"type": "string", "description": "Id of the event in the HTML page, \"animstatechanged\"."},
+              "md": {"type": "string"},
+              "json": {"type": "string"},
+              "summary": {"type": "string", "description": "First sentence(s) of the event's description, plain text; empty when the wiki gives only its parameters."},
+              "arma3_since": {"type": ["string", "null"]}
             }
           }
         }

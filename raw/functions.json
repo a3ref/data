@@ -3798,9 +3798,9 @@
    "Take On Helicopters: Functions",
    "Take On Helicopters: New Functions"
   ],
-  "revid": 309606,
-  "timestamp": "2022-05-05T12:07:38Z",
-  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= GUI\n\n|descr= <pre>#define DISPLAY\t\t(uinamespace getvariable 'hsim_RscClouds')\n#define CONTROL\t\t(DISPLAY displayctrl _idc)\n#define RSC_LAYER\t759\n\n{{Wiki|placeholder}}\n\n|s1= <!-- [] call [[BIS_fnc_displayClouds]] -->\n\n|r1=\n\n|x1= <!-- <sqf>[] call BIS_fnc_displayClouds;</sqf> -->\n\n|seealso=\n}}"
+  "revid": 379591,
+  "timestamp": "2026-11-04T21:04:05Z",
+  "wikitext": "{{RV|type=function\n\n|game1= tkoh\n|version1= 1.00\n\n|game2= arma3\n|version2= 0.50\n\n|gr1= GUI\n\n|descr= Shows or removes the moving clouds background used by {{tkoh}} menus: the {{hl|RscClouds}} title resource on layer 759.\nWith mode 1 the function adds {{hl|MouseMoving}} and {{hl|MouseHolding}} event handlers to the given display; they create the layer on the first mouse movement.\n{{Feature|informative|This is a {{tkoh}} leftover. In {{arma3}} the cloud animation is commented out and the only picture the function sets is the {{tkoh}} logo ({{hl|\\HSim\\UI_H\\data\\helisim_logo_ca.paa}}), which does not exist, so nothing is shown.\n{{arma3}} calls it only without arguments, in the {{hl|onUnload}} of {{hl|RscDisplayInterruptRevert.sqf}} and {{hl|RscDisplayHeliportMain.sqf}}, to remove the layer.}}\n\n|s1= [display, mode] call [[BIS_fnc_displayClouds]]\n\n|p1= display: [[Display]] - (Optional, default [[displayNull]]) display that gets the mouse event handlers (mode 1 only)\n\n|p2= mode: [[Number]] - (Optional, default 0)\n* 1: add the mouse event handlers to the display\n* 0: remove the clouds layer\n* negative: toggle the fade of controls with IDC 1200 to 1210 in the layer\n\n|r1= [[Nothing]]\n\n|x1= <sqf>[] call BIS_fnc_displayClouds; // removes the clouds layer</sqf>\n\n|x2= <sqf>// in a display's onLoad\n[_this select 0, 1] call BIS_fnc_displayClouds;</sqf>\n\n|seealso= [[cutRsc]] [[cutText]] [[displayAddEventHandler]]\n}}"
  },
  "15811": {
   "title": "BIS fnc displayMission",
