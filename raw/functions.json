@@ -7245,11 +7245,12 @@
    "Function Group: Event Handlers",
    "Function Group: Multiplayer",
    "Functions",
+   "Functions: Server Execution",
    "Introduced with Arma 3 version 1.00"
   ],
-  "revid": 349536,
-  "timestamp": "2023-11-08T17:16:42Z",
-  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|gr1= Multiplayer\n\n|gr2= Event Handlers\n\n|descr= Executes a function on server every time a player connects the mission.\n\n|s1= [code, params]] call [[BIS_fnc_onPlayerConnected]]\n\n|p1= code: [[Code]] or [[String]] - function name or [[Code|code]] to be executed. Following parameters are passed to the function or code:\n*0: [[player|Player]]\n*1: Params\n\n|p2= params: [[Anything]] - parameters passed to the code or function\n\n|r1= [[Boolean]]\n\n|x1= <sqf>[\n {\n   params [\"_player\", \"_params\"];\n   hint name _player; hint _params;\n }, \n \"Parameter\" \n] call BIS_fnc_onPlayerConnected;</sqf>\n\n|seealso= [[onPlayerConnected]] [[BIS_fnc_addStackedEventHandler]] [[Event Scripts]]\n}}"
+  "revid": 379590,
+  "timestamp": "2026-11-04T00:04:10Z",
+  "wikitext": "{{RV|type=function\n\n|game1= arma3\n|version1= 1.00\n\n|serverExec= y\n\n|gr1= Multiplayer\n\n|gr2= Event Handlers\n\n|descr= Executes code on server every time a player joins the scenario (after unit selection).\n\n|s1= [code, params] call [[BIS_fnc_onPlayerConnected]]\n\n|p1= code: [[Code]] or [[String]] - [[Code|code]] or name of the function to be executed. The following parameters are passed: [player, params], where:\n* player: [[Object]] - the connected [[player]] unit\n* params: [[Anything]] - ''params'' (below)\n\n|p2= params: [[Anything]] - parameters passed to the code or function (usually an [[Array]] or [[HashMap]])\n<!--\n|p3= execute: [[Boolean]] - (Optional, default [[false]]) [[true]] is used by the server to execute on all clients; leave to [[false]]\n-->\n|r1= [[Boolean]]\n\n|x1= <sqf>\n[\n\t{\n\t\tparams [\"_player\", \"_params\"];\n\t\tsystemChat name _player;\n\t\tsystemChat _params;\n\t},\n\t\"Parameter\"\n] call BIS_fnc_onPlayerConnected;\n</sqf>\n\n|seealso= [[onPlayerConnected]] [[BIS_fnc_addStackedEventHandler]] [[Event Scripts]]\n}}"
  },
  "16074": {
   "title": "BIS fnc initPlayable",
