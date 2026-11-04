@@ -23,7 +23,7 @@ grep -m1 '^{"name":"Position"' topics.json            # a concept page as Markdo
 
 Names are as written in scripts (`setPos`, `diag_fps`, `BIS_fnc_spawnGroup`); operators are named like their wiki
 page (`a != b`) and have an `operator` field (`!=`). For one page as readable Markdown, use the site instead:
-`https://a3ref.github.io/commands/setPos.md`.
+`https://wiki.arma3.io/commands/setPos.md`.
 
 With Python or `jq`, load `index.json` first and only the records you need:
 

@@ -6,7 +6,7 @@ JSON, synced daily.**
 
 Built first for AI agents, bots and programs: the original wiki blocks automated access behind a bot challenge,
 so this repository keeps a clean, versioned, machine-readable copy that anything can fetch with a plain HTTP GET.
-No API key, no rate limit, CORS open. The readable site with per-page Markdown and HTML is **https://a3ref.github.io/**;
+No API key, no rate limit, CORS open. The readable site with per-page Markdown and HTML is **https://wiki.arma3.io/**;
 agents with MCP can use **[a3ref/mcp](https://github.com/a3ref/mcp)** (search, pages and an SQF linter).
 
 ## Files
@@ -48,8 +48,8 @@ commands = {c["name"].lower(): c for c in json.load(urllib.request.urlopen(url))
 print(commands["setpos"]["syntaxes"][0]["syntax"])   # object setPos pos
 ```
 
-Single pages, already split, live on the site: `https://a3ref.github.io/commands/setPos.json`,
-`https://a3ref.github.io/functions/BIS_fnc_spawnGroup.md`. See https://a3ref.github.io/llms.txt for the full guide
+Single pages, already split, live on the site: `https://wiki.arma3.io/commands/setPos.json`,
+`https://wiki.arma3.io/functions/BIS_fnc_spawnGroup.md`. See https://wiki.arma3.io/llms.txt for the full guide
 written for language models.
 
 ### Give it to your agent
@@ -57,10 +57,10 @@ written for language models.
 ```markdown
 ## Arma 3 / SQF reference
 When writing or reviewing SQF for Arma 3, check commands and BIS_fnc_* functions against
-https://a3ref.github.io/ instead of relying on memory:
-- https://a3ref.github.io/commands/<command>.md (e.g. commands/setPos.md)
-- https://a3ref.github.io/functions/<BIS_fnc_name>.md (e.g. functions/BIS_fnc_spawnGroup.md)
-- https://a3ref.github.io/index.json lists every name with its syntax and a one-line summary
+https://wiki.arma3.io/ instead of relying on memory:
+- https://wiki.arma3.io/commands/<command>.md (e.g. commands/setPos.md)
+- https://wiki.arma3.io/functions/<BIS_fnc_name>.md (e.g. functions/BIS_fnc_spawnGroup.md)
+- https://wiki.arma3.io/index.json lists every name with its syntax and a one-line summary
 Names are case-sensitive and use the wiki spelling.
 ```
 
