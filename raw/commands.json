@@ -11929,14 +11929,15 @@
    "Arma 2: Operation Arrowhead: Scripting Commands",
    "Arma 2: Scripting Commands",
    "Arma 3: Scripting Commands",
+   "Command Group: GUI Control",
    "Command Group: GUI Control - HTML",
    "Introduced with Armed Assault version 1.00",
    "Scripting Commands",
    "Take On Helicopters: Scripting Commands"
   ],
-  "revid": 336297,
-  "timestamp": "2022-12-21T11:10:07Z",
-  "wikitext": "{{RV|type=command\n\n|game1= arma1\n|version1= 1.00\n\n|game2= arma2\n|version2= 1.00\n\n|game3= arma2oa\n|version3= 1.50\n\n|game4= tkoh\n|version4= 1.00\n\n|game5= arma3\n|version5= 0.50\n\n|gr1= GUI Control - HTML\n\n|descr= Sets the {{hl|sizeEx}} property for most controls as follows: \n* {{hl|CT_MAP}} - \"sizeExNames\"\n* {{hl|CT_HTML}} - \"P\" >> \"sizeEx\"\n* Other - \"sizeEx\"\n* {{GVI|arma3|2.02|size= 0.75}} {{hl|CT_STRUCTURED_TEXT}} - \"size\"\n\n|s1= control [[ctrlSetFontHeight]]  size \n\n|p1= control: [[Control]]\n\n|p2= size: [[Number]]\n|r1= [[Nothing]]\n\n|x1= <sqf>_control ctrlSetFontHeight 0.05;</sqf>\n\n|seealso= [[ctrlFontHeight]] [[Arma: GUI Configuration]]\n}}"
+  "revid": 379637,
+  "timestamp": "2026-11-10T17:48:13Z",
+  "wikitext": "{{RV|type=command\n\n|game1= arma1\n|version1= 1.00\n\n|game2= arma2\n|version2= 1.00\n\n|game3= arma2oa\n|version3= 1.50\n\n|game4= tkoh\n|version4= 1.00\n\n|game5= arma3\n|version5= 0.50\n\n|gr1= GUI Control - HTML\n\n|gr2= GUI Control\n\n|descr= Sets the {{hl|sizeEx}} property for most controls as follows: \n* {{hl|CT_MAP}} - \"sizeExNames\"\n* {{hl|CT_HTML}} - \"P\" >> \"sizeEx\"\n* Other - \"sizeEx\"\n* {{GVI|arma3|2.02|size= 0.75}} {{hl|CT_STRUCTURED_TEXT}} - \"size\"\n\n|s1= control [[ctrlSetFontHeight]]  size \n\n|p1= control: [[Control]]\n\n|p2= size: [[Number]]\n|r1= [[Nothing]]\n\n|x1= <sqf>_control ctrlSetFontHeight 0.05;</sqf>\n\n|seealso= [[ctrlFontHeight]] [[Arma: GUI Configuration]]\n}}"
  },
  "2832": {
   "title": "ctrlSetFontHeightH1",
